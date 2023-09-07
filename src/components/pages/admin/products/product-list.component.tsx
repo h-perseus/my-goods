@@ -49,6 +49,7 @@ import { useInformation } from "../../../../api/information/hooks/use-informatio
         await navigator.clipboard.writeText(text);
         alert('링크를 복사하였습니다');
       } catch (error) {
+        console.error('Failed to copy text: ', error);
         alert('링크복사에 실패하였습니다');
       }
     };
