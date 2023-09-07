@@ -1,0 +1,14 @@
+{
+    "type": "service_account",
+    "project_id": "naver-396709",
+    "private_key_id": "f419117c848d8b60598dff24caaeb79db356c272",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCaMw460vw9iuxD\n/isIQyxiFfvmZvhe3/dO5p4DK72vMtGItoVtVJ7PdgzGuj1Zvlv5RMkQIBZAUiNH\nNvBRGrjOLcoefPrSIybF4gehYLdx1HfPwBiyEpr4YgeYTvLr3eDlzZdmffM6kmv5\n6CTGw19HhYIvMV+UTE5rgnvTPxU8q3etd4JlnySX/1ZevRk+/MBiiDD5A/avHPHh\noWc1Puq08rtWQFnuVv9y969TheeM9OkcH4ou1TTuU5Vl82fcxTFZODQZYMb8mUbX\n3fJnxhZtPwdOKLK2CAr4JNMAA74w00TZ8e81t7FSUa3zvdAtgK3bMPDWpu0PMGPk\nW0dIIWJRAgMBAAECggEABe1Gc75eUaNAV5CyaLvkPdTofL+idksXf2Hf2vFYdh52\n7VFOqZgiDolUDmNkLknh0R/ytnr1P/2oO3mCHSvwxIQAC9Hz9hXBzMNWVb6Y7ngj\nLsoMaPPMHxXtgs4uCiDaHxsa4aafrbWpDs78cuNZiy83hMbaDKIuNXWresAm+dDy\nHeKchQTuErSvWxzYr+HlDey4QDkBhVBH/iVLsRO0NZIgis32pkhWb1o1yUezzya4\nzyoGBD6bAKfAXGXtGpxVSBBHs1T82oX4yDkKerprPfKCgYtbcSuezzQvW4k+CwZS\n9kgzxjYzdlhCTuju5HX1QqbWbOUcgqA3gGbxuYtlEQKBgQDMuMoDvzoTQfscwBAT\nwKeqmPJbNla/L3Jdc/FFdEHMWJNxV+xM9zF9klO0JkRlp5yXWbDm2d6v8g5pzxox\nF0Uzor8tA9fOIGaqDnZNibn1v6NHq9OO9WB5wFfhCfVGaTF464Xc08+EuG4fQEEp\nx9boDiIwTQDY8qg2KNYawuV3nQKBgQDA0qj7YnY7wHH6BYChavbH9YLqF4J1J3lC\nXyA+X/7rNtZimCQjTGnUbj5w6dO9kPCpx9XfkeBW6+7jAw2AS5qg4u24XLTBN8gt\nYhFKcTbqeTGabtI+oVjO0np31UV9v6rxxt9P0zloZ4KJzkrFWn/UK4+1sNKM3y01\nfrOa1qApRQKBgQCegklwA0T9Gi5LAW6xTI7FaSzlcLpTx3HeZ+Icq7oydTacIL6G\njTLVjlGe/64fo1p8WWa+J1zjkCCWzlLyRZlANLefLAWQxMeYzh/NQ2EnpNzQpnrk\niprLSiEAzgwKG3LBtGJuK9XWZlJlggOyTNfZzu+rxENuttuFK7My/0pahQKBgBur\n35470hXfFzw3H++KRyIJBKGNgCZJ5Of2eM0av52HwBpkFQOPyrw2mfVgSQeyTic/\nS10LNTOkJiMj5AMeVnFyP4UuoK390Fda9HpHZwcdH1Y3QyrDwtfjcrnRvGhAYkrS\nLGfrOxjVifE2zpol06RiH/yGBKE8weMkbKfy1wc1AoGAFeuZjOl3oc0I6cUQ3NbO\ncWG7AQFy6E73hshoDqNHrnlHDCwc7qr6C+qcSsHK8yN+yshCE/OPr90YcaBmamND\n/ly8hwNtKVIRb7ZdPBMgCF0YRXwa0SoZpfLmRCKZ+ssPglczTUv7eQvnEPnRMNDI\n8Je10LJYyDFBt8rj28ZI3IQ=\n-----END PRIVATE KEY-----\n",
+    "client_email": "naver-cafe@naver-396709.iam.gserviceaccount.com",
+    "client_id": "115108525223925851841",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/naver-cafe%40naver-396709.iam.gserviceaccount.com",
+    "universe_domain": "googleapis.com"
+  }
+  
