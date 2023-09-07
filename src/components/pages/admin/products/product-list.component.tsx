@@ -46,7 +46,28 @@ import { useInformation } from "../../../../api/information/hooks/use-informatio
 
     const handleCopyClick = async (text: string) => {
       try {
-        await navigator.clipboard.writeText(text);
+        if (navigator.clipboard) {
+          await navigator.clipboard.writeText(text);
+        } else {
+          const el = document.createElement('textarea');
+          el.value = text;
+          document.body.appendChild(el);
+          let iOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+          if (iOS){
+            const range = document.createRange();
+            range.selectNodeContents(el);
+            const selection = window.getSelection();
+            if (selection) {
+              selection.removeAllRanges();
+              selection.addRange(range);
+            }
+            el.setSelectionRange(0, 999999);
+          } else {
+            el.select();
+          }
+          document.execCommand('copy');
+          document.body.removeChild(el);
+        }
         alert('링크를 복사하였습니다');
       } catch (error) {
         console.error('Failed to copy text: ', error);
