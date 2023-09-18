@@ -8,25 +8,29 @@ import { useNavigate } from "react-router-dom";
 import { ROUTER_PATHS } from "../../../../routes";
 
 export const DomainsComponent = (): JSX.Element => {
-  const {domains, load} = useDomains({searchOptions: undefined});
+  const { domains, load } = useDomains({ searchOptions: undefined });
   const { delete: deleteDomain, isInProgress } = useDomainDelete();
   let [selectedDomains, setSelectedDomains] = useState<string[]>([]);
 
   const handleDeleteItem = (id: string) => {
-    deleteDomain([id]).then(() => {
-      load();
-    }).catch( e => {})
-  }
+    deleteDomain([id])
+      .then(() => {
+        load();
+      })
+      .catch((e) => {});
+  };
 
   const handleDeleteDomains = useCallback(() => {
-    deleteDomain(selectedDomains).then(() => {
-      load();
-    }).catch( e => {})
-  }, [selectedDomains])
+    deleteDomain(selectedDomains)
+      .then(() => {
+        load();
+      })
+      .catch((e) => {});
+  }, [selectedDomains]);
 
   const navigate = useNavigate();
 
-  if (isInProgress) return <LoadingIndicator></LoadingIndicator>
+  if (isInProgress) return <LoadingIndicator></LoadingIndicator>;
   return (
     <>
       <Flex
@@ -36,13 +40,33 @@ export const DomainsComponent = (): JSX.Element => {
         position="relative"
         UNSAFE_style={{ overflow: "hidden" }}
       >
-        <Flex gap={"size-100"} marginBottom={'size-200'} justifyContent={'end'}>
-          <Button isDisabled={selectedDomains.length === 0} variant="secondary" UNSAFE_style={{ borderRadius: '4px'}} onPress={handleDeleteDomains}>삭제</Button>
-          <Button variant="accent" UNSAFE_style={{ borderRadius: '4px'}} style="fill" onPress={() => {navigate(ROUTER_PATHS.ADMIN + ROUTER_PATHS.DOMAIN_CREATE)}}>추가</Button>
+        <Flex gap={"size-100"} marginBottom={"size-200"} justifyContent={"end"}>
+          <Button
+            isDisabled={selectedDomains.length === 0}
+            variant="secondary"
+            UNSAFE_style={{ borderRadius: "4px" }}
+            onPress={handleDeleteDomains}
+          >
+            삭제
+          </Button>
+          <Button
+            variant="accent"
+            UNSAFE_style={{ borderRadius: "4px" }}
+            style="fill"
+            onPress={() => {
+              navigate(ROUTER_PATHS.ADMIN + ROUTER_PATHS.DOMAIN_CREATE);
+            }}
+          >
+            추가
+          </Button>
         </Flex>
-        <View flex={1} minHeight={0} position={"relative"}  overflow={'auto'}>
+        <View flex={1} minHeight={0} position={"relative"} overflow={"auto"}>
           {
-            <DomainList domains={domains} setSelectedDomains={setSelectedDomains} handleDeleteItem={handleDeleteItem}></DomainList>
+            <DomainList
+              domains={domains}
+              setSelectedDomains={setSelectedDomains}
+              handleDeleteItem={handleDeleteItem}
+            ></DomainList>
           }
         </View>
       </Flex>

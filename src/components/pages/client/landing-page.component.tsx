@@ -4,6 +4,8 @@ import { Flex, View } from "@adobe/react-spectrum";
 import { ProductComponent } from "./product.component";
 import { ProductRequestCreateComponent } from "./product-request-create.component";
 import { RequestFinishedComponent } from "./request-finished.component";
+import { ProductConfirmComponent } from "./product-confirm.component";
+import { ProductLoginComponent } from "./product-login.component";
 
 export const LandingPage = (): JSX.Element => {
   return (
@@ -12,12 +14,11 @@ export const LandingPage = (): JSX.Element => {
         display: "flex",
         flexFlow: "column",
         height: "100vh",
-        alignItems: 'stretch'
+        alignItems: "stretch",
       }}
     >
       <View
         backgroundColor="gray-50"
-        paddingTop={"size-400"}
         overflow="hidden"
         UNSAFE_style={{
           flex: "1",
@@ -39,9 +40,35 @@ export const LandingPage = (): JSX.Element => {
                     maxHeight={"100%"}
                     height={"100%"}
                     direction={"column"}
-                    alignItems={'center'}
+                    alignItems={"center"}
                   >
                     <ProductComponent></ProductComponent>
+                  </Flex>
+                }
+              />
+              <Route
+                path={ROUTER_PATHS.PRODUCT_CONFIRM}
+                element={
+                  <Flex
+                    maxHeight={"100%"}
+                    height={"100%"}
+                    direction={"column"}
+                    alignItems={"center"}
+                  >
+                    <ProductConfirmComponent></ProductConfirmComponent>
+                  </Flex>
+                }
+              />
+              <Route
+                path={ROUTER_PATHS.PRODUCT_LOGIN}
+                element={
+                  <Flex
+                    maxHeight={"100%"}
+                    height={"100%"}
+                    direction={"column"}
+                    alignItems={"center"}
+                  >
+                    <ProductLoginComponent></ProductLoginComponent>
                   </Flex>
                 }
               />
@@ -52,8 +79,7 @@ export const LandingPage = (): JSX.Element => {
                     maxHeight={"100%"}
                     height={"100%"}
                     direction={"column"}
-                    alignItems={'center'}
-                    marginX={"size-300"}
+                    alignItems={"center"}
                   >
                     <ProductRequestCreateComponent></ProductRequestCreateComponent>
                   </Flex>
@@ -66,8 +92,7 @@ export const LandingPage = (): JSX.Element => {
                     maxHeight={"100%"}
                     height={"100%"}
                     direction={"column"}
-                    alignItems={'center'}
-                    marginX={"size-300"}
+                    alignItems={"center"}
                   >
                     <RequestFinishedComponent></RequestFinishedComponent>
                   </Flex>
@@ -75,7 +100,12 @@ export const LandingPage = (): JSX.Element => {
               />
               <Route
                 path="*"
-                element={<Navigate to={ ROUTER_PATHS.ADMIN + ROUTER_PATHS.PRODUCTS} replace />}
+                element={
+                  <Navigate
+                    to={ROUTER_PATHS.ADMIN + ROUTER_PATHS.PRODUCTS}
+                    replace
+                  />
+                }
               />
             </Routes>
           </Flex>

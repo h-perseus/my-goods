@@ -1,0 +1,16 @@
+{
+    "overrides": [
+      {
+        "files": "*.html",
+        "options": {
+          "htmlWhitespaceSensitivity": "ignore",
+          "printWidth": 80,
+          "semi": false,
+          "singleQuote": true, 
+          "jsxSingleQuote": true,
+          "jsxBracketSameLine": false
+        }
+      }
+    ]
+  }
+  

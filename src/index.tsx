@@ -8,6 +8,8 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { NotificationProvider } from "./components/shared/notification/notification.component";
 import App from "./components/app.component";
 import { ApplicationServicesProvider } from "./components/providers/application-services-provider.component";
+import { Buffer } from "buffer";
+global.Buffer = Buffer;
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -24,15 +26,15 @@ const root = ReactDOM.createRoot(
 root.render(
   <Provider theme={lightTheme} colorScheme="light">
     <ApplicationServicesProvider>
-    <ErrorBoundary>
-      <Router>
-        <NotificationProvider>
-          <QueryClientProvider client={queryClient}>
-            <App />
-          </QueryClientProvider>
-        </NotificationProvider>
-      </Router>
-    </ErrorBoundary>
+      <ErrorBoundary>
+        <Router>
+          <NotificationProvider>
+            <QueryClientProvider client={queryClient}>
+              <App />
+            </QueryClientProvider>
+          </NotificationProvider>
+        </Router>
+      </ErrorBoundary>
     </ApplicationServicesProvider>
   </Provider>,
 );

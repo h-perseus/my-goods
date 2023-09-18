@@ -1,32 +1,24 @@
 import { Domain } from "../domain.interface";
-import AXIOS from '../../axios-instance';
+import AXIOS from "../../axios-instance";
 import { API_URLS } from "../../urls";
 
 export const createApiDomainService = () => {
-  const list = async (
-    searchOptions?: any
-  ): Promise<Domain[]> => {
-
+  const list = async (searchOptions?: any): Promise<Domain[]> => {
     const response = await AXIOS.get<Domain[]>(
-      API_URLS.DOMAIN_LIST(searchOptions)
+      API_URLS.DOMAIN_LIST(searchOptions),
     );
 
     const domains = response.data || [];
-    return domains
+    return domains;
   };
 
-  const get = async (
-    id: string
-  ): Promise<Domain> => {
+  const get = async (id: string): Promise<Domain> => {
     const { data } = await AXIOS.get<Domain>(API_URLS.DOMAIN(id));
 
     return data;
   };
 
-  const edit = async (
-    id: string,
-    body: Partial<Domain>
-  ): Promise<void> => {
+  const edit = async (id: string, body: Partial<Domain>): Promise<void> => {
     await AXIOS.put(API_URLS.DOMAIN(id), body);
   };
 
@@ -35,9 +27,7 @@ export const createApiDomainService = () => {
     return data;
   };
 
-  const destroy = async (
-    id: string
-  ): Promise<void> => {
+  const destroy = async (id: string): Promise<void> => {
     await AXIOS.delete(API_URLS.DOMAIN(id));
   };
 
@@ -46,6 +36,6 @@ export const createApiDomainService = () => {
     get,
     edit,
     create,
-    destroy
+    destroy,
   };
 };

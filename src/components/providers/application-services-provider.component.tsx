@@ -1,11 +1,11 @@
-import { createContext, ReactNode, useContext } from 'react';
-import { MissingProviderError } from '../../helpers/missing-provider-error';
-import { createApiProductService } from '../../api/products/services/api-product-service';
-import { createApiRequestService } from '../../api/requests/services/api-request-service';
-import { createApiDomainService } from '../../api/domains/services/api-domain-service';
-import { createApiUserService } from '../../api/users/services/api-user-service';
-import { createApiConnectionService } from '../../api/connections/services/api-connection-service';
-import { createApiInformationService } from '../../api/information/services/api-information-service';
+import { createContext, ReactNode, useContext } from "react";
+import { MissingProviderError } from "../../helpers/missing-provider-error";
+import { createApiProductService } from "../../api/products/services/api-product-service";
+import { createApiRequestService } from "../../api/requests/services/api-request-service";
+import { createApiDomainService } from "../../api/domains/services/api-domain-service";
+import { createApiUserService } from "../../api/users/services/api-user-service";
+import { createApiConnectionService } from "../../api/connections/services/api-connection-service";
+import { createApiInformationService } from "../../api/information/services/api-information-service";
 
 export interface ApplicationServicesContextProps {
   productService: any;
@@ -34,7 +34,7 @@ export const ApplicationServicesProvider = ({
     domainService: createApiDomainService(),
     connectionService: createApiConnectionService(),
     userService: createApiUserService(),
-    informationService: createApiInformationService()
+    informationService: createApiInformationService(),
   };
 
   return (
@@ -49,8 +49,8 @@ export const useApplicationServices = (): ApplicationServicesContextProps => {
 
   if (context === undefined) {
     throw new MissingProviderError(
-      'useApplicationServices',
-      'ApplicationServiceProvider'
+      "useApplicationServices",
+      "ApplicationServiceProvider",
     );
   }
 

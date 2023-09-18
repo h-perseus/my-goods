@@ -6,24 +6,27 @@ import { useCallback, useState } from "react";
 import { LoadingIndicator } from "../../../shared/loading/loading-indicator.component";
 
 export const RequestsComponent = (): JSX.Element => {
-  const {requests, load} = useRequests({searchOptions: undefined});
+  const { requests, load } = useRequests({ searchOptions: undefined });
   const { delete: deleteRequest, isInProgress } = useRequestDelete();
   let [selectedRequests, setSelectedRequests] = useState<string[]>([]);
 
   const handleDeleteItem = (id: string) => {
-    deleteRequest([id]).then(() => {
-      load();
-    }).catch( e => {})
-  }
+    deleteRequest([id])
+      .then(() => {
+        load();
+      })
+      .catch((e) => {});
+  };
 
   const handleDeleteRequests = useCallback(() => {
-    deleteRequest(selectedRequests).then(() => {
-      load();
-    }).catch( e => {})
-  }, [selectedRequests])
+    deleteRequest(selectedRequests)
+      .then(() => {
+        load();
+      })
+      .catch((e) => {});
+  }, [selectedRequests]);
 
-
-  if (isInProgress) return <LoadingIndicator></LoadingIndicator>
+  if (isInProgress) return <LoadingIndicator></LoadingIndicator>;
   return (
     <>
       <Flex
@@ -33,12 +36,23 @@ export const RequestsComponent = (): JSX.Element => {
         position="relative"
         UNSAFE_style={{ overflow: "hidden" }}
       >
-        <Flex gap={"size-100"} marginBottom={'size-200'} justifyContent={'end'}>
-          <Button isDisabled={selectedRequests.length === 0} variant="secondary" UNSAFE_style={{ borderRadius: '4px'}} onPress={handleDeleteRequests}>삭제</Button>
+        <Flex gap={"size-100"} marginBottom={"size-200"} justifyContent={"end"}>
+          <Button
+            isDisabled={selectedRequests.length === 0}
+            variant="secondary"
+            UNSAFE_style={{ borderRadius: "4px" }}
+            onPress={handleDeleteRequests}
+          >
+            삭제
+          </Button>
         </Flex>
-        <View flex={1} minHeight={0} position={"relative"}  overflow={'auto'}>
+        <View flex={1} minHeight={0} position={"relative"} overflow={"auto"}>
           {
-            <RequestList requests={requests} setSelectedRequests={setSelectedRequests} handleDeleteItem={handleDeleteItem}></RequestList>
+            <RequestList
+              requests={requests}
+              setSelectedRequests={setSelectedRequests}
+              handleDeleteItem={handleDeleteItem}
+            ></RequestList>
           }
         </View>
       </Flex>

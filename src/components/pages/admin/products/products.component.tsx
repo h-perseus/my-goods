@@ -8,26 +8,30 @@ import { useCallback, useState } from "react";
 import { LoadingIndicator } from "../../../shared/loading/loading-indicator.component";
 
 export const ProductsComponent = (): JSX.Element => {
-  const {products, load} = useProducts({searchOptions: undefined});
+  const { products, load } = useProducts({ searchOptions: undefined });
   const { delete: deleteProduct, isInProgress } = useProductDelete();
   let [selectedProducts, setSelectedProducts] = useState<string[]>([]);
 
   const handleDeleteItem = (id: string) => {
-    console.log(id)
-    deleteProduct([id]).then(() => {
-      load();
-    }).catch( e => {})
-  }
+    console.log(id);
+    deleteProduct([id])
+      .then(() => {
+        load();
+      })
+      .catch((e) => {});
+  };
 
   const handleDeleteProducts = useCallback(() => {
-    deleteProduct(selectedProducts).then(() => {
-      load();
-    }).catch( e => {})
-  }, [selectedProducts])
+    deleteProduct(selectedProducts)
+      .then(() => {
+        load();
+      })
+      .catch((e) => {});
+  }, [selectedProducts]);
 
   const navigate = useNavigate();
 
-  if (isInProgress) return <LoadingIndicator></LoadingIndicator>
+  if (isInProgress) return <LoadingIndicator></LoadingIndicator>;
   return (
     <>
       <Flex
@@ -37,13 +41,33 @@ export const ProductsComponent = (): JSX.Element => {
         position="relative"
         UNSAFE_style={{ overflow: "hidden" }}
       >
-        <Flex gap={"size-100"} marginBottom={'size-200'} justifyContent={'end'}>
-          <Button isDisabled={selectedProducts.length === 0} variant="secondary" UNSAFE_style={{ borderRadius: '4px'}} onPress={handleDeleteProducts}>삭제</Button>
-          <Button variant="accent" UNSAFE_style={{ borderRadius: '4px'}} style="fill" onPress={() => {navigate(ROUTER_PATHS.ADMIN + ROUTER_PATHS.PRODUCT_CREATE)}}>추가</Button>
+        <Flex gap={"size-100"} marginBottom={"size-200"} justifyContent={"end"}>
+          <Button
+            isDisabled={selectedProducts.length === 0}
+            variant="secondary"
+            UNSAFE_style={{ borderRadius: "4px" }}
+            onPress={handleDeleteProducts}
+          >
+            삭제
+          </Button>
+          <Button
+            variant="accent"
+            UNSAFE_style={{ borderRadius: "4px" }}
+            style="fill"
+            onPress={() => {
+              navigate(ROUTER_PATHS.ADMIN + ROUTER_PATHS.PRODUCT_CREATE);
+            }}
+          >
+            추가
+          </Button>
         </Flex>
-        <View flex={1} minHeight={0} position={"relative"}  overflow={'auto'}>
+        <View flex={1} minHeight={0} position={"relative"} overflow={"auto"}>
           {
-            <ProductList products={products} setSelectedProducts={setSelectedProducts} handleDeleteItem={handleDeleteItem}></ProductList>
+            <ProductList
+              products={products}
+              setSelectedProducts={setSelectedProducts}
+              handleDeleteItem={handleDeleteItem}
+            ></ProductList>
           }
         </View>
       </Flex>

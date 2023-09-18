@@ -18,14 +18,13 @@ import { useEffect } from "react";
 import { LOCAL_STORAGE_KEYS } from "../../../helpers/local-storage-keys";
 
 export const LandingPage = (): JSX.Element => {
-
   const navigate = useNavigate();
 
   useEffect(() => {
     if (localStorage.getItem(LOCAL_STORAGE_KEYS.AUTHORIZED) !== "true") {
-      navigate('/login');
+      navigate("/login");
     }
-  }, [])
+  }, []);
 
   return (
     <div
@@ -95,7 +94,7 @@ export const LandingPage = (): JSX.Element => {
                   </Flex>
                 }
               />
-               <Route
+              <Route
                 path={ROUTER_PATHS.PRODUCT_EDIT}
                 element={
                   <Flex
@@ -121,7 +120,7 @@ export const LandingPage = (): JSX.Element => {
                   </Flex>
                 }
               />
-               <Route
+              <Route
                 path={ROUTER_PATHS.REQUEST}
                 element={
                   <Flex
@@ -199,7 +198,7 @@ export const LandingPage = (): JSX.Element => {
                   </Flex>
                 }
               />
-               <Route
+              <Route
                 path={ROUTER_PATHS.INFORMATION}
                 element={
                   <Flex
@@ -214,7 +213,12 @@ export const LandingPage = (): JSX.Element => {
               />
               <Route
                 path="*"
-                element={<Navigate to={ ROUTER_PATHS.ADMIN + ROUTER_PATHS.PRODUCTS} replace />}
+                element={
+                  <Navigate
+                    to={ROUTER_PATHS.ADMIN + ROUTER_PATHS.PRODUCTS}
+                    replace
+                  />
+                }
               />
             </Routes>
           </Flex>

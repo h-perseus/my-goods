@@ -52,18 +52,9 @@ const App = (): JSX.Element => {
   return (
     <>
       <Routes>
-        <Route
-          path={ROUTER_PATHS.ADMIN + "*"}
-          element={<AdminLandingPage />}
-        />
-         <Route
-          path={"*"}
-          element={<LandingPage />}
-        />
-        <Route
-          path={"/login"}
-          element={<LoginPage />}
-        />
+        <Route path={ROUTER_PATHS.ADMIN + "*"} element={<AdminLandingPage />} />
+        <Route path={"*"} element={<LandingPage />} />
+        <Route path={"/login"} element={<LoginPage />} />
         <Route
           path="*"
           element={<Navigate to={ROUTER_PATHS.ADMIN} replace />}

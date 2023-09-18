@@ -1,7 +1,7 @@
-import { useCallback, useState } from 'react';
-import { useApplicationServices } from '../../../components/providers/application-services-provider.component';
-import { NOTIFICATION_TYPE } from '../../../components/shared/notification/notification-toast/notification-type.enum';
-import { useNotification } from '../../../components/shared/notification/notification.component';
+import { useCallback, useState } from "react";
+import { useApplicationServices } from "../../../components/providers/application-services-provider.component";
+import { NOTIFICATION_TYPE } from "../../../components/shared/notification/notification-toast/notification-type.enum";
+import { useNotification } from "../../../components/shared/notification/notification.component";
 
 interface UseConnectionDelete {
   delete: (ids: string[]) => Promise<void>;
@@ -25,7 +25,7 @@ export const useConnectionDelete = (): UseConnectionDelete => {
       }
       setInProgress(false);
     },
-    [service]
+    [service],
   );
 
   return { delete: _delete, isInProgress };
