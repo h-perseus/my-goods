@@ -23,33 +23,57 @@ export const ProductRequestCreateComponent = (): JSX.Element => {
   const { edit: editConnection } = useConnectionEdit();
   const [connection, setConnection] = useState<any>(undefined);
 
-  const [payload, setPayload] = useState<any>({});
 
-  const handlePay = useCallback(() => {
+  const handlePay = () => {
+
+    let payload: any = {};
+
+    const phone01: any = document.getElementById("dd_sh_hp1");
+    const phone02: any = document.getElementById("dd_sh_hp2");
+    const phone03: any = document.getElementById("dd_sh_hp3");
+    if (phone01 && phone02 && phone03) {
+      payload.phone = phone01.value + phone02.value + phone03.value;
+    }
+
+    const phone11: any = document.getElementById("dd_hp1");
+    const phone12: any = document.getElementById("dd_hp2");
+    const phone13: any = document.getElementById("dd_hp3");
+    if (phone11 && phone12 && phone13) {
+      payload.phone1 = phone11.value + phone12.value + phone13.value;
+    }
+
+     
+      const userName: any = document.getElementById("dd_sh_xingming");
+      if (userName) {
+        payload.userName = userName.value
+      }
+      const shippingAddress: any = document.getElementById("dd_sh_dizhi1");
+      if (shippingAddress) {
+       payload.shippingAddress = shippingAddress.value
+      }
+      const shippingMemo: any = document.getElementById("dd_memo");
+      if (shippingMemo) {
+        payload.shippingMemo = shippingMemo.value;
+      }
     if (isEmpty(payload.userName)) {
       alert("이름을 입력하세요");
       return;
     }
     if (
-      isEmpty(payload.phone01) ||
-      isEmpty(payload.phone02) ||
-      isEmpty(payload.phone03)
+      isEmpty(payload.phone) &&
+      isEmpty(payload.phone1)
     ) {
       alert("연락처를 입력하세요");
       return;
     }
     if (request) {
-      editRequest(requestId, {
-        ...payload,
-        phone: payload.phone01 + payload.phone02 + payload.phone03,
-        phone1: payload.phone11 + payload.phone12 + payload.phone13,
-      })
+      editRequest(requestId, payload)
         .then(() => {
           navigate(PATHS.getRequestFinishedUrl(requestId));
         })
         .catch((e) => {});
     }
-  }, [payload]);
+  };
 
   useEffect(() => {
     const submit = document.getElementById("my_goods_submit");
@@ -129,81 +153,6 @@ export const ProductRequestCreateComponent = (): JSX.Element => {
         }
         return prev;
       });
-    }, 1000);
-
-    setTimeout(() => {
-      const phone01 = document.getElementById("dd_sh_hp1");
-      if (phone01) {
-        phone01.addEventListener("change", (e: any) => {
-          setPayload((a: any) => {
-            return { ...a, phone01: e.target.value };
-          });
-        });
-      }
-      const phone02 = document.getElementById("dd_sh_hp2");
-      if (phone02) {
-        phone02.addEventListener("change", (e: any) => {
-          setPayload((a: any) => {
-            return { ...a, phone02: e.target.value };
-          });
-        });
-      }
-      const phone03 = document.getElementById("dd_sh_hp3");
-      if (phone03) {
-        phone03.addEventListener("change", (e: any) => {
-          setPayload((a: any) => {
-            return { ...a, phone03: e.target.value };
-          });
-        });
-      }
-      const phone11 = document.getElementById("dd_hp1");
-      if (phone11) {
-        phone11.addEventListener("change", (e: any) => {
-          setPayload((a: any) => {
-            return { ...a, phone11: e.target.value };
-          });
-        });
-      }
-      const phone12 = document.getElementById("dd_hp2");
-      if (phone12) {
-        phone12.addEventListener("change", (e: any) => {
-          setPayload((a: any) => {
-            return { ...a, phone12: e.target.value };
-          });
-        });
-      }
-      const phone13 = document.getElementById("dd_hp3");
-      if (phone13) {
-        phone13.addEventListener("change", (e: any) => {
-          setPayload((a: any) => {
-            return { ...a, phone13: e.target.value };
-          });
-        });
-      }
-      const userName = document.getElementById("dd_sh_xingming");
-      if (userName) {
-        userName.addEventListener("change", (e: any) => {
-          setPayload((a: any) => {
-            return { ...a, userName: e.target.value };
-          });
-        });
-      }
-      const shippingAddress = document.getElementById("dd_sh_dizhi1");
-      if (shippingAddress) {
-        shippingAddress.addEventListener("change", (e: any) => {
-          setPayload((a: any) => {
-            return { ...a, shippingAddress: e.target.value };
-          });
-        });
-      }
-      const shippingMemo = document.getElementById("dd_memo");
-      if (shippingMemo) {
-        shippingMemo.addEventListener("change", (e: any) => {
-          setPayload((a: any) => {
-            return { ...a, shippingMemo: e.target.value };
-          });
-        });
-      }
     }, 1000);
 
     return () => clearInterval(timer);
