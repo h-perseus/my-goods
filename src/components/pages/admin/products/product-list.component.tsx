@@ -85,6 +85,8 @@ export const ProductList = ({
     }, 1000);
   });
 
+  if (!information) return (<></>)
+
   return (
     <View>
       <TableView

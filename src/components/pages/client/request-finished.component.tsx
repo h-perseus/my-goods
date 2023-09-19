@@ -48,6 +48,7 @@ export const RequestFinishedComponent = (): JSX.Element => {
           setHtmlContent(
             data
               .replaceAll("{my_goods_product_name}", request.product.name)
+              .replaceAll("{my_goods_product_image}", request.product.image)
               .replaceAll(
                 "{my_goods_product_price}",
                 request.product.price.toString(),

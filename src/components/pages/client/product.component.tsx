@@ -89,15 +89,9 @@ export const ProductComponent = (): JSX.Element => {
     }, 1000);
 
     setTimeout(() => {
-      const btn = document.getElementById("bt_purcharse");
+      const btn = document.getElementById("btn_purchase");
       if (btn) {
         btn.addEventListener("click", () => {
-          navigate(PATHS.getProductConfirmUrl(productId));
-        });
-      }
-      const btn1 = document.getElementById("bt_purcharse1");
-      if (btn1) {
-        btn1.addEventListener("click", () => {
           navigate(PATHS.getProductConfirmUrl(productId));
         });
       }

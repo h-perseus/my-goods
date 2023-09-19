@@ -1,21 +1,3 @@
-import {
-  Form,
-  TextField,
-  Flex,
-  Button,
-  Heading,
-  useAsyncList,
-  Image,
-  TableHeader,
-  Column,
-  TableBody,
-  Row,
-  Cell,
-  TableView,
-  View,
-  LabeledValue,
-  Divider,
-} from "@adobe/react-spectrum";
 import { useCallback, useEffect, useState } from "react";
 import { useInformation } from "../../../api/information/hooks/use-information.hook";
 import { useRequest } from "../../../api/requests/hooks/use-request.hook";
@@ -23,19 +5,10 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useRequestEdit } from "../../../api/requests/hooks/use-request-edit.hook";
 import { LoadingIndicator } from "../../shared/loading/loading-indicator.component";
 import { isEmpty } from "../../../helpers/utils";
-import { PATHS, ROUTER_PATHS } from "../../../routes";
+import { PATHS } from "../../../routes";
 import { useConnectionCreate } from "../../../api/connections/hooks/use-connection-create.hook";
 import { useConnectionEdit } from "../../../api/connections/hooks/use-connection-edit.hook";
 import ReactHtmlParser from "react-html-parser";
-let columns = [
-  { name: "", key: "image", width: 150 },
-  { name: "상품정보", key: "name" },
-  { name: "판매자", key: "seller", width: 200 },
-  { name: "수수료", key: "fee", width: 100 },
-  { name: "수량", key: "quantity", width: 100 },
-  { name: "할인", key: "discount", width: 100 },
-  { name: "주문금액", key: "price", width: 100 },
-];
 
 export const ProductRequestCreateComponent = (): JSX.Element => {
   const navigate = useNavigate();
@@ -50,23 +23,19 @@ export const ProductRequestCreateComponent = (): JSX.Element => {
   const { edit: editConnection } = useConnectionEdit();
   const [connection, setConnection] = useState<any>(undefined);
 
-  let [tableDensity, setTableDensity] = useState<any>("compact");
-  const [tableItems, setTableItems] = useState<any[]>([]);
-
   const [payload, setPayload] = useState<any>({});
 
   const handlePay = useCallback(() => {
+    if (isEmpty(payload.userName)) {
+      alert("이름을 입력하세요");
+      return;
+    }
     if (
       isEmpty(payload.phone01) ||
       isEmpty(payload.phone02) ||
-      isEmpty(payload.phone03) ||
-      isEmpty(payload.phone11) ||
-      isEmpty(payload.phone12) ||
-      isEmpty(payload.phone13) ||
-      isEmpty(payload.userName) ||
-      isEmpty(payload.shippingAddress)
+      isEmpty(payload.phone03)
     ) {
-      alert("이름, 연락처, 배송지주소를 입력하세요");
+      alert("연락처를 입력하세요");
       return;
     }
     if (request) {
@@ -94,28 +63,10 @@ export const ProductRequestCreateComponent = (): JSX.Element => {
     };
   }, [handlePay]);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setTableDensity("spacious");
-    }, 1000);
-  });
-
   const [htmlContent, setHtmlContent] = useState("");
 
   useEffect(() => {
     if (information && request) {
-      setTableItems([
-        {
-          id: "1",
-          image: request.product?.image,
-          name: request.product?.name,
-          seller: information.seller,
-          fee: information.fee,
-          quantity: 1,
-          discount: information.discount,
-          price: request.product?.price,
-        },
-      ]);
       if (!htmlContent) {
         fetch("/request.html") // The path is relative to the public directory
           .then((response) => response.text())
@@ -123,6 +74,7 @@ export const ProductRequestCreateComponent = (): JSX.Element => {
             setHtmlContent(
               data
                 .replaceAll("{my_goods_product_name}", request.product.name)
+                .replaceAll("{my_goods_product_image}", request.product.image)
                 .replaceAll("{my_goods_information_seller}", information.seller)
                 .replaceAll(
                   "{my_goods_information_delivery_fee}",
@@ -133,6 +85,9 @@ export const ProductRequestCreateComponent = (): JSX.Element => {
                   request.product.price.toString(),
                 ),
             );
+            setTimeout(() => {
+              setPayload({ phone01: "010", phone11: "010" });
+            }, 100);
           })
           .catch((error) => console.error("Error fetching HTML asset:", error));
       }
@@ -175,8 +130,6 @@ export const ProductRequestCreateComponent = (): JSX.Element => {
         return prev;
       });
     }, 1000);
-
-    setPayload({ phone01: "010", phone11: "010" });
 
     setTimeout(() => {
       const phone01 = document.getElementById("dd_sh_hp1");
