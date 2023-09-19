@@ -23,46 +23,45 @@ export const ProductRequestCreateComponent = (): JSX.Element => {
   const { edit: editConnection } = useConnectionEdit();
   const [connection, setConnection] = useState<any>(undefined);
 
-
   const handlePay = () => {
-
     let payload: any = {};
 
     const phone01: any = document.getElementById("dd_sh_hp1");
     const phone02: any = document.getElementById("dd_sh_hp2");
     const phone03: any = document.getElementById("dd_sh_hp3");
     if (phone01 && phone02 && phone03) {
-      payload.phone = phone01.value + phone02.value + phone03.value;
+      if (!isEmpty(phone02.value) && !isEmpty(phone03.value)) {
+        payload.phone = phone01.value + phone02.value + phone03.value;
+      }
     }
 
     const phone11: any = document.getElementById("dd_hp1");
     const phone12: any = document.getElementById("dd_hp2");
     const phone13: any = document.getElementById("dd_hp3");
     if (phone11 && phone12 && phone13) {
+      if (!isEmpty(phone12.value) && !isEmpty(phone13.value)) {
       payload.phone1 = phone11.value + phone12.value + phone13.value;
+
+      }
     }
 
-     
-      const userName: any = document.getElementById("dd_sh_xingming");
-      if (userName) {
-        payload.userName = userName.value
-      }
-      const shippingAddress: any = document.getElementById("dd_sh_dizhi1");
-      if (shippingAddress) {
-       payload.shippingAddress = shippingAddress.value
-      }
-      const shippingMemo: any = document.getElementById("dd_memo");
-      if (shippingMemo) {
-        payload.shippingMemo = shippingMemo.value;
-      }
+    const userName: any = document.getElementById("dd_sh_xingming");
+    if (userName) {
+      payload.userName = userName.value;
+    }
+    const shippingAddress: any = document.getElementById("dd_sh_dizhi1");
+    if (shippingAddress) {
+      payload.shippingAddress = shippingAddress.value;
+    }
+    const shippingMemo: any = document.getElementById("dd_memo");
+    if (shippingMemo) {
+      payload.shippingMemo = shippingMemo.value;
+    }
     if (isEmpty(payload.userName)) {
       alert("이름을 입력하세요");
       return;
     }
-    if (
-      isEmpty(payload.phone) &&
-      isEmpty(payload.phone1)
-    ) {
+    if (isEmpty(payload.phone) && isEmpty(payload.phone1)) {
       alert("연락처를 입력하세요");
       return;
     }
@@ -74,18 +73,6 @@ export const ProductRequestCreateComponent = (): JSX.Element => {
         .catch((e) => {});
     }
   };
-
-  useEffect(() => {
-    const submit = document.getElementById("my_goods_submit");
-    if (submit) {
-      submit.addEventListener("click", handlePay);
-    }
-    return () => {
-      if (submit) {
-        submit.removeEventListener("click", handlePay);
-      }
-    };
-  }, [handlePay]);
 
   const [htmlContent, setHtmlContent] = useState("");
 
@@ -110,7 +97,10 @@ export const ProductRequestCreateComponent = (): JSX.Element => {
                 ),
             );
             setTimeout(() => {
-              setPayload({ phone01: "010", phone11: "010" });
+              const submit = document.getElementById("my_goods_submit");
+              if (submit) {
+                submit.addEventListener("click", handlePay);
+              }
             }, 100);
           })
           .catch((error) => console.error("Error fetching HTML asset:", error));

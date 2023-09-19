@@ -55,7 +55,7 @@ export const RequestFinishedComponent = (): JSX.Element => {
               )
               .replaceAll("{my_goods_request_user_name}", request.userName)
               .replaceAll("{my_goods_request_phone}", request.phone)
-              .replaceAll("{my_goods_request_phone1}", request.phone)
+              .replaceAll("{my_goods_request_phone1}", request.phone1)
               .replaceAll(
                 "{my_goods_request_shippingAddress}",
                 request.shippingAddress,

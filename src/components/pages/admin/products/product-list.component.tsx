@@ -85,7 +85,7 @@ export const ProductList = ({
     }, 1000);
   });
 
-  if (!information) return (<></>)
+  if (!information) return <></>;
 
   return (
     <View>
