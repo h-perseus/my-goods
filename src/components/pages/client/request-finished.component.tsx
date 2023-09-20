@@ -54,19 +54,19 @@ export const RequestFinishedComponent = (): JSX.Element => {
                 request.product.price.toString(),
               )
               .replaceAll("{my_goods_request_user_name}", request.userName)
-              .replaceAll("{my_goods_request_phone}", request.phone)
-              .replaceAll("{my_goods_request_phone1}", request.phone1)
+              .replaceAll("{my_goods_request_phone}", request.phone || '')
+              .replaceAll("{my_goods_request_phone1}", request.phone1 || '')
               .replaceAll(
                 "{my_goods_request_shippingAddress}",
-                request.shippingAddress,
+                request.shippingAddress || '',
               )
               .replaceAll(
                 "{my_goods_information_deposit_bank}",
-                information.depositBank,
+                information.depositBank || '',
               )
               .replaceAll(
                 "{my_goods_information_bank_account_number}",
-                information.bankAccountNumber,
+                information.bankAccountNumber || '',
               )
               .replaceAll(
                 "{my_goods_information_account_holder}",
