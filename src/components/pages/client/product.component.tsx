@@ -1,18 +1,3 @@
-import {
-  Flex,
-  Text,
-  Image,
-  Form,
-  TextField,
-  DialogTrigger,
-  View,
-  Dialog,
-  Heading,
-  Divider,
-  Content,
-  ButtonGroup,
-  Button,
-} from "@adobe/react-spectrum";
 import { useNavigate, useParams } from "react-router-dom";
 import { useProduct } from "../../../api/products/hooks/use-product.hook";
 import { useRequestCreate } from "../../../api/requests/hooks/use-request-create.hook";
@@ -23,7 +8,7 @@ import { PATHS } from "../../../routes";
 import { useConnectionCreate } from "../../../api/connections/hooks/use-connection-create.hook";
 import { useConnectionEdit } from "../../../api/connections/hooks/use-connection-edit.hook";
 
-export const ProductComponent = (): JSX.Element => {
+export const ProductComponent = ({device, ip}: {device: string | undefined, ip: string| undefined}): JSX.Element => {
   const navigate = useNavigate();
   const { productId = "" } = useParams<{
     productId: string;
@@ -38,14 +23,27 @@ export const ProductComponent = (): JSX.Element => {
   const [htmlContent, setHtmlContent] = useState("");
 
   useEffect(() => {
-    if (product && !connection) {
+    if (product && !htmlContent && device) {
+      fetch(device === 'pc'? "/product.html": "/product.mobile.html") // The path is relative to the public directory
+        .then((response) => response.text())
+        .then((data) => {
+          setHtmlContent(
+            data
+              .replaceAll("{my_goods_product_name}", product.name)
+              .replaceAll("{my_goods_product_image}", product.image)
+              .replaceAll("{my_goods_product_price}", new Intl.NumberFormat().format(product.price)),
+          );
+        })
+        .catch((error) => console.error("Error fetching HTML asset:", error));
+    }
+  }, [product, htmlContent, device]);
+
+  useEffect(() => {
+    if (ip && device && product && !connection) {
+
       createConnection({
-        device:
-          /Mobile|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-            navigator.userAgent,
-          )
-            ? "mobile"
-            : "pc",
+        ip,
+        device,
         product: productId,
         page: "메인",
         duration: 0,
@@ -58,22 +56,27 @@ export const ProductComponent = (): JSX.Element => {
         });
     }
 
-    if (product && !htmlContent) {
-      fetch("/product.html") // The path is relative to the public directory
-        .then((response) => response.text())
-        .then((data) => {
-          setHtmlContent(
-            data
-              .replaceAll("{my_goods_product_name}", product.name)
-              .replaceAll("{my_goods_product_image}", product.image)
-              .replaceAll("{my_goods_product_price}", product.price.toString()),
-          );
-        })
-        .catch((error) => console.error("Error fetching HTML asset:", error));
-    }
-  }, [product, connection, htmlContent]);
+  }, [ip, device, product, connection]);
 
   useEffect(() => {
+    if (connection) {
+      setTimeout(() => {
+        const btn = document.getElementById("btn_purchase");
+        if (btn) {
+          btn.addEventListener("click", () => {
+            editConnection(connection._id, { page: "주문서작성" }).then(() => {
+              navigate(PATHS.getProductConfirmUrl(productId));
+            }).catch(
+              (e) => {alert('오류발생')},
+            );
+          });
+        }
+      }, 1000);
+    }
+  }, [connection])
+
+  useEffect(() => {
+
     const timer = setInterval(() => {
       setConnection((prev: any) => {
         if (prev) {
@@ -88,14 +91,7 @@ export const ProductComponent = (): JSX.Element => {
       });
     }, 1000);
 
-    setTimeout(() => {
-      const btn = document.getElementById("btn_purchase");
-      if (btn) {
-        btn.addEventListener("click", () => {
-          navigate(PATHS.getProductConfirmUrl(productId));
-        });
-      }
-    }, 1000);
+    
     return () => clearInterval(timer);
   }, []);
 

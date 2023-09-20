@@ -1,10 +1,9 @@
 import { Button, Flex, View } from "@adobe/react-spectrum";
 import { useConnections } from "../../../../api/connections/hooks/use-connections.hook";
 import { ConnectionList } from "./connection-list.component";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useConnectionDelete } from "../../../../api/connections/hooks/use-connection-delete.hook";
 import { LoadingIndicator } from "../../../shared/loading/loading-indicator.component";
-import { useNavigate } from "react-router-dom";
 
 export const ConnectionsComponent = (): JSX.Element => {
   const { connections, load } = useConnections({ searchOptions: undefined });
@@ -27,7 +26,17 @@ export const ConnectionsComponent = (): JSX.Element => {
       .catch((e) => {});
   }, [selectedConnections]);
 
-  const navigate = useNavigate();
+  useEffect(() => {
+    const timer = setInterval(() => {
+      try {
+        load();
+      } catch (error) {
+      }
+    }, 3000);
+
+    return () => clearInterval(timer);
+  }, []);
+
 
   if (isInProgress) return <LoadingIndicator></LoadingIndicator>;
   return (

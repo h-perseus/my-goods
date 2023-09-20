@@ -2,9 +2,9 @@ export interface Information {
   domain?: any;
   userId: string;
   password: string;
-  discount: Number;
-  fee: Number;
-  deliveryFee: Number;
+  discount: number;
+  fee: number;
+  deliveryFee: number;
   seller: string;
   depositBank: string;
   depositDeadline: string;

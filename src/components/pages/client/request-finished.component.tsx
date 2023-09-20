@@ -7,7 +7,7 @@ import { useRequest } from "../../../api/requests/hooks/use-request.hook";
 import { useInformation } from "../../../api/information/hooks/use-information.hook";
 import ReactHtmlParser from "react-html-parser";
 
-export const RequestFinishedComponent = (): JSX.Element => {
+export const RequestFinishedComponent = ({device, ip}: {device: string | undefined, ip: string| undefined}): JSX.Element => {
   const { requestId = "" } = useParams<{
     requestId: string;
   }>();
@@ -21,17 +21,12 @@ export const RequestFinishedComponent = (): JSX.Element => {
   const [htmlContent, setHtmlContent] = useState("");
 
   useEffect(() => {
-    if (request && !connection) {
+    if (ip && device && request && !connection) {
       createConnection({
-        device:
-          /Mobile|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-            navigator.userAgent,
-          )
-            ? "mobile"
-            : "pc",
+        device,
         product: request.product?._id,
         page: "완료",
-        duration: 0,
+        ip,
       })
         .then((res) => {
           setConnection(res);
@@ -40,9 +35,11 @@ export const RequestFinishedComponent = (): JSX.Element => {
           console.log(e);
         });
     }
+  }, [ip, device, request, connection]);
 
-    if (request && !isInProgress && information && !htmlContent) {
-      fetch("/request_finished.html") // The path is relative to the public directory
+  useEffect(() => {
+    if (request && !isInProgress && information && !htmlContent && device) {
+      fetch(device === 'pc' ? "/request_finished.html": '/request_finished.mobile.html') // The path is relative to the public directory
         .then((response) => response.text())
         .then((data) => {
           setHtmlContent(
@@ -51,7 +48,7 @@ export const RequestFinishedComponent = (): JSX.Element => {
               .replaceAll("{my_goods_product_image}", request.product.image)
               .replaceAll(
                 "{my_goods_product_price}",
-                request.product.price.toString(),
+                new Intl.NumberFormat().format(request.product.price)
               )
               .replaceAll("{my_goods_request_user_name}", request.userName)
               .replaceAll("{my_goods_request_phone}", request.phone || '')
@@ -78,7 +75,7 @@ export const RequestFinishedComponent = (): JSX.Element => {
               )
               .replaceAll(
                 "{my_goods_information_fee}",
-                information.fee.toString(),
+                new Intl.NumberFormat().format(information.fee)
               )
               .replaceAll(
                 "{my_goods_information_discount}",
@@ -86,20 +83,20 @@ export const RequestFinishedComponent = (): JSX.Element => {
               )
               .replaceAll(
                 "{my_goods_information_delivery_fee}",
-                information.deliveryFee.toString(),
+                new Intl.NumberFormat().format(information.deliveryFee)
               ),
           );
         })
         .catch((error) => console.error("Error fetching HTML asset:", error));
     }
-  }, [request, connection, information, isInProgress]);
+  }, [request, information, isInProgress, htmlContent, device]);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setConnection((prev: any) => {
         if (prev) {
           try {
-            editConnection(prev._id, { duration: prev.duration + 1 }).catch(
+            editConnection(prev._id, { duration: prev.duration + 1, page: "완료" }).catch(
               (e) => {},
             );
           } catch (error) {}

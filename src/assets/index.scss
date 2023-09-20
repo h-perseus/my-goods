@@ -3,6 +3,11 @@
 @import '@spectrum-css/vars/dist/spectrum-dark.css';
 @import '@spectrum-css/icon/dist/index-vars.css';
 
+.spot_thmb_border, .spot_thumb {
+  -webkit-mask: none !important;
+  border-radius: 50%;
+}
+
 :root {
   --intel-blue: #0095ca;
   --energy-blue: #00c7fd;

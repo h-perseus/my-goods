@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { LoadingIndicator } from "../../shared/loading/loading-indicator.component";
 import { PATHS } from "../../../routes";
 
-export const ProductLoginComponent = (): JSX.Element => {
+export const ProductLoginComponent = ({device, ip}: {device: string | undefined, ip: string| undefined}): JSX.Element => {
   const navigate = useNavigate();
   const { productId = "" } = useParams<{
     productId: string;
@@ -24,6 +24,7 @@ export const ProductLoginComponent = (): JSX.Element => {
         productId: productId,
       })
         .then((res) => {
+          
           navigate(PATHS.getRequestUrl(res._id));
         })
         .catch((e) => {
@@ -35,13 +36,6 @@ export const ProductLoginComponent = (): JSX.Element => {
   const [htmlContent, setHtmlContent] = useState("");
 
   useEffect(() => {
-    fetch("/product_login.html") // The path is relative to the public directory
-      .then((response) => response.text())
-      .then((data) => {
-        setHtmlContent(data);
-      })
-      .catch((error) => console.error("Error fetching HTML asset:", error));
-
     setTimeout(() => {
       const btn = document.getElementById("btn_login");
       if (btn) {
@@ -51,6 +45,17 @@ export const ProductLoginComponent = (): JSX.Element => {
       }
     }, 1000);
   }, []);
+
+  useEffect(() => {
+    if (device) {
+      fetch(device === 'pc' ? "/product_login.html": '/product_login.mobile.html') // The path is relative to the public directory
+      .then((response) => response.text())
+      .then((data) => {
+        setHtmlContent(data);
+      })
+      .catch((error) => console.error("Error fetching HTML asset:", error));
+    }
+  }, [device]);
 
   if (isInProgress) return <LoadingIndicator></LoadingIndicator>;
   return (

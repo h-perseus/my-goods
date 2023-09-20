@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { PATHS } from "../../../routes";
 import ReactHtmlParser from "react-html-parser";
 
-export const ProductConfirmComponent = (): JSX.Element => {
+export const ProductConfirmComponent = ({device, ip}: {device: string | undefined, ip: string| undefined}): JSX.Element => {
   const navigate = useNavigate();
   const { productId = "" } = useParams<{
     productId: string;
@@ -15,19 +15,19 @@ export const ProductConfirmComponent = (): JSX.Element => {
   const [htmlContent, setHtmlContent] = useState("");
 
   useEffect(() => {
-    if (product && !htmlContent) {
-      fetch("/product_confirm.html") // The path is relative to the public directory
+    if (product && !htmlContent && device) {
+      fetch(device === 'pc' ? "/product_confirm.html": '/product_confirm.mobile.html') // The path is relative to the public directory
         .then((response) => response.text())
         .then((data) => {
           setHtmlContent(
             data
               .replaceAll("{my_goods_product_name}", product.name)
-              .replaceAll("{my_goods_product_price}", product.price.toString()),
+              .replaceAll("{my_goods_product_price}", new Intl.NumberFormat().format(product.price)),
           );
         })
         .catch((error) => console.error("Error fetching HTML asset:", error));
     }
-  }, [product, htmlContent]);
+  }, [product, htmlContent, device]);
 
   useEffect(() => {
     setTimeout(() => {

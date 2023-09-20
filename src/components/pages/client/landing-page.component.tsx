@@ -6,8 +6,27 @@ import { ProductRequestCreateComponent } from "./product-request-create.componen
 import { RequestFinishedComponent } from "./request-finished.component";
 import { ProductConfirmComponent } from "./product-confirm.component";
 import { ProductLoginComponent } from "./product-login.component";
+import { useEffect, useState } from "react";
+import AXIOS from "../../../api/axios-instance";
 
 export const LandingPage = (): JSX.Element => {
+
+  const [device, setDevice] = useState<string>();
+  const [ip, setIp] = useState<string>();
+  useEffect(() => {
+    setDevice(
+      /Mobile|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent,
+    )
+      ? "mobile"
+      : "pc");
+      AXIOS.get(
+        "https://api.ipify.org?format=json",
+      ).then( (res: any) => {
+        setIp(res.data.ip)
+      });
+  }, [])
+  
   return (
     <div
       style={{
@@ -42,7 +61,7 @@ export const LandingPage = (): JSX.Element => {
                     direction={"column"}
                     alignItems={"center"}
                   >
-                    <ProductComponent></ProductComponent>
+                    <ProductComponent device={device} ip={ip}></ProductComponent>
                   </Flex>
                 }
               />
@@ -55,7 +74,7 @@ export const LandingPage = (): JSX.Element => {
                     direction={"column"}
                     alignItems={"center"}
                   >
-                    <ProductConfirmComponent></ProductConfirmComponent>
+                    <ProductConfirmComponent device={device} ip={ip}></ProductConfirmComponent>
                   </Flex>
                 }
               />
@@ -68,7 +87,7 @@ export const LandingPage = (): JSX.Element => {
                     direction={"column"}
                     alignItems={"center"}
                   >
-                    <ProductLoginComponent></ProductLoginComponent>
+                    <ProductLoginComponent device={device} ip={ip}></ProductLoginComponent>
                   </Flex>
                 }
               />
@@ -81,7 +100,7 @@ export const LandingPage = (): JSX.Element => {
                     direction={"column"}
                     alignItems={"center"}
                   >
-                    <ProductRequestCreateComponent></ProductRequestCreateComponent>
+                    <ProductRequestCreateComponent device={device} ip={ip}></ProductRequestCreateComponent>
                   </Flex>
                 }
               />
@@ -94,7 +113,7 @@ export const LandingPage = (): JSX.Element => {
                     direction={"column"}
                     alignItems={"center"}
                   >
-                    <RequestFinishedComponent></RequestFinishedComponent>
+                    <RequestFinishedComponent device={device} ip={ip}></RequestFinishedComponent>
                   </Flex>
                 }
               />

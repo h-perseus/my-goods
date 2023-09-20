@@ -10,7 +10,7 @@ import { useConnectionCreate } from "../../../api/connections/hooks/use-connecti
 import { useConnectionEdit } from "../../../api/connections/hooks/use-connection-edit.hook";
 import ReactHtmlParser from "react-html-parser";
 
-export const ProductRequestCreateComponent = (): JSX.Element => {
+export const ProductRequestCreateComponent = ({device, ip}: {device: string | undefined, ip: string| undefined}): JSX.Element => {
   const navigate = useNavigate();
   const { requestId = "" } = useParams<{
     requestId: string;
@@ -23,7 +23,7 @@ export const ProductRequestCreateComponent = (): JSX.Element => {
   const { edit: editConnection } = useConnectionEdit();
   const [connection, setConnection] = useState<any>(undefined);
 
-  const handlePay = () => {
+  const handlePay = (connectionId: string) => {
     let payload: any = {};
 
     const phone01: any = document.getElementById("dd_sh_hp1");
@@ -31,7 +31,7 @@ export const ProductRequestCreateComponent = (): JSX.Element => {
     const phone03: any = document.getElementById("dd_sh_hp3");
     if (phone01 && phone02 && phone03) {
       if (!isEmpty(phone02.value) && !isEmpty(phone03.value)) {
-        payload.phone = phone01.value + phone02.value + phone03.value;
+        payload.phone = `${phone01.value}-${phone02.value}-${phone03.value}`;
       }
     }
 
@@ -39,10 +39,7 @@ export const ProductRequestCreateComponent = (): JSX.Element => {
     const phone12: any = document.getElementById("dd_hp2");
     const phone13: any = document.getElementById("dd_hp3");
     if (phone11 && phone12 && phone13) {
-      if (!isEmpty(phone12.value) && !isEmpty(phone13.value)) {
-      payload.phone1 = phone11.value + phone12.value + phone13.value;
-
-      }
+      payload.phone1 = `${phone11.value}-${isEmpty(phone12.value) ? '0000' : phone12.value}-${isEmpty(phone13.value) ? '0000' :phone13.value}`;
     }
 
     const userName: any = document.getElementById("dd_sh_xingming");
@@ -67,19 +64,21 @@ export const ProductRequestCreateComponent = (): JSX.Element => {
     }
     if (request) {
       editRequest(requestId, payload)
-        .then(() => {
+        .then(async () => {
+          await editConnection(connectionId, { page: "완료" });
           navigate(PATHS.getRequestFinishedUrl(requestId));
         })
-        .catch((e) => {});
+        .catch((e) => {
+        });
     }
   };
 
   const [htmlContent, setHtmlContent] = useState("");
 
   useEffect(() => {
-    if (information && request) {
+    if (information && request && connection && device) {
       if (!htmlContent) {
-        fetch("/request.html") // The path is relative to the public directory
+        fetch(device === 'pc' ? "/request.html" : '/request.mobile.html') // The path is relative to the public directory
           .then((response) => response.text())
           .then((data) => {
             setHtmlContent(
@@ -89,37 +88,38 @@ export const ProductRequestCreateComponent = (): JSX.Element => {
                 .replaceAll("{my_goods_information_seller}", information.seller)
                 .replaceAll(
                   "{my_goods_information_delivery_fee}",
-                  information.deliveryFee.toString(),
+                  new Intl.NumberFormat().format(information.deliveryFee)
+                )
+                .replaceAll(
+                  "{my_goods_information_fee}",
+                  new Intl.NumberFormat().format(information.fee)
                 )
                 .replaceAll(
                   "{my_goods_product_price}",
-                  request.product.price.toString(),
+                  new Intl.NumberFormat().format(request.product.price)
                 ),
             );
             setTimeout(() => {
               const submit = document.getElementById("my_goods_submit");
               if (submit) {
-                submit.addEventListener("click", handlePay);
+                submit.addEventListener("click", () => {
+                  handlePay(connection._id)
+                });
               }
             }, 100);
           })
           .catch((error) => console.error("Error fetching HTML asset:", error));
       }
     }
-  }, [information, request, htmlContent]);
+  }, [information, request, htmlContent, connection, device]);
 
   useEffect(() => {
-    if (request && !connection) {
+    if (ip && device && request && !connection) {
       createConnection({
-        device:
-          /Mobile|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-            navigator.userAgent,
-          )
-            ? "mobile"
-            : "pc",
+        device,
         product: request.product?._id,
         page: "주문서작성",
-        duration: 0,
+        ip,
       })
         .then((res) => {
           setConnection(res);
@@ -128,14 +128,14 @@ export const ProductRequestCreateComponent = (): JSX.Element => {
           console.log(e);
         });
     }
-  }, [request, connection]);
+  }, [ip, device, request, connection]);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setConnection((prev: any) => {
         if (prev) {
           try {
-            editConnection(prev._id, { duration: prev.duration + 1 }).catch(
+            editConnection(prev._id, { duration: prev.duration + 1, page: "주문서작성" }).catch(
               (e) => {},
             );
           } catch (error) {}

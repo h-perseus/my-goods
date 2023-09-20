@@ -23,10 +23,6 @@ export const createApiConnectionService = () => {
   };
 
   const create = async (body: Partial<Connection>): Promise<Connection> => {
-    const { data: ipData } = await AXIOS.get(
-      "https://api.ipify.org?format=json",
-    );
-    body.ip = ipData.ip;
     const { data } = await AXIOS.post<Connection>(API_URLS.CONNECTIONS, body);
     return data;
   };

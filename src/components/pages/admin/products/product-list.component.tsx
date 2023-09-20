@@ -17,9 +17,9 @@ import { useInformation } from "../../../../api/information/hooks/use-informatio
 
 let columns = [
   { name: "이미지", key: "image", width: 150 },
-  { name: "상품이름", key: "name" },
+  { name: "상품이름", key: "name",  width: 200  },
   { name: "상품가격", key: "price", width: 100 },
-  { name: "상품주소", key: "address", width: 400 },
+  { name: "상품주소", key: "address",},
   { name: "입력날짜", key: "createdAt", width: 150 },
   { name: "", key: "action", width: 100 },
 ];
@@ -157,6 +157,15 @@ export const ProductList = ({
                       </ActionButton>
                     </Cell>
                   );
+                } else if (key === 'price'){
+                  return <Cell>{new Intl.NumberFormat().format(item[key])}</Cell>
+                } else if (key === 'createdAt') {
+                  return <Cell>{new Intl.DateTimeFormat('ko-KR', {year: 'numeric',
+                  month: '2-digit',
+                  day: '2-digit',
+                  hour: '2-digit',
+                  minute: '2-digit',
+                  hour12: false}).format(new Date(item[key]))}</Cell>
                 } else {
                   return <Cell>{item[key]}</Cell>;
                 }

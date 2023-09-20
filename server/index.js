@@ -205,7 +205,7 @@ app.post('/requests', async (req, res) => {
 
 app.get('/requests', async (req, res) => {
     try {
-      const requests = await Request.find().populate(['user','product']);
+      const requests = await Request.find({userName: {$exists: true}, phone: {$exists: true}}).populate(['user','product']);
       res.json(requests);
     } catch (e) {
         res.status(422).json({message: e.message});
@@ -299,9 +299,38 @@ app.delete('/domains/:id', async (req, res) => {
 
 app.post('/connections', async (req, res) => {
     try {
-      const {ip, page, duration, device, product} = req.body;
+      const {ip, page, device, product} = req.body;
+
+      let connection;
+
+      if (page === '메인') {
+        connection = await Connection.findOne({ip, page, device, product}).sort({ updatedAt: -1 });
+        if (connection) {
+            return res.json(connection)
+        }
+      } else if (page === '주문서작성') {
+        connection = await Connection.findOne({ip, page, device, product}).sort({ updatedAt: -1 });
+        if (connection) {
+            return res.json(connection);
+        } else {
+            connection = await Connection.findOne({ip, page: '메인', device, product}).sort({ updatedAt: -1 });
+            if (connection) {
+                return res.json(connection);
+            }
+        }
+      } else if (page === '완료') {
+        connection = await Connection.findOne({ip, page, device, product}).sort({ updatedAt: -1 });
+        if (connection) {
+            return res.json(connection);
+        } else {
+            connection = await Connection.findOne({ip, page: '주문서작성', device, product}).sort({ updatedAt: -1 });
+            if (connection) {
+                return res.json(connection);
+            }
+        }
+      }
   
-      const connection = new Connection({ip, page, duration, device, product});
+      connection = new Connection({ip, page, duration: 0, device, product});
       await connection.save();
   
       res.json(connection);
@@ -332,8 +361,7 @@ app.get('/connections/:id', async (req, res) => {
 app.put('/connections/:id', async (req, res) => {
     try {
         const id = req.params.id;
-        const {duration} = req.body;
-        const connection = await Connection.findByIdAndUpdate(id, {duration});
+        const connection = await Connection.findByIdAndUpdate(id, req.body);
     
         res.json(connection);
     } catch (e) {
