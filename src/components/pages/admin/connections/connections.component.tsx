@@ -30,13 +30,11 @@ export const ConnectionsComponent = (): JSX.Element => {
     const timer = setInterval(() => {
       try {
         load();
-      } catch (error) {
-      }
+      } catch (error) {}
     }, 3000);
 
     return () => clearInterval(timer);
   }, []);
-
 
   if (isInProgress) return <LoadingIndicator></LoadingIndicator>;
   return (

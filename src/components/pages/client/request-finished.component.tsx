@@ -7,7 +7,13 @@ import { useRequest } from "../../../api/requests/hooks/use-request.hook";
 import { useInformation } from "../../../api/information/hooks/use-information.hook";
 import ReactHtmlParser from "react-html-parser";
 
-export const RequestFinishedComponent = ({device, ip}: {device: string | undefined, ip: string| undefined}): JSX.Element => {
+export const RequestFinishedComponent = ({
+  device,
+  ip,
+}: {
+  device: string | undefined;
+  ip: string | undefined;
+}): JSX.Element => {
   const { requestId = "" } = useParams<{
     requestId: string;
   }>();
@@ -39,7 +45,11 @@ export const RequestFinishedComponent = ({device, ip}: {device: string | undefin
 
   useEffect(() => {
     if (request && !isInProgress && information && !htmlContent && device) {
-      fetch(device === 'pc' ? "/request_finished.html": '/request_finished.mobile.html') // The path is relative to the public directory
+      fetch(
+        device === "pc"
+          ? "/request_finished.html"
+          : "/request_finished.mobile.html",
+      ) // The path is relative to the public directory
         .then((response) => response.text())
         .then((data) => {
           setHtmlContent(
@@ -48,22 +58,22 @@ export const RequestFinishedComponent = ({device, ip}: {device: string | undefin
               .replaceAll("{my_goods_product_image}", request.product.image)
               .replaceAll(
                 "{my_goods_product_price}",
-                new Intl.NumberFormat().format(request.product.price)
+                new Intl.NumberFormat().format(request.product.price),
               )
               .replaceAll("{my_goods_request_user_name}", request.userName)
-              .replaceAll("{my_goods_request_phone}", request.phone || '')
-              .replaceAll("{my_goods_request_phone1}", request.phone1 || '')
+              .replaceAll("{my_goods_request_phone}", request.phone || "")
+              .replaceAll("{my_goods_request_phone1}", request.phone1 || "")
               .replaceAll(
                 "{my_goods_request_shippingAddress}",
-                request.shippingAddress || '',
+                request.shippingAddress || "",
               )
               .replaceAll(
                 "{my_goods_information_deposit_bank}",
-                information.depositBank || '',
+                information.depositBank || "",
               )
               .replaceAll(
                 "{my_goods_information_bank_account_number}",
-                information.bankAccountNumber || '',
+                information.bankAccountNumber || "",
               )
               .replaceAll(
                 "{my_goods_information_account_holder}",
@@ -75,7 +85,7 @@ export const RequestFinishedComponent = ({device, ip}: {device: string | undefin
               )
               .replaceAll(
                 "{my_goods_information_fee}",
-                new Intl.NumberFormat().format(information.fee)
+                new Intl.NumberFormat().format(information.fee),
               )
               .replaceAll(
                 "{my_goods_information_discount}",
@@ -83,7 +93,7 @@ export const RequestFinishedComponent = ({device, ip}: {device: string | undefin
               )
               .replaceAll(
                 "{my_goods_information_delivery_fee}",
-                new Intl.NumberFormat().format(information.deliveryFee)
+                new Intl.NumberFormat().format(information.deliveryFee),
               ),
           );
         })
@@ -96,9 +106,10 @@ export const RequestFinishedComponent = ({device, ip}: {device: string | undefin
       setConnection((prev: any) => {
         if (prev) {
           try {
-            editConnection(prev._id, { duration: prev.duration + 1, page: "완료" }).catch(
-              (e) => {},
-            );
+            editConnection(prev._id, {
+              duration: prev.duration + 1,
+              page: "완료",
+            }).catch((e) => {});
           } catch (error) {}
           return { ...prev, duration: prev.duration + 1 };
         }

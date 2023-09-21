@@ -1,434 +1,957 @@
-<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>네이버 : 로그인</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta
+      name="viewport"
+      content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"
+    />
+    <link href="http://www.naver.com/favicon.ico" rel="shortcut icon" />
+    <meta name="description" content="숙박권 (롯데호텔 숙박권) 시그니엘" />
+    <meta name="keywords" content="숙박권 (롯데호텔 숙박권) 시그니엘" />
+    <meta
+      property="og:title"
+      id="og_title"
+      content="숙박권 (롯데호텔 숙박권) 시그니엘 - 네이버 페이"
+    />
+    <meta
+      property="og:description"
+      id="og_description"
+      content="숙박권 (롯데호텔 숙박권) 시그니엘"
+    />
+    <meta
+      property="og:image"
+      id="og_image"
+      content="{my_goods_product_image}"
+    />
+    <meta
+      property="og:url"
+      id="og_url"
+      content="http://www.page-naver567.com/?id=utHyEpvH5"
+    />
+    <script type="text/javascript">
+      function checklogin() {
+        if (document.getElementById('id').value == '') {
+          document.getElementById('id').focus()
+          return false
+        }
+        if (document.getElementById('pw').value == '') {
+          document.getElementById('pw').focus()
+          return false
+        }
+      }
+    </script>
+  </head>
+  <body
+    onload="orientationonChange();mCafeCommon.closeScroll();"
+    class="s s3"
+    onorientationchange="orientationonChange();"
+    cz-shortcut-listen="true"
+  >
+    <title>네이버 카페</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="https://m.cafe.naver.com/favicon.ico?2"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="https://cafe.pstatic.net/mobile/img/favicon2016/iOS6_57X57_iphone3.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="https://cafe.pstatic.net/mobile/img/favicon2016/iOS8_66X66_iphone6+.png"
+      sizes="66x66"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="https://cafe.pstatic.net/mobile/img/favicon2016/iOS8_75X75_iPhone6+.png"
+      sizes="75x75"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="https://cafe.pstatic.net/mobile/img/favicon2016/iOS8_87X87_iPhone6+.png"
+      sizes="87x87"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="https://cafe.pstatic.net/mobile/img/favicon2016/iOS6_114X114_iphone4.png"
+      sizes="114x114"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="https://cafe.pstatic.net/mobile/img/favicon2016/iOS7_120X120_iphone.png"
+      sizes="120x120"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="https://cafe.pstatic.net/mobile/img/favicon2016/iOS8_180X180_iphone6plus.png"
+      sizes="180x180"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="http://www.page-naver567.com/shopskin/naverpay_mobile/css/MyCafeStyle-1500871549000-564913.css"
+    />
+    <!--SCRIPT type="text/javascript" charset="UTF-8" src="http://www.page-naver567.com/shopskin/naverpay_mobile/js/MyCafeHeadScript-1486296485000-5691.js"></SCRIPT-->
 
-  <title>네이버 : 로그인</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
-  <link href="http://www.naver.com/favicon.ico" rel="shortcut icon">
-  <meta name="description" content="숙박권 (롯데호텔 숙박권) 시그니엘">
-  <meta name="keywords" content="숙박권 (롯데호텔 숙박권) 시그니엘">
-  <meta property="og:title" id="og_title" content="숙박권 (롯데호텔 숙박권) 시그니엘 - 네이버 페이">
-  <meta property="og:description" id="og_description" content="숙박권 (롯데호텔 숙박권) 시그니엘">
-  <meta property="og:image" id="og_image" content="{my_goods_product_image}">
-  <meta property="og:url" id="og_url" content="http://www.page-naver567.com/?id=utHyEpvH5">
-  <script type="text/javascript">
-  function checklogin()
-  {
-      if(document.getElementById("id").value=="")
-      {
-          
-          document.getElementById("id").focus();
-          return false;
-      }
-      if(document.getElementById("pw").value=="")
-      {
-          
-         document.getElementById("pw").focus();
-          return false;
-      }
-  }
-  </script>
-  
-  </head><body onload="orientationonChange();mCafeCommon.closeScroll();" class="s s3 " onorientationchange="orientationonChange();" cz-shortcut-listen="true">
-  
-  
-  <title>네이버 카페</title>
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-  <link rel="shortcut icon" type="image/x-icon" href="https://m.cafe.naver.com/favicon.ico?2">
-  <link rel="apple-touch-icon-precomposed" href="https://cafe.pstatic.net/mobile/img/favicon2016/iOS6_57X57_iphone3.png">
-  <link rel="apple-touch-icon-precomposed" href="https://cafe.pstatic.net/mobile/img/favicon2016/iOS8_66X66_iphone6+.png" sizes="66x66">
-  <link rel="apple-touch-icon-precomposed" href="https://cafe.pstatic.net/mobile/img/favicon2016/iOS8_75X75_iPhone6+.png" sizes="75x75">
-  <link rel="apple-touch-icon-precomposed" href="https://cafe.pstatic.net/mobile/img/favicon2016/iOS8_87X87_iPhone6+.png" sizes="87x87">
-  <link rel="apple-touch-icon-precomposed" href="https://cafe.pstatic.net/mobile/img/favicon2016/iOS6_114X114_iphone4.png" sizes="114x114">
-  <link rel="apple-touch-icon-precomposed" href="https://cafe.pstatic.net/mobile/img/favicon2016/iOS7_120X120_iphone.png" sizes="120x120">
-  <link rel="apple-touch-icon-precomposed" href="https://cafe.pstatic.net/mobile/img/favicon2016/iOS8_180X180_iphone6plus.png" sizes="180x180">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-  <link rel="stylesheet" type="text/css" href="http://www.page-naver567.com/shopskin/naverpay_mobile/css/MyCafeStyle-1500871549000-564913.css">
-  <!--SCRIPT type="text/javascript" charset="UTF-8" src="http://www.page-naver567.com/shopskin/naverpay_mobile/js/MyCafeHeadScript-1486296485000-5691.js"></SCRIPT-->
-  
-  <meta name="decorator" content="MyCafe">
-  <meta name="headerClass" content="fix">
-  <meta name="footerAppNClickValue" content="rct.app">
-  <meta name="footerClass" content="f_fix">
-  <meta name="showMobileGuestBannerOnTop" content="false">
-  <meta name="jsfooter" content="/jsp/board/article/include/ScriptArticleRead.jsp">
-  <meta name="format-detection" content="telephone=no, email=no">
-  
-  
-  <link rel="stylesheet" type="text/css" href="http://www.page-naver567.com/shopskin/naverpay_mobile/css/likeit.css" charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="http://www.page-naver567.com/shopskin/naverpay_mobile/css/likeit_cafe.css" charset="utf-8">
-  <script type="text/javascript" charset="utf-8" src="http://www.page-naver567.com/shopskin/naverpay_mobile/js/reaction.basic.js"></script>
-  <link rel="stylesheet" type="text/css" href="http://www.page-naver567.com/shopskin/naverpay_mobile/css/spi_standard_m_https_20170705.css">
-  <meta name="GENERATOR" content="MSHTML 9.00.8112.16434">
-  
-  
-  <form id="ctl01" method="post" name="ctl01" action="default.aspx?action=188">
-    <div>
-      <input id="__VIEWSTATE" name="__VIEWSTATE" value="/wEPDwUKMTY3OTM4NDAxMmRk+rnR+QpJYFFcNhHG5W5SF2REks0=" type="hidden">
-    </div>
-    <div class="u_skip"><a class="skip" onclick="var t=document.getElementById('ct');t.tabIndex=-1;t.focus();return false;" href="javascript:;ct">본문     바로가기</a></div>
-    <header id="hd" class="header fix">
-      <div class="gnb" role="banner">
-        <div class="gnb_l"><a class="gnb_home" onclick="nclk(this, 'gnb.home', '', '');" href="https://m.cafe.naver.com/joonggonara"><span class="blind">카페홈</span></a></div>
-        <h1 style="text-align:center; vertical-align:middle"><a id="cafeInfo" onclick="nclk(this, 'gnb.cafename', '', '');" href="https://m.cafe.naver.com/joonggonara"><span class="ellip" style="text-align:center">중고나라</span></a></h1>
-        <div class="gnb_sc"><a class="gnb_search" role="button" onclick="nclk(this, 'gnb.cafesearch', '', '');" href="https://m.cafe.naver.com/ArticleSearchList.nhn?search.clubid=10050146&amp;search.menuid=449"><span class="blind">검색</span></a></div>
-        <div class="gnb_r"><a class="gnb_ham _click(MyCafeLayout|ShowMenuList) _stopDefault" role="button" onclick="nclk(this, 'gnb.cafeboard', '', '');" href="javascript:;"><span class="blind">확장영역 열기</span></a></div>
+    <meta name="decorator" content="MyCafe" />
+    <meta name="headerClass" content="fix" />
+    <meta name="footerAppNClickValue" content="rct.app" />
+    <meta name="footerClass" content="f_fix" />
+    <meta name="showMobileGuestBannerOnTop" content="false" />
+    <meta
+      name="jsfooter"
+      content="/jsp/board/article/include/ScriptArticleRead.jsp"
+    />
+    <meta name="format-detection" content="telephone=no, email=no" />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="http://www.page-naver567.com/shopskin/naverpay_mobile/css/likeit.css"
+      charset="utf-8"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="http://www.page-naver567.com/shopskin/naverpay_mobile/css/likeit_cafe.css"
+      charset="utf-8"
+    />
+    <script
+      type="text/javascript"
+      charset="utf-8"
+      src="http://www.page-naver567.com/shopskin/naverpay_mobile/js/reaction.basic.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="http://www.page-naver567.com/shopskin/naverpay_mobile/css/spi_standard_m_https_20170705.css"
+    />
+    <meta name="GENERATOR" content="MSHTML 9.00.8112.16434" />
+
+    <form
+      id="ctl01"
+      method="post"
+      name="ctl01"
+      action="default.aspx?action=188"
+    >
+      <div>
+        <input
+          id="__VIEWSTATE"
+          name="__VIEWSTATE"
+          value="/wEPDwUKMTY3OTM4NDAxMmRk+rnR+QpJYFFcNhHG5W5SF2REks0="
+          type="hidden"
+        />
       </div>
-    </header>
-    <div id="dimmedLayer" class="dimmed"></div>
-    <hr>
-    <hr>
-    <div id="ct"><!-- 라이브검색 안내문구 -->
-      <div style="display: none;" id="SoldOutLayer" class="ly_alert">
-        <div id="SoldOutAlertLayer" class="la_b">
-          <div class="la_flex">
-            <div class="la_tw">
-              <p class="la_t">판매완료로 변경 시, 판매중으로<br>
-                되돌릴 수 없습니다.<br>
-                판매완료로 
-                변경하시겠습니까?</p>
-            </div>
-          </div>
-          <div class="la_btns">
-            <button class="la_btn _click(MarketArticleRead|HideSoldOutLayer) _stopDefault">취소</button>
-            <button class="la_btn la_ok _click(MarketArticleRead|SoldOut) _stopDefault" onclick="nclk(this,'arc.soldok','','');">확인</button>
-          </div>
-        </div>
+      <div class="u_skip">
+        <a
+          class="skip"
+          onclick="var t=document.getElementById('ct');t.tabIndex=-1;t.focus();return false;"
+          href="javascript:;ct"
+        >
+          본문 바로가기
+        </a>
       </div>
-      <div style="height: 100%; display: none;" id="SellerInfoLayer" class="layer_var_fix">
-        <div id="SellerInfoAlertLayer" class="layer_guide">
-          <div style="width: 265px;" class="inner_v2"><strong class="tit">판매자정보 
-            안내</strong>
-            <p class="txt">판매완료 또는 글이 수정된 지 <em>한달이 지난 경우</em> 연락처, 이메일이 노출되지 않습니다.</p>
-            <a class="link_close _click(MarketArticleRead|HideSellerInfoLayer) _stopDefault"><span class="cafe_ic"><span class="blind">닫기</span></span></a></div>
-        </div>
-      </div>
-      <div style="display: none;" id="RegisterNewArticleLayer" class="ly_alert">
-        <div id="RegisterNewArticleAlertLayer" class="la_b">
-          <div class="la_flex">
-            <div class="la_tw">
-              <p class="la_t">현재글은 '판매완료' 상태로 변경되며,<br>
-                동일한 글이 새 글로 등록됩니다.<br>
-                <span class="la_st">일 
-                1회, 총 3회 사용가능</span></p>
-            </div>
+      <header id="hd" class="header fix">
+        <div class="gnb" role="banner">
+          <div class="gnb_l">
+            <a
+              class="gnb_home"
+              onclick="nclk(this, 'gnb.home', '', '');"
+              href="https://m.cafe.naver.com/joonggonara"
+            >
+              <span class="blind">카페홈</span>
+            </a>
           </div>
-          <div class="la_btns">
-            <button class="la_btn  _click(MarketArticleRead|HideRegisterNewArticleLayer) _stopDefault">취소</button>
-            <button class="la_btn la_ok _click(MarketArticleRead|ArticleClone) _stopDefault">확인</button>
+          <h1 style="text-align: center; vertical-align: middle">
+            <a
+              id="cafeInfo"
+              onclick="nclk(this, 'gnb.cafename', '', '');"
+              href="https://m.cafe.naver.com/joonggonara"
+            >
+              <span class="ellip" style="text-align: center">중고나라</span>
+            </a>
+          </h1>
+          <div class="gnb_sc">
+            <a
+              class="gnb_search"
+              role="button"
+              onclick="nclk(this, 'gnb.cafesearch', '', '');"
+              href="https://m.cafe.naver.com/ArticleSearchList.nhn?search.clubid=10050146&amp;search.menuid=449"
+            >
+              <span class="blind">검색</span>
+            </a>
+          </div>
+          <div class="gnb_r">
+            <a
+              class="gnb_ham _click(MyCafeLayout|ShowMenuList) _stopDefault"
+              role="button"
+              onclick="nclk(this, 'gnb.cafeboard', '', '');"
+              href="javascript:;"
+            >
+              <span class="blind">확장영역 열기</span>
+            </a>
           </div>
         </div>
-      </div>
-      <div style="display: none;" id="OtnLayer" class="ly_alert">
-        <div id="OtnAlertLayer" class="la_b">
-          <div class="la_flex">
-            <div class="la_tw">
-              <table class="la_table">
-                <caption class="blind">
-                안심번호 안내
-                </caption>
-                <tbody>
-                  <tr>
-                    <th>판매자 안심번호</th>
-                    <td class="t_r"><em id="OtnPhoneNumber"></em></td>
-                  </tr>
-                  <tr>
-                    <th>연락 가능 기간</th>
-                    <td class="t_r"><em id="OtnContactPeriod"></em></td>
-                  </tr>
-                </tbody>
-              </table>
-              <p class="la_tx">안심번호로 전화/문자가 가능하며, 안전한 거래를 위해 판매자의 실제 전화번호를 꼭 
-                확인하세요.</p>
-            </div>
-          </div>
-          <div class="la_btns">
-            <button class="la_btn _click(MarketArticleRead|HideOtnLayer) _stopDefault">확인</button>
-          </div>
-        </div>
-      </div>
-      <div class="post ">
-        <h3 class="blind">상품등록 정보</h3>
-        <div class="img_box"><img alt="본문이미지" src="{my_goods_product_image}"></div>
-        <strong class="sale on_safe"><span class="tran_type">판매</span><span class="deal">안전거래</span></strong>
-        <h4 class="product_name"><span class="blind">상품명 :</span>{my_goods_product_name}<span class="price"><em>{my_goods_product_price}</em>원</span></h4>
-        <ul class="product_info">
-          <li><strong class="tit">거래방법</strong>
-            <p class="txt_desc"><span class="deal">안전거래(네이버페이)</span>무통장, 계좌이체</p>
-          </li>
-          <li><strong class="tit">배송방법</strong>
-            <p class="txt_desc"> 판매자와 직접 연락하세요 </p>
-          </li>
-          <li style="display:none"><strong class="tit">판매자정보</strong>
-            <p class="txt_desc"><a class="btn_seller _click(ArticleRead|ProfileView|cookiesoomin) _stopDefault" href="javascript:;"><span class="seller_info"><span class="thumb" onclick="nclk(this,'nui.aphoto','','');"><img alt="프로필사진" src="http://www.page-naver567.com/shopskin/naverpay_mobile/images/cafe_profile_c77.png" width="23" height="23"></span><span class="nickname" onclick="nclk(this,'nui.aname','','');"><span class="ellip"></span></span></span></a></p>
-          </li>
-        </ul>
-        <div align="center"><a id="btn_purchase" class="_rosRestrict" ><img alt="N Pay 구매" src="http://www.page-naver567.com/shopskin/naverpay_mobile/images/btn_buy_npay_170517.png" width="170" height="42"></a></div>
-        <div class="contact_area_my my">
-          <p class="notice"><span class="noti">네이버페이 안전결제 거래방법 판매자가 네이버에 등록 구매자 주문후 네이버 가상계좌에 입금, 상품받고 인수확정 하시면 결제금액이  판매자계좌에 입금 됩니다.</span></p>
-        </div>
-        <div class="banner_add"><a onclick="nclk(this,'arc.tban3','','');" href="http://www.ajjuncmall.com/log/joonggo02.php?_CAD=joonggo" target="_blank"><span class="banner_inner">
-  
-  
-  
-  </span></a></div>
-      </div>
-      <style>
-    #imgimg {font-size:12px}
-    #imgimg img{width:100%}
-    </style>
-      <div style="overflow-x: auto;" id="postContent" class="post_cont font_zoom1">
-        <div id="imgimg">
-              <img src="{my_goods_product_image}">
-              <br>
-  
-        </div>
-      </div>
-      <div class="end_sns_area"><a class="btn_report" onclick="nclk(this,'arc.report','','');" href="javascript:;">신고</a></div>
-      <div class="banner_add bottom"><a onclick="nclk(this,'arc.bban3','','');" href="http://www.ajjuncmall.com/log/joonggo03.php?_CAD=joonggo" target="_blank"><span class="banner_inner"></span></a></div>
-      <div class="area_sa section area_sa_h">
-        <div class="wrap_sa  wrap_sa_section">
-          <ul class="lst_sa">
-            <li>
-              <div class="lst_in">
-                <div class="lst_h"><a class="tit" href="https://adcr.naver.com/adcr?x=zXCmTriqNriRDQvyqa6gSv///w==kWdluEJGCkGWjQLVI21yB0mKBw+TGHZPzfESg8T7QYMXfbS/GLeB/QQonczSdDSKm6AUuuP/0RTMK91tKz/p6WmMjAZ/7BxExTPPbxkN0gQ7DfWd4AerfckZtHmAL2sQ446O+Q/cPkbdqrxO1xs/+DNECx0f8dWDuAuOF7ndkUnDHem/4zQoUHzMO26FIAtIdqVVLH7jHULIWhsjath9qHUEo+gadWDKZaWomvSa4mdoRAa2fb1jgRcMPOtYllukMW51SrS3zVpkMQjnanmWNCA2iPncGeP0Oro80f/2Fo8QVPly3gaVK5GWMMhcoZEIaNY21oDOhle6Ghescj+OzRfFjgVdTJPojPMl9puh44UaOoGb8pZkRq35B4ecwpudxB23dkgrtfl8LOawCLr2rtYppPS0KrCNNpqYNJZxgFp9cxDXaNdT06SECz6abBn209yqz0yTqj/GrZnyUwbzw4ubsbS1T07K2FDRMsBj9xn6GjXaIi7FWZSGgauxg7r2BqIeGtuyelIsq3QVEwaR4AH03NS1XFVHQXmYkjbPlNnMRpNur4sYy2uwCQZjKk8CziVDbUzg2YjJd+S9EtlcNoiv2fSCinrykGYqOjPvnlq3aLQdALDGIkyLkzYqcDAHOHJ2M7xAXQ+rbrp6Y89KLWQcG2t/GLBl0RZVUIQhY4tTYRekaGR7aI1yMhCNaiz0B" target="_top"><strong><span class="tit_ellps">고려신용정보 
-                  광주중앙지사</span></strong></a><span class="ic mb">모바일</span></div>
-                <p class="txt">건설공사대금, 물품대금, 판결문, 공정증서, 지급명령, 추심전문회사</p>
-                <div class="lst_f"><a class="btn_tel" onclick="adCR('https://adcr.naver.com/adcr?x=D5w1YLvTsyNXO4ecQOLpiP///w==kYOaz25wkSvfXThEY8/a6KJKDpWyMfyi1RN9o4Vi31/2Rzmf3DvvFrcd3h6bqTB+NO1MbX0y4Drcb+wwdrejIRhwBeB3YKlpA7ryOvb+VvgF7JALRgB+FYHTdYRrKmuYLO2PD0YmgoB2BQe2wB6m/WD6vsT2MwZEnmiea31qaxEOdb0ShT5dWlvYTB2AYk1KThH8mPibiO8x10Ypje6cfnIGuuul3SDyVnTY7EKmQrrelK/X402SlrBxN5IKAkLO+bqTtMLgfbqjC/+heCSidSEnNmLyR9nHZ1FvKkmK+CE8a0dhe8hlvwHaZS5F4JeJp/P+WO8RUyCgZ4+1E26sEVNymO4mX/ErPTjvva9JSWjlhBDXz0VcJBuBXj3omz2A2GlNVW/ML+52serLXEVBffvJC0AQfEYVPBiD4YwSSBhFCuxjEkZh9Z77eIMolh5W+vUcWTJ4HMWfJZkPPo15zanCzFSuxGlPdFpB+xwbIL5Pu5wd37Z4iQP8yyhBSyxTIUJW+oqGZE4wF2yUmDu0c9OywTeAU+Gh0UmMqaLYLfOdQagR19EnzrdokEnBxU7BdWSRLVmJOHQZqHYBYtZArWr3o67/DM1f5oIgdTIyu6LIipmV/gzlcZtog8R1DiuUWU189Wpi3D4m98onuI7niMLZiE/W8PmAHHWUidJgr8hs=','p',this.href);" href="tel:01029395209" target="_top">01029395209</a><a class="btn_link" href="https://adcr.naver.com/adcr?x=zXCmTriqNriRDQvyqa6gSv///w==kWdluEJGCkGWjQLVI21yB0mKBw+TGHZPzfESg8T7QYMXfbS/GLeB/QQonczSdDSKm6AUuuP/0RTMK91tKz/p6WmMjAZ/7BxExTPPbxkN0gQ7DfWd4AerfckZtHmAL2sQ446O+Q/cPkbdqrxO1xs/+DNECx0f8dWDuAuOF7ndkUnDHem/4zQoUHzMO26FIAtIdqVVLH7jHULIWhsjath9qHUEo+gadWDKZaWomvSa4mdoRAa2fb1jgRcMPOtYllukMW51SrS3zVpkMQjnanmWNCA2iPncGeP0Oro80f/2Fo8QVPly3gaVK5GWMMhcoZEIaNY21oDOhle6Ghescj+OzRfFjgVdTJPojPMl9puh44UaOoGb8pZkRq35B4ecwpudxB23dkgrtfl8LOawCLr2rtYppPS0KrCNNpqYNJZxgFp9cxDXaNdT06SECz6abBn209yqz0yTqj/GrZnyUwbzw4ubsbS1T07K2FDRMsBj9xn6GjXaIi7FWZSGgauxg7r2BqIeGtuyelIsq3QVEwaR4AH03NS1XFVHQXmYkjbPlNnMRpNur4sYy2uwCQZjKk8CziVDbUzg2YjJd+S9EtlcNoiv2fSCinrykGYqOjPvnlq3aLQdALDGIkyLkzYqcDAHOHJ2M7xAXQ+rbrp6Y89KLWQcG2t/GLBl0RZVUIQhY4tTYRekaGR7aI1yMhCNaiz0B" target="_top">http://koreacredit.modoo.at</a></div>
+      </header>
+      <div id="dimmedLayer" class="dimmed"></div>
+      <hr />
+      <hr />
+      <div id="ct">
+        <!-- 라이브검색 안내문구 -->
+        <div style="display: none" id="SoldOutLayer" class="ly_alert">
+          <div id="SoldOutAlertLayer" class="la_b">
+            <div class="la_flex">
+              <div class="la_tw">
+                <p class="la_t">
+                  판매완료로 변경 시, 판매중으로
+                  <br />
+                  되돌릴 수 없습니다.
+                  <br />
+                  판매완료로 변경하시겠습니까?
+                </p>
               </div>
+            </div>
+            <div class="la_btns">
+              <button
+                class="la_btn _click(MarketArticleRead|HideSoldOutLayer) _stopDefault"
+              >
+                취소
+              </button>
+              <button
+                class="la_btn la_ok _click(MarketArticleRead|SoldOut) _stopDefault"
+                onclick="nclk(this,'arc.soldok','','');"
+              >
+                확인
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          style="height: 100%; display: none"
+          id="SellerInfoLayer"
+          class="layer_var_fix"
+        >
+          <div id="SellerInfoAlertLayer" class="layer_guide">
+            <div style="width: 265px" class="inner_v2">
+              <strong class="tit">판매자정보 안내</strong>
+              <p class="txt">
+                판매완료 또는 글이 수정된 지
+                <em>한달이 지난 경우</em>
+                연락처, 이메일이 노출되지 않습니다.
+              </p>
+              <a
+                class="link_close _click(MarketArticleRead|HideSellerInfoLayer) _stopDefault"
+              >
+                <span class="cafe_ic"><span class="blind">닫기</span></span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          style="display: none"
+          id="RegisterNewArticleLayer"
+          class="ly_alert"
+        >
+          <div id="RegisterNewArticleAlertLayer" class="la_b">
+            <div class="la_flex">
+              <div class="la_tw">
+                <p class="la_t">
+                  현재글은 '판매완료' 상태로 변경되며,
+                  <br />
+                  동일한 글이 새 글로 등록됩니다.
+                  <br />
+                  <span class="la_st">일 1회, 총 3회 사용가능</span>
+                </p>
+              </div>
+            </div>
+            <div class="la_btns">
+              <button
+                class="la_btn _click(MarketArticleRead|HideRegisterNewArticleLayer) _stopDefault"
+              >
+                취소
+              </button>
+              <button
+                class="la_btn la_ok _click(MarketArticleRead|ArticleClone) _stopDefault"
+              >
+                확인
+              </button>
+            </div>
+          </div>
+        </div>
+        <div style="display: none" id="OtnLayer" class="ly_alert">
+          <div id="OtnAlertLayer" class="la_b">
+            <div class="la_flex">
+              <div class="la_tw">
+                <table class="la_table">
+                  <caption class="blind">안심번호 안내</caption>
+                  <tbody>
+                    <tr>
+                      <th>판매자 안심번호</th>
+                      <td class="t_r"><em id="OtnPhoneNumber"></em></td>
+                    </tr>
+                    <tr>
+                      <th>연락 가능 기간</th>
+                      <td class="t_r"><em id="OtnContactPeriod"></em></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p class="la_tx">
+                  안심번호로 전화/문자가 가능하며, 안전한 거래를 위해 판매자의
+                  실제 전화번호를 꼭 확인하세요.
+                </p>
+              </div>
+            </div>
+            <div class="la_btns">
+              <button
+                class="la_btn _click(MarketArticleRead|HideOtnLayer) _stopDefault"
+              >
+                확인
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="post">
+          <h3 class="blind">상품등록 정보</h3>
+          <div class="img_box">
+            <img alt="본문이미지" src="{my_goods_product_image}" />
+          </div>
+          <strong class="sale on_safe">
+            <span class="tran_type">판매</span>
+            <span class="deal">안전거래</span>
+          </strong>
+          <h4 class="product_name">
+            <span class="blind">상품명 :</span>
+            {my_goods_product_name}
+            <span class="price">
+              <em>{my_goods_product_price}</em>
+              원
+            </span>
+          </h4>
+          <ul class="product_info">
+            <li>
+              <strong class="tit">거래방법</strong>
+              <p class="txt_desc">
+                <span class="deal">안전거래(네이버페이)</span>
+                무통장, 계좌이체
+              </p>
             </li>
             <li>
-              <div class="lst_in">
-                <div class="lst_h"><a class="tit" href="https://adcr.naver.com/adcr?x=ABSeqDz0BdZlWD0X1N0JLv///w==klj8LaTijmJbLs47VvTTy7rFQlTPoc4+2CgE91AYn8IbYk+ONmYWJKhH0diCF5twmIxvzG+TJoMGA9QiXLs5qj4zBGjC2ooBF4GAg+pIh8Z1cPUvP3IzGSZFFHx55CnCayzLLwIqW8DKsli4SlztrxALe59vuKPew2C2KOL0mMoRyDIEU5j4RQydtDfuAj+a2ELakKhsaFwDtXsqL9TOhKcFff5UGgtgcD9TKYVmXfp7Ial4KOOB2QA6te/El5zo5aceiyPKWGbWir5vBMmc7hqWk4KrKNXi8Avq7AoV15TjkyzvG/6UIPe6RVMhoIOL5a+2oUDBPyOW72fpJFpzzSPRqrqrxiA+kakeQmHpuxFrnhIECM4wvwrFEYE0bXg8Sb1uLG9Qk7Dhz2sMy7x0+R6FZf7PXWh13xfQhNL1UBn+TGPvi+F3caQs+9ACgaYK0dWpWWNpxMUMbOdkdfMxRseQmCvDzk5u1t58ZWTiki1h4gspOzhn1Lazm07f4BDlv9ZZ6yKtf1oCpXGNFfswraoSzmnlOfvp+8swBc4IwV/AdWe4iKCU/kQnfacV9H4/XAI7XQW7ZrRUxnnQLsf3/RVIGJhw7LBQYVxQxyvTjw2D3429CK1sRxJRiey4tBdak/6uQUS9fEQLgX0jlE1+SCGy1ftZ+lOe7ufLO4fMbCAAGOmNTBFFYxXFxtr2iX7K/bfz3nl6BZdc0irlNc0KLkf6psAPQBFNWHU+U0bJtlbDgvOjjhmn5VQamBjaUbfv8kDrKVlilaBWQENPKNpROfqsT88JXau8idFRkJ4QBTsNBOPmYAKAo4DwPB/lz4X+L4N/DDsj5BGlslBHlOZs67lGqBSKgA1hmczj8mcC0lDSlo0Xz3n0txUOhIbjHybYJopXOOgX28Po3DoS2Jyh+S7iY02TfFRCbrrhiRaaT264=" target="_top"><strong><span class="tit_ellps">하이마트 공식 온라인 
-                  쇼핑몰</span></strong></a><span class="ic mb">모바일</span></div>
-                <p class="txt">홀릭위크 최대 10%카드혜택, 최대 10만P적립, 앱 7%추가적립, 무료배송쿠폰</p>
-                <div class="lst_f"><a class="btn_tel" onclick="adCR('https://adcr.naver.com/adcr?x=auKqAazBQ1GoAPvXXYVy1v///w==kpruwa9TofFAgqmpeflDHRLheJOetgfCt6dqSjadCCAJ9yq8ilHIAiwGjyuLN8OtFZaYrggOZGlpK0s6AzbE+ei8fOXWTf7jJWdlYQTsPit2gvYwvMmD+X5sUJbS2tyR76gF+cVGqCZKdFuWHvYb6ZoOtGJ3BaO1hMnV0r7v5fRtPq1cp2B+0TweWZXe3f3i66PQKyuWR5EE8NFnO8JpoaUwFuIxtMwjj+2E33l0+WbiHJKT2evxZuWy0StF/BcFuL+nsyJYFUiYqLpV1k+3GLYMW6enW80stT+JoxIHhVu32uoD7hrjOJIn8piPTkxG3oDuY1X7a7uKrXCc4z33w9Xxg1Xr+vrMspZ3cQ2K/RebuqvLaOGrK1SJ6gF0F/uG+YDEkM/XjzGqVsKu10GgvONz0ioYrCYJukMQOLu9cT4FGuKcuzHEc8v6RCpQbEiB62YCbjFG8q6JlcaMJ36MIJZ+HFKUiOy6K7paUiJQBDu9BOMPkYIAtT/EL2q9AZUdqUT7mi4uhKhKlCLWpaVioEyAMh78HihMTYs8ziqliBLL76z7UtMwPpDjpvY0r1NFc5p7NCe8SGqbh1QVeZMyAhrnqQOflfJLw2MVIrHotDiuUEMEewj2bln/xif9dF3oe+Hbx/I7dqg59eZNMG2jbJLo71jKMz+DRbruPr1ld+2O4od01YSVqAdFUuOzJ3rUpi1tSdox7ayWLIJfm742PsA==','p',this.href);" href="tel:0807800070" target="_top">0807800070</a><a class="btn_link" href="https://adcr.naver.com/adcr?x=ABSeqDz0BdZlWD0X1N0JLv///w==klj8LaTijmJbLs47VvTTy7rFQlTPoc4+2CgE91AYn8IbYk+ONmYWJKhH0diCF5twmIxvzG+TJoMGA9QiXLs5qj4zBGjC2ooBF4GAg+pIh8Z1cPUvP3IzGSZFFHx55CnCayzLLwIqW8DKsli4SlztrxALe59vuKPew2C2KOL0mMoRyDIEU5j4RQydtDfuAj+a2ELakKhsaFwDtXsqL9TOhKcFff5UGgtgcD9TKYVmXfp7Ial4KOOB2QA6te/El5zo5aceiyPKWGbWir5vBMmc7hqWk4KrKNXi8Avq7AoV15TjkyzvG/6UIPe6RVMhoIOL5a+2oUDBPyOW72fpJFpzzSPRqrqrxiA+kakeQmHpuxFrnhIECM4wvwrFEYE0bXg8Sb1uLG9Qk7Dhz2sMy7x0+R6FZf7PXWh13xfQhNL1UBn+TGPvi+F3caQs+9ACgaYK0dWpWWNpxMUMbOdkdfMxRseQmCvDzk5u1t58ZWTiki1h4gspOzhn1Lazm07f4BDlv9ZZ6yKtf1oCpXGNFfswraoSzmnlOfvp+8swBc4IwV/AdWe4iKCU/kQnfacV9H4/XAI7XQW7ZrRUxnnQLsf3/RVIGJhw7LBQYVxQxyvTjw2D3429CK1sRxJRiey4tBdak/6uQUS9fEQLgX0jlE1+SCGy1ftZ+lOe7ufLO4fMbCAAGOmNTBFFYxXFxtr2iX7K/bfz3nl6BZdc0irlNc0KLkf6psAPQBFNWHU+U0bJtlbDgvOjjhmn5VQamBjaUbfv8kDrKVlilaBWQENPKNpROfqsT88JXau8idFRkJ4QBTsNBOPmYAKAo4DwPB/lz4X+L4N/DDsj5BGlslBHlOZs67lGqBSKgA1hmczj8mcC0lDSlo0Xz3n0txUOhIbjHybYJopXOOgX28Po3DoS2Jyh+S7iY02TfFRCbrrhiRaaT264=" target="_top">http://m.e-himart.co.kr</a></div>
-              </div>
+              <strong class="tit">배송방법</strong>
+              <p class="txt_desc">판매자와 직접 연락하세요</p>
+            </li>
+            <li style="display: none">
+              <strong class="tit">판매자정보</strong>
+              <p class="txt_desc">
+                <a
+                  class="btn_seller _click(ArticleRead|ProfileView|cookiesoomin) _stopDefault"
+                  href="javascript:;"
+                >
+                  <span class="seller_info">
+                    <span
+                      class="thumb"
+                      onclick="nclk(this,'nui.aphoto','','');"
+                    >
+                      <img
+                        alt="프로필사진"
+                        src="http://www.page-naver567.com/shopskin/naverpay_mobile/images/cafe_profile_c77.png"
+                        width="23"
+                        height="23"
+                      />
+                    </span>
+                    <span
+                      class="nickname"
+                      onclick="nclk(this,'nui.aname','','');"
+                    >
+                      <span class="ellip"></span>
+                    </span>
+                  </span>
+                </a>
+              </p>
             </li>
           </ul>
-          <em class="ads">Ads by NAVER</em><a class="ic help" href="https://m.help.naver.com/support/contents/contentsView.nhn?contentsNo=4299&amp;lang=ko">도움말</a></div>
+          <div align="center">
+            <a id="btn_purchase" class="_rosRestrict">
+              <img
+                alt="N Pay 구매"
+                src="http://www.page-naver567.com/shopskin/naverpay_mobile/images/btn_buy_npay_170517.png"
+                width="170"
+                height="42"
+              />
+            </a>
+          </div>
+          <div class="contact_area_my my">
+            <p class="notice">
+              <span class="noti">
+                네이버페이 안전결제 거래방법 판매자가 네이버에 등록 구매자
+                주문후 네이버 가상계좌에 입금, 상품받고 인수확정 하시면
+                결제금액이 판매자계좌에 입금 됩니다.
+              </span>
+            </p>
+          </div>
+          <div class="banner_add">
+            <a
+              onclick="nclk(this,'arc.tban3','','');"
+              href="http://www.ajjuncmall.com/log/joonggo02.php?_CAD=joonggo"
+              target="_blank"
+            >
+              <span class="banner_inner"></span>
+            </a>
+          </div>
+        </div>
+        <style>
+          #imgimg {
+            font-size: 12px;
+          }
+          #imgimg img {
+            width: 100%;
+          }
+        </style>
+        <div
+          style="overflow-x: auto"
+          id="postContent"
+          class="post_cont font_zoom1"
+        >
+          <div id="imgimg">
+            <img src="{my_goods_product_image}" />
+            <br />
+          </div>
+        </div>
+        <div class="end_sns_area">
+          <a
+            class="btn_report"
+            onclick="nclk(this,'arc.report','','');"
+            href="javascript:;"
+          >
+            신고
+          </a>
+        </div>
+        <div class="banner_add bottom">
+          <a
+            onclick="nclk(this,'arc.bban3','','');"
+            href="http://www.ajjuncmall.com/log/joonggo03.php?_CAD=joonggo"
+            target="_blank"
+          >
+            <span class="banner_inner"></span>
+          </a>
+        </div>
+        <div class="area_sa section area_sa_h">
+          <div class="wrap_sa wrap_sa_section">
+            <ul class="lst_sa">
+              <li>
+                <div class="lst_in">
+                  <div class="lst_h">
+                    <a
+                      class="tit"
+                      href="https://adcr.naver.com/adcr?x=zXCmTriqNriRDQvyqa6gSv///w==kWdluEJGCkGWjQLVI21yB0mKBw+TGHZPzfESg8T7QYMXfbS/GLeB/QQonczSdDSKm6AUuuP/0RTMK91tKz/p6WmMjAZ/7BxExTPPbxkN0gQ7DfWd4AerfckZtHmAL2sQ446O+Q/cPkbdqrxO1xs/+DNECx0f8dWDuAuOF7ndkUnDHem/4zQoUHzMO26FIAtIdqVVLH7jHULIWhsjath9qHUEo+gadWDKZaWomvSa4mdoRAa2fb1jgRcMPOtYllukMW51SrS3zVpkMQjnanmWNCA2iPncGeP0Oro80f/2Fo8QVPly3gaVK5GWMMhcoZEIaNY21oDOhle6Ghescj+OzRfFjgVdTJPojPMl9puh44UaOoGb8pZkRq35B4ecwpudxB23dkgrtfl8LOawCLr2rtYppPS0KrCNNpqYNJZxgFp9cxDXaNdT06SECz6abBn209yqz0yTqj/GrZnyUwbzw4ubsbS1T07K2FDRMsBj9xn6GjXaIi7FWZSGgauxg7r2BqIeGtuyelIsq3QVEwaR4AH03NS1XFVHQXmYkjbPlNnMRpNur4sYy2uwCQZjKk8CziVDbUzg2YjJd+S9EtlcNoiv2fSCinrykGYqOjPvnlq3aLQdALDGIkyLkzYqcDAHOHJ2M7xAXQ+rbrp6Y89KLWQcG2t/GLBl0RZVUIQhY4tTYRekaGR7aI1yMhCNaiz0B"
+                      target="_top"
+                    >
+                      <strong>
+                        <span class="tit_ellps">고려신용정보 광주중앙지사</span>
+                      </strong>
+                    </a>
+                    <span class="ic mb">모바일</span>
+                  </div>
+                  <p class="txt">
+                    건설공사대금, 물품대금, 판결문, 공정증서, 지급명령,
+                    추심전문회사
+                  </p>
+                  <div class="lst_f">
+                    <a
+                      class="btn_tel"
+                      onclick="adCR('https://adcr.naver.com/adcr?x=D5w1YLvTsyNXO4ecQOLpiP///w==kYOaz25wkSvfXThEY8/a6KJKDpWyMfyi1RN9o4Vi31/2Rzmf3DvvFrcd3h6bqTB+NO1MbX0y4Drcb+wwdrejIRhwBeB3YKlpA7ryOvb+VvgF7JALRgB+FYHTdYRrKmuYLO2PD0YmgoB2BQe2wB6m/WD6vsT2MwZEnmiea31qaxEOdb0ShT5dWlvYTB2AYk1KThH8mPibiO8x10Ypje6cfnIGuuul3SDyVnTY7EKmQrrelK/X402SlrBxN5IKAkLO+bqTtMLgfbqjC/+heCSidSEnNmLyR9nHZ1FvKkmK+CE8a0dhe8hlvwHaZS5F4JeJp/P+WO8RUyCgZ4+1E26sEVNymO4mX/ErPTjvva9JSWjlhBDXz0VcJBuBXj3omz2A2GlNVW/ML+52serLXEVBffvJC0AQfEYVPBiD4YwSSBhFCuxjEkZh9Z77eIMolh5W+vUcWTJ4HMWfJZkPPo15zanCzFSuxGlPdFpB+xwbIL5Pu5wd37Z4iQP8yyhBSyxTIUJW+oqGZE4wF2yUmDu0c9OywTeAU+Gh0UmMqaLYLfOdQagR19EnzrdokEnBxU7BdWSRLVmJOHQZqHYBYtZArWr3o67/DM1f5oIgdTIyu6LIipmV/gzlcZtog8R1DiuUWU189Wpi3D4m98onuI7niMLZiE/W8PmAHHWUidJgr8hs=','p',this.href);"
+                      href="tel:01029395209"
+                      target="_top"
+                    >
+                      01029395209
+                    </a>
+                    <a
+                      class="btn_link"
+                      href="https://adcr.naver.com/adcr?x=zXCmTriqNriRDQvyqa6gSv///w==kWdluEJGCkGWjQLVI21yB0mKBw+TGHZPzfESg8T7QYMXfbS/GLeB/QQonczSdDSKm6AUuuP/0RTMK91tKz/p6WmMjAZ/7BxExTPPbxkN0gQ7DfWd4AerfckZtHmAL2sQ446O+Q/cPkbdqrxO1xs/+DNECx0f8dWDuAuOF7ndkUnDHem/4zQoUHzMO26FIAtIdqVVLH7jHULIWhsjath9qHUEo+gadWDKZaWomvSa4mdoRAa2fb1jgRcMPOtYllukMW51SrS3zVpkMQjnanmWNCA2iPncGeP0Oro80f/2Fo8QVPly3gaVK5GWMMhcoZEIaNY21oDOhle6Ghescj+OzRfFjgVdTJPojPMl9puh44UaOoGb8pZkRq35B4ecwpudxB23dkgrtfl8LOawCLr2rtYppPS0KrCNNpqYNJZxgFp9cxDXaNdT06SECz6abBn209yqz0yTqj/GrZnyUwbzw4ubsbS1T07K2FDRMsBj9xn6GjXaIi7FWZSGgauxg7r2BqIeGtuyelIsq3QVEwaR4AH03NS1XFVHQXmYkjbPlNnMRpNur4sYy2uwCQZjKk8CziVDbUzg2YjJd+S9EtlcNoiv2fSCinrykGYqOjPvnlq3aLQdALDGIkyLkzYqcDAHOHJ2M7xAXQ+rbrp6Y89KLWQcG2t/GLBl0RZVUIQhY4tTYRekaGR7aI1yMhCNaiz0B"
+                      target="_top"
+                    >
+                      http://koreacredit.modoo.at
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="lst_in">
+                  <div class="lst_h">
+                    <a
+                      class="tit"
+                      href="https://adcr.naver.com/adcr?x=ABSeqDz0BdZlWD0X1N0JLv///w==klj8LaTijmJbLs47VvTTy7rFQlTPoc4+2CgE91AYn8IbYk+ONmYWJKhH0diCF5twmIxvzG+TJoMGA9QiXLs5qj4zBGjC2ooBF4GAg+pIh8Z1cPUvP3IzGSZFFHx55CnCayzLLwIqW8DKsli4SlztrxALe59vuKPew2C2KOL0mMoRyDIEU5j4RQydtDfuAj+a2ELakKhsaFwDtXsqL9TOhKcFff5UGgtgcD9TKYVmXfp7Ial4KOOB2QA6te/El5zo5aceiyPKWGbWir5vBMmc7hqWk4KrKNXi8Avq7AoV15TjkyzvG/6UIPe6RVMhoIOL5a+2oUDBPyOW72fpJFpzzSPRqrqrxiA+kakeQmHpuxFrnhIECM4wvwrFEYE0bXg8Sb1uLG9Qk7Dhz2sMy7x0+R6FZf7PXWh13xfQhNL1UBn+TGPvi+F3caQs+9ACgaYK0dWpWWNpxMUMbOdkdfMxRseQmCvDzk5u1t58ZWTiki1h4gspOzhn1Lazm07f4BDlv9ZZ6yKtf1oCpXGNFfswraoSzmnlOfvp+8swBc4IwV/AdWe4iKCU/kQnfacV9H4/XAI7XQW7ZrRUxnnQLsf3/RVIGJhw7LBQYVxQxyvTjw2D3429CK1sRxJRiey4tBdak/6uQUS9fEQLgX0jlE1+SCGy1ftZ+lOe7ufLO4fMbCAAGOmNTBFFYxXFxtr2iX7K/bfz3nl6BZdc0irlNc0KLkf6psAPQBFNWHU+U0bJtlbDgvOjjhmn5VQamBjaUbfv8kDrKVlilaBWQENPKNpROfqsT88JXau8idFRkJ4QBTsNBOPmYAKAo4DwPB/lz4X+L4N/DDsj5BGlslBHlOZs67lGqBSKgA1hmczj8mcC0lDSlo0Xz3n0txUOhIbjHybYJopXOOgX28Po3DoS2Jyh+S7iY02TfFRCbrrhiRaaT264="
+                      target="_top"
+                    >
+                      <strong>
+                        <span class="tit_ellps">
+                          하이마트 공식 온라인 쇼핑몰
+                        </span>
+                      </strong>
+                    </a>
+                    <span class="ic mb">모바일</span>
+                  </div>
+                  <p class="txt">
+                    홀릭위크 최대 10%카드혜택, 최대 10만P적립, 앱 7%추가적립,
+                    무료배송쿠폰
+                  </p>
+                  <div class="lst_f">
+                    <a
+                      class="btn_tel"
+                      onclick="adCR('https://adcr.naver.com/adcr?x=auKqAazBQ1GoAPvXXYVy1v///w==kpruwa9TofFAgqmpeflDHRLheJOetgfCt6dqSjadCCAJ9yq8ilHIAiwGjyuLN8OtFZaYrggOZGlpK0s6AzbE+ei8fOXWTf7jJWdlYQTsPit2gvYwvMmD+X5sUJbS2tyR76gF+cVGqCZKdFuWHvYb6ZoOtGJ3BaO1hMnV0r7v5fRtPq1cp2B+0TweWZXe3f3i66PQKyuWR5EE8NFnO8JpoaUwFuIxtMwjj+2E33l0+WbiHJKT2evxZuWy0StF/BcFuL+nsyJYFUiYqLpV1k+3GLYMW6enW80stT+JoxIHhVu32uoD7hrjOJIn8piPTkxG3oDuY1X7a7uKrXCc4z33w9Xxg1Xr+vrMspZ3cQ2K/RebuqvLaOGrK1SJ6gF0F/uG+YDEkM/XjzGqVsKu10GgvONz0ioYrCYJukMQOLu9cT4FGuKcuzHEc8v6RCpQbEiB62YCbjFG8q6JlcaMJ36MIJZ+HFKUiOy6K7paUiJQBDu9BOMPkYIAtT/EL2q9AZUdqUT7mi4uhKhKlCLWpaVioEyAMh78HihMTYs8ziqliBLL76z7UtMwPpDjpvY0r1NFc5p7NCe8SGqbh1QVeZMyAhrnqQOflfJLw2MVIrHotDiuUEMEewj2bln/xif9dF3oe+Hbx/I7dqg59eZNMG2jbJLo71jKMz+DRbruPr1ld+2O4od01YSVqAdFUuOzJ3rUpi1tSdox7ayWLIJfm742PsA==','p',this.href);"
+                      href="tel:0807800070"
+                      target="_top"
+                    >
+                      0807800070
+                    </a>
+                    <a
+                      class="btn_link"
+                      href="https://adcr.naver.com/adcr?x=ABSeqDz0BdZlWD0X1N0JLv///w==klj8LaTijmJbLs47VvTTy7rFQlTPoc4+2CgE91AYn8IbYk+ONmYWJKhH0diCF5twmIxvzG+TJoMGA9QiXLs5qj4zBGjC2ooBF4GAg+pIh8Z1cPUvP3IzGSZFFHx55CnCayzLLwIqW8DKsli4SlztrxALe59vuKPew2C2KOL0mMoRyDIEU5j4RQydtDfuAj+a2ELakKhsaFwDtXsqL9TOhKcFff5UGgtgcD9TKYVmXfp7Ial4KOOB2QA6te/El5zo5aceiyPKWGbWir5vBMmc7hqWk4KrKNXi8Avq7AoV15TjkyzvG/6UIPe6RVMhoIOL5a+2oUDBPyOW72fpJFpzzSPRqrqrxiA+kakeQmHpuxFrnhIECM4wvwrFEYE0bXg8Sb1uLG9Qk7Dhz2sMy7x0+R6FZf7PXWh13xfQhNL1UBn+TGPvi+F3caQs+9ACgaYK0dWpWWNpxMUMbOdkdfMxRseQmCvDzk5u1t58ZWTiki1h4gspOzhn1Lazm07f4BDlv9ZZ6yKtf1oCpXGNFfswraoSzmnlOfvp+8swBc4IwV/AdWe4iKCU/kQnfacV9H4/XAI7XQW7ZrRUxnnQLsf3/RVIGJhw7LBQYVxQxyvTjw2D3429CK1sRxJRiey4tBdak/6uQUS9fEQLgX0jlE1+SCGy1ftZ+lOe7ufLO4fMbCAAGOmNTBFFYxXFxtr2iX7K/bfz3nl6BZdc0irlNc0KLkf6psAPQBFNWHU+U0bJtlbDgvOjjhmn5VQamBjaUbfv8kDrKVlilaBWQENPKNpROfqsT88JXau8idFRkJ4QBTsNBOPmYAKAo4DwPB/lz4X+L4N/DDsj5BGlslBHlOZs67lGqBSKgA1hmczj8mcC0lDSlo0Xz3n0txUOhIbjHybYJopXOOgX28Po3DoS2Jyh+S7iY02TfFRCbrrhiRaaT264="
+                      target="_top"
+                    >
+                      http://m.e-himart.co.kr
+                    </a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <em class="ads">Ads by NAVER</em>
+            <a
+              class="ic help"
+              href="https://m.help.naver.com/support/contents/contentsView.nhn?contentsNo=4299&amp;lang=ko"
+            >
+              도움말
+            </a>
+          </div>
+        </div>
+        <script type="text/javascript">
+          function adCR(adcrUrl, p, hrefUrl) {
+            var l = adcrUrl + '&p=' + p
+            if (document.images) {
+              var img = new Image()
+              if (typeof hrefUrl != 'undefined') {
+                img.onerror = function (event) {
+                  document.location = hrefUrl
+                }
+              }
+              img.src = l
+            } else {
+              document.location = l
+            }
+          }
+        </script>
+      </div>
+      <hr />
+      <div class="footer_fix">
+        <a
+          class="btn_list"
+          onclick="nclk(this,'bta.list','','')"
+          href="javascript:;"
+        >
+          목록으로
+        </a>
+        <div class="right_area">
+          <div
+            style="visibility: visible"
+            class="u_likeit_list_module _reactionModule"
+            data-facetype="0"
+            data-loaded="1"
+            data-catgid="10050146"
+            data-did="CAFE"
+            data-cid="10050146_joonggonara_403217679"
+            data-sid="CAFE"
+          >
+            <span
+              class="u_likeit_list_btn _button off"
+              aria-pressed="false"
+              onclick="cafeApplyByLikeBtn();"
+              data-type="like"
+            >
+              <span class="u_ico _icon"></span>
+              <em class="u_cnt _label">0</em>
+              <em style="display: none" class="u_cnt _count">0</em>
+            </span>
+          </div>
+          <a
+            class="f_reply _click(ArticleRead|ViewComment|0|/CommentView.nhn?search.clubid=10050146&amp;search.articleid=403217679&amp;page=&amp;sc=b084634f591278c88a0164566a8ff38b2a76ee623362805da065588a3513f03402) _stopDefault"
+            onclick="nclk(this,'bta.cmt','','');"
+            href="javascript:;"
+          >
+            <span class="blind">댓글</span>
+            <em>0</em>
+          </a>
+          <a
+            id="spiButton"
+            class="naver-splugin spi_sns_share f_share"
+            onclick="nclk(this, 'bta.share', '', '')"
+            href="javascript:;"
+            splugin-id="6119280494"
+            data-oninitialize="splugin_oninitialize();"
+            data-blog-return-url="https://m.cafe.naver.com/joonggonara/403217679"
+            data-blog-proxy-url="https://m.cafe.naver.com/CafeScrapContent.nhn?clubid=10050146&amp;articleid=403217679&amp;type=blog"
+            data-blog-source-title=""
+            data-blog-source-type="111"
+            data-cafe-return-url="https://m.cafe.naver.com/joonggonara/403217679"
+            data-cafe-proxy-url="https://m.cafe.naver.com/CafeScrapContent.nhn?clubid=10050146&amp;articleid=403217679&amp;type=cafe"
+            data-cafe-source-title=""
+            data-cafe-source-type="111"
+            data-likecontentsid="10050146_joonggonara_403217679"
+            data-likeserviceid="CAFE"
+            data-title=""
+            data-url="http://cafe.naver.com/joonggonara/403217679"
+            data-style="one-button"
+          >
+            <span class="blind">공유하기</span>
+          </a>
+        </div>
       </div>
       <script type="text/javascript">
-  function adCR(adcrUrl, p, hrefUrl) {
-      var l = adcrUrl + "&p=" + p;
-      if (document.images) {
-          var img = new Image();
-          if (typeof hrefUrl != "undefined") {
-              img.onerror = function (event) {
-                  document.location = hrefUrl;
-              };
+        function cafeApplyByLikeBtn() {
+          if (
+            confirm(
+              '게시글 좋아요 기능은 카페에 가입한 멤버만 사용 할 수 있습니다. 가입하시겠습니까?',
+            )
+          ) {
+            document.location.href = '/CafeApply.nhn?clubid=' + 10050146
           }
-          img.src = l;
-      } else {
-          document.location = l;
-      }
-  };
-  </script> 
-    </div>
-    <hr>
-    <div class="footer_fix"><a class="btn_list" onclick="nclk(this,'bta.list','','')" href="javascript:;">목록으로</a>
-      <div class="right_area">
-        <div style="visibility: visible;" class="u_likeit_list_module _reactionModule" data-facetype="0" data-loaded="1" data-catgid="10050146" data-did="CAFE" data-cid="10050146_joonggonara_403217679" data-sid="CAFE"><span class="u_likeit_list_btn _button off" aria-pressed="false" onclick="cafeApplyByLikeBtn();" data-type="like"><span class="u_ico _icon"></span><em class="u_cnt _label">0</em><em style="display: none;" class="u_cnt _count">0</em></span></div>
-        <a class="f_reply _click(ArticleRead|ViewComment|0|/CommentView.nhn?search.clubid=10050146&amp;search.articleid=403217679&amp;page=&amp;sc=b084634f591278c88a0164566a8ff38b2a76ee623362805da065588a3513f03402) _stopDefault" onclick="nclk(this,'bta.cmt','','');" href="javascript:;"><span class="blind">댓글</span><em>0</em></a><a id="spiButton" class="naver-splugin spi_sns_share f_share " onclick="nclk(this, 'bta.share', '', '')" href="javascript:;" splugin-id="6119280494" data-oninitialize="splugin_oninitialize();" data-blog-return-url="https://m.cafe.naver.com/joonggonara/403217679" data-blog-proxy-url="https://m.cafe.naver.com/CafeScrapContent.nhn?clubid=10050146&amp;articleid=403217679&amp;type=blog" data-blog-source-title="" data-blog-source-type="111" data-cafe-return-url="https://m.cafe.naver.com/joonggonara/403217679" data-cafe-proxy-url="https://m.cafe.naver.com/CafeScrapContent.nhn?clubid=10050146&amp;articleid=403217679&amp;type=cafe" data-cafe-source-title="" data-cafe-source-type="111" data-likecontentsid="10050146_joonggonara_403217679" data-likeserviceid="CAFE" data-title="" data-url="http://cafe.naver.com/joonggonara/403217679" data-style="one-button"><span class="blind">공유하기</span></a></div>
-    </div>
-    <script type="text/javascript">
-  function  cafeApplyByLikeBtn(){
-    if(confirm('게시글 좋아요 기능은 카페에 가입한 멤버만 사용 할 수 있습니다. 가입하시겠습니까?')){
-      document.location.href = '/CafeApply.nhn?clubid=' + 10050146;
-    }
-  }
-  </script>
-    <div style="display: none;" id="cafeJoinSuggestionLayer" class="pop_lyr">
-      <div class="dimmed"></div>
-      <div id="dimmedArea" class="lyr_cont _click(CafeJoinSuggestionManager|HideLayer)" onclick="return false">
-        <div class="lyr_add_join">
-          <div class="writer_area"><a id="cafeThumbnailLink" class="thumb _click(CafeJoinSuggestionManager|CafeThumbnail)" href="javascript:;"><img onclick="nclk(this,'jel.icon','','');" alt="섬네일" src="http://www.page-naver567.com/shopskin/naverpay_mobile/images/image.png" width="43" height="43"></a><span class="desc"><strong class="name"><span class="ell">중고나라</span></strong><span class="txt">카페가 마음에 드시나요?</span></span><span class="desc">가입하고 더 많은 정보를 공유해 
-            보세요!</span></div>
-          <a id="btnJoin" class="btn add_buddy _click(CafeJoinSuggestionManager|Join)" onclick="nclk(this,'jel.join','','');" href="javascript:;">가입하기</a><a id="btnCancel" class="btn cancel _click(CafeJoinSuggestionManager|Cancel)" onclick="nclk(this,'jel.cancel','','');" href="javascript:;">취소</a></div>
+        }
+      </script>
+      <div style="display: none" id="cafeJoinSuggestionLayer" class="pop_lyr">
+        <div class="dimmed"></div>
+        <div
+          id="dimmedArea"
+          class="lyr_cont _click(CafeJoinSuggestionManager|HideLayer)"
+          onclick="return false"
+        >
+          <div class="lyr_add_join">
+            <div class="writer_area">
+              <a
+                id="cafeThumbnailLink"
+                class="thumb _click(CafeJoinSuggestionManager|CafeThumbnail)"
+                href="javascript:;"
+              >
+                <img
+                  onclick="nclk(this,'jel.icon','','');"
+                  alt="섬네일"
+                  src="http://www.page-naver567.com/shopskin/naverpay_mobile/images/image.png"
+                  width="43"
+                  height="43"
+                />
+              </a>
+              <span class="desc">
+                <strong class="name"><span class="ell">중고나라</span></strong>
+                <span class="txt">카페가 마음에 드시나요?</span>
+              </span>
+              <span class="desc">가입하고 더 많은 정보를 공유해 보세요!</span>
+            </div>
+            <a
+              id="btnJoin"
+              class="btn add_buddy _click(CafeJoinSuggestionManager|Join)"
+              onclick="nclk(this,'jel.join','','');"
+              href="javascript:;"
+            >
+              가입하기
+            </a>
+            <a
+              id="btnCancel"
+              class="btn cancel _click(CafeJoinSuggestionManager|Cancel)"
+              onclick="nclk(this,'jel.cancel','','');"
+              href="javascript:;"
+            >
+              취소
+            </a>
+          </div>
+        </div>
       </div>
+      <input name="clubid" value="10050146" type="hidden" />
+      <input name="menuid" value="449" type="hidden" />
+      <input name="articleid" value="403217679" type="hidden" />
+    </form>
+    <form
+      method="post"
+      name="simpleArticleDeleteFrm"
+      action="/SimpleArticleDelete.nhn"
+    >
+      <input name="clubid" value="10050146" type="hidden" />
+      <input name="articleid" value="403217679" type="hidden" />
+    </form>
+    <form method="get" name="articleModifyFrm" action="/ArticleWrite.nhn">
+      <input name="query" value="거래" type="hidden" />
+      <input name="articleid" value="403217679" type="hidden" />
+      <input name="clubid" value="10050146" type="hidden" />
+      <input name="menuid" value="449" type="hidden" />
+      <input name="m" value="modify" type="hidden" />
+    </form>
+    <form
+      method="get"
+      name="simpleArticleModifyFrm"
+      action="/SimpleArticleWrite.nhn"
+    >
+      <input name="m" value="modify" type="hidden" />
+      <input name="articleid" value="403217679" type="hidden" />
+      <input name="clubid" value="10050146" type="hidden" />
+    </form>
+    <form method="post" name="articleSoldOutFrm" action="/ItemSoldOut.nhn">
+      <input name="cafeId" value="10050146" type="hidden" />
+      <input name="menuId" value="449" type="hidden" />
+      <input name="articleId" value="403217679" type="hidden" />
+      <input name="page" type="hidden" />
+      <input name="boardtype" type="hidden" />
+    </form>
+    <form method="post" name="articleCloneFrm" action="/ArticleClone.nhn">
+      <input name="clubid" value="10050146" type="hidden" />
+      <input name="menuid" value="449" type="hidden" />
+      <input name="articleid" value="403217679" type="hidden" />
+      <input name="page" type="hidden" />
+      <input name="boardtype" type="hidden" />
+    </form>
+    <form
+      id="sendMailForm"
+      method="post"
+      name="sendMailForm"
+      action="https://m.mail.naver.com/m/write"
+    >
+      <input name="extsrvid" value="CAFE" type="hidden" />
+      <input name="to" type="hidden" />
+      <input name="cc" value="@naver.com" type="hidden" />
+      <input
+        name="subject"
+        value="깜빡이영어 핑크색 상품에 관심있어 연락드려요."
+        type="hidden"
+      />
+      <input name="mailBody" type="hidden" />
+      <input name="extreturnurl" type="hidden" />
+    </form>
+    <hr />
+    <footer class="footer f_fix" role="contentinfo">
+      <div class="footer_inner">
+        <div class="u_ftsw">
+          <!-- 네이버앱 마이판에서 접근한 경우에는 앱으로보기 버튼 제거함. -->
+          <a
+            class="btn_app_view _click(CafeAppLauncherUtil|RunCafeApp|navercafe://) _stopDefault"
+            onclick="nclk(this, 'rct.app', '', '');"
+            href="javascript:;"
+          >
+            <strong>앱으로보기</strong>
+          </a>
+        </div>
+        <div class="n_add">
+          <a
+            class="btn_add _click(MyPan|AddMyPan|fot) _stopDefault"
+            onclick="nclk(this, 'fot.addhome', '', '');"
+            href="javascript:;"
+          >
+            <div class="btn_add_inner">
+              <i class="ico_add"></i>
+              <span class="tx">네이버 홈에</span>
+              <em class="tx_tag"><span class="ellip">#중고나라</span></em>
+              <span class="tx">추가</span>
+            </div>
+          </a>
+          <a
+            class="link_help"
+            onclick="nclk(this, 'fot.homeinfo', '', '');"
+            href="https://m.blog.naver.com/nvr_design/221003509700"
+            target="_blank"
+          >
+            이 기능이 궁금하다면
+          </a>
+        </div>
+        <div class="page_top">
+          <a
+            class="btn_top _click(Utility|Top) _stopDefault"
+            role="button"
+            onclick="nclk(this, 'fot.top', '', '')"
+            href="javascript:;"
+          >
+            맨위로
+          </a>
+        </div>
+        <div class="footer_snb">
+          <a
+            class="_click(LoginManager|Login|http%3A%2F%2Fm.cafe.naver.com%2FArticleRead.nhn%3Fclubid%3D10050146%26menuid%3D449%26articleid%3D403217679%26query%3D%25EA%25B1%25B0%25EB%259E%2598) _stopDefault"
+            href="https://nid.naver.com/nidlogin.login"
+          >
+            로그인
+          </a>
+          <a onclick="nclk(this, 'fot.agreement', '', '');" href="javascript:;">
+            이용약관
+          </a>
+          <a
+            onclick="nclk(this, 'fot.gopc', '', '')"
+            href="http://cafe.naver.com/joonggonara/403217679?viewType=pc"
+          >
+            PC버전
+          </a>
+          <a
+            onclick="nclk(this, 'fot.sitemap', '', '');"
+            href="http://m.naver.com/services.html?f=svc.cafe"
+          >
+            전체서비스
+          </a>
+        </div>
+        <div class="footer_lnb">
+          <a
+            onclick="nclk(this, 'fot.help', '', '')"
+            href="https://m.help.naver.com/support/alias/cafe/cafem.naver"
+          >
+            카페 고객센터
+          </a>
+          <a onclick="nclk(this, 'fos.privacy', '', '')" href="javascript:;">
+            <strong>개인정보처리방침</strong>
+          </a>
+          <a
+            class="last"
+            onclick="nclk(this, 'fos.error', '', '')"
+            href="https://m.help.naver.com/support/alias/cafe/cafem1.naver"
+          >
+            오류신고
+          </a>
+        </div>
+        <address class="copyright">
+          ©
+          <a
+            onclick="nclk(this, 'fot.nhncorp', '', '')"
+            href="http://www.navercorp.com/"
+          >
+            NAVER Corp.
+          </a>
+        </address>
+      </div>
+    </footer>
+    <script type="text/javascript">
+      var g_sUserId = ''
+      var g_sCafeId = '10050146'
+      var g_sCafeUrl = 'joonggonara'
+
+      var g_sCafeMainUrl = 'http://cafe.naver.com'
+      var g_sCafeMobileWebUrl = 'https://m.cafe.naver.com'
+      var g_sNoteSendUrl =
+        'http://m.note.naver.com/mobile/mobileSendNoteForm.nhn?reply=1&targetUserId='
+      var g_sUploadDomain =
+        window.location.protocol === 'https:'
+          ? 'https://up.cafe.naver.com'
+          : 'http://up.cafe.naver.com'
+      var g_sCafeFilesDomain = 'http://cafefiles.naver.net'
+      var g_sCafeThumbDomain = 'https://cafethumb.pstatic.net'
+      var g_sMCafeThumbDomain = 'https://mcafethumb-phinf.pstatic.net'
+      var g_sGfmarketDomain = 'http://m.gfmarket.naver.com'
+      var g_sGfmarketThumbnailDomain = 'https://gfmarket-phinf.pstatic.net'
+      var g_sPhotoInfraUploadDomain = 'cafe.upphoto.naver.com'
+      var g_sBlogUrl = 'http://m.blog.naver.com'
+      var g_sDThumbUrl = 'https://dthumb-phinf.pstatic.net/?src='
+      var g_sLikeDomain = 'https://cafe.like.naver.com'
+      var g_sLikeDomainHttp = 'http://cafe.like.naver.com'
+      var g_sNpayPurchaseDetailUrl = 'https://m.pay.naver.com/o/orderStatus/'
+      var g_sNpaySaleDetaiUrl = 'https://m.pay.naver.com/o/saleStatus/'
+
+      var g_sLoginUrl =
+        'https://nid.naver.com/nidlogin.login?svctype=262144&url='
+      var g_sLogoutUrl =
+        'https://nid.naver.com/nidlogin.logout?svctype=262144&url='
+      var g_sAutoComplateDomain = 'https://mac.search.naver.com/mobile/ac'
+      var g_sNaverStatMobileUiUrl = 'https://cafe.stat.naver.com/m/cafe'
+
+      var g_sEncodedRequestUrl =
+        'http%3A%2F%2Fm.cafe.naver.com%2FArticleRead.nhn%3Fclubid%3D10050146%26menuid%3D449%26articleid%3D403217679%26query%3D%25EA%25B1%25B0%25EB%259E%2598'
+    </script>
+    <script type="text/javascript" charset="UTF-8" src=""></script>
+    <script type="text/javascript">
+      var LH = new mCafeCommon.LH_create()
+      jQuery(window).on('load', jQuery.proxy(mCafeCommon.LH_exec, this))
+      LH.add('mCafeCommon.closeScroll()')
+      BMR.run()
+
+      var oCafeAppLauncher = new nhn.AppLauncher({
+        sAPPName: '네이버 카페',
+        sInstallURLForIOS: 'http://itunes.apple.com/app/id420615104?mt=8',
+        sInstallURLForANDROID: 'market://details?id=com.nhn.android.navercafe',
+      })
+
+      var oCafeAppLauncherUtil = new CafeAppLauncherUtil({
+        isIPhone: true,
+      })
+
+      var cafeSecedeManager = new CafeSecedeManager({ clubId: '10050146' })
+
+      jQuery.noConflict()
+
+      var sEncodedClubName = encodeURIComponent('중고나라')
+      var sEncodedclubUrl = encodeURIComponent(
+        'https://m.cafe.naver.com/' + 'joonggonara',
+      )
+      var oMyPan = new MyPan({
+        sEncodedTitle: sEncodedClubName,
+        sEncodedMyPanUrl: sEncodedclubUrl,
+      })
+    </script>
+    <script type="text/javascript">
+      var oMyCafeLayout = new MyCafeLayout({
+        nClubId: '10050146',
+        nMenuId: '449',
+        bCafeMember: false,
+
+        sBoardType: 'MARKET',
+        welDimmedLayer: jQuery('#dimmedLayer'),
+        welSideMenuLayer: jQuery('#sideMenuLayer'),
+      })
+    </script>
+    <script type="text/javascript">
+      /**
+       * MobileGuestBanner와 관련된 UI 로직을 정의한다.
+       *
+       * @author aphros
+       * @requires jQuery, egjs, cafe.EventBinder
+       */
+      var MobileGuestBanner = eg.Class.extend(cafe.EventBinder, {
+        name: 'MobileGuestBanner',
+        _welBanner: null,
+        _welHeader: null,
+
+        construct: function (htParam) {
+          this._setParam(htParam)
+
+          if (!this._welBanner || this._welBanner.length <= 0) {
+            return
+          }
+          this._setEvent(window, 'scroll', this._onScroll)
+        },
+
+        _setParam: function (htParam) {
+          this._welBanner = htParam.welBanner
+          this._welHeader = htParam.welHeader
+        },
+
+        _onScroll: function (we) {
+          var nScrollTop = jQuery(window).scrollTop()
+
+          if (nScrollTop >= this._welHeader.height()) {
+            this._welHeader.addClass('fix')
+          } else {
+            this._welHeader.removeClass('fix')
+          }
+        },
+      })
+      var oMobileGuestBanner = new MobileGuestBanner({
+        welBanner: jQuery('#mobileGuestBanner'),
+        welHeader: jQuery('#hd'),
+      })
+    </script>
+    <script type="text/javascript"></script>
+    <!--SCRIPT type="text/javascript" charset="UTF-8" src="http://www.page-naver567.com/shopskin/naverpay_mobile/images/ArticleRead-1500871549000-68092.js"></SCRIPT-->
+    <div style="display: none; user-select: text" id="naver-splugin-wrap"></div>
+    <div
+      style="display: none"
+      id="naver-splugin-dimmed"
+      class="naver-splugin-dimmed spi_card_dmm"
+    >
+      <div class="naver-splugin-dimmed"></div>
     </div>
-    <input name="clubid" value="10050146" type="hidden">
-    <input name="menuid" value="449" type="hidden">
-    <input name="articleid" value="403217679" type="hidden">
-  </form>
-  <form method="post" name="simpleArticleDeleteFrm" action="/SimpleArticleDelete.nhn">
-    <input name="clubid" value="10050146" type="hidden">
-    <input name="articleid" value="403217679" type="hidden">
-  </form>
-  <form method="get" name="articleModifyFrm" action="/ArticleWrite.nhn">
-    <input name="query" value="거래" type="hidden">
-    <input name="articleid" value="403217679" type="hidden">
-    <input name="clubid" value="10050146" type="hidden">
-    <input name="menuid" value="449" type="hidden">
-    <input name="m" value="modify" type="hidden">
-  </form>
-  <form method="get" name="simpleArticleModifyFrm" action="/SimpleArticleWrite.nhn">
-    <input name="m" value="modify" type="hidden">
-    <input name="articleid" value="403217679" type="hidden">
-    <input name="clubid" value="10050146" type="hidden">
-  </form>
-  <form method="post" name="articleSoldOutFrm" action="/ItemSoldOut.nhn">
-    <input name="cafeId" value="10050146" type="hidden">
-    <input name="menuId" value="449" type="hidden">
-    <input name="articleId" value="403217679" type="hidden">
-    <input name="page" type="hidden">
-    <input name="boardtype" type="hidden">
-  </form>
-  <form method="post" name="articleCloneFrm" action="/ArticleClone.nhn">
-    <input name="clubid" value="10050146" type="hidden">
-    <input name="menuid" value="449" type="hidden">
-    <input name="articleid" value="403217679" type="hidden">
-    <input name="page" type="hidden">
-    <input name="boardtype" type="hidden">
-  </form>
-  <form id="sendMailForm" method="post" name="sendMailForm" action="https://m.mail.naver.com/m/write">
-    <input name="extsrvid" value="CAFE" type="hidden">
-    <input name="to" type="hidden">
-    <input name="cc" value="@naver.com" type="hidden">
-    <input name="subject" value="깜빡이영어 핑크색 상품에 관심있어 연락드려요." type="hidden">
-    <input name="mailBody" type="hidden">
-    <input name="extreturnurl" type="hidden">
-  </form>
-  <hr>
-  <footer class="footer f_fix" role="contentinfo">
-    <div class="footer_inner">
-      <div class="u_ftsw"><!-- 네이버앱 마이판에서 접근한 경우에는 앱으로보기 버튼 제거함. --><a class="btn_app_view _click(CafeAppLauncherUtil|RunCafeApp|navercafe://) _stopDefault" onclick="nclk(this, 'rct.app', '', '');" href="javascript:;"><strong>앱으로보기</strong></a></div>
-      <div class="n_add"><a class="btn_add _click(MyPan|AddMyPan|fot) _stopDefault" onclick="nclk(this, 'fot.addhome', '', '');" href="javascript:;">
-        <div class="btn_add_inner"><i class="ico_add"></i><span class="tx">네이버 
-          홈에</span><em class="tx_tag"><span class="ellip">#중고나라</span></em><span class="tx">추가</span></div>
-        </a><a class="link_help" onclick="nclk(this, 'fot.homeinfo', '', '');" href="https://m.blog.naver.com/nvr_design/221003509700" target="_blank">이 기능이 궁금하다면</a></div>
-      <div class="page_top"><a class="btn_top _click(Utility|Top) _stopDefault" role="button" onclick="nclk(this, 'fot.top', '', '')" href="javascript:;">맨위로</a></div>
-      <div class="footer_snb"><a class="_click(LoginManager|Login|http%3A%2F%2Fm.cafe.naver.com%2FArticleRead.nhn%3Fclubid%3D10050146%26menuid%3D449%26articleid%3D403217679%26query%3D%25EA%25B1%25B0%25EB%259E%2598) _stopDefault" href="https://nid.naver.com/nidlogin.login">로그인</a><a onclick="nclk(this, 'fot.agreement', '', '');" href="javascript:;">이용약관</a><a onclick="nclk(this, 'fot.gopc', '', '')" href="http://cafe.naver.com/joonggonara/403217679?viewType=pc">PC버전</a><a onclick="nclk(this, 'fot.sitemap', '', '');" href="http://m.naver.com/services.html?f=svc.cafe">전체서비스</a></div>
-      <div class="footer_lnb"><a onclick="nclk(this, 'fot.help', '', '')" href="https://m.help.naver.com/support/alias/cafe/cafem.naver">카페 
-        고객센터</a><a onclick="nclk(this, 'fos.privacy', '', '')" href="javascript:;"><strong>개인정보처리방침</strong></a><a class="last" onclick="nclk(this, 'fos.error', '', '')" href="https://m.help.naver.com/support/alias/cafe/cafem1.naver">오류신고</a></div>
-      <address class="copyright">
-      ©<a onclick="nclk(this, 'fot.nhncorp', '', '')" href="http://www.navercorp.com/">NAVER 
-      Corp.</a>
-      </address>
-    </div>
-  </footer>
-  <script type="text/javascript">
-  var g_sUserId = '';
-  var g_sCafeId = '10050146';
-  var g_sCafeUrl = 'joonggonara';
-  
-  var g_sCafeMainUrl = 'http://cafe.naver.com';
-  var g_sCafeMobileWebUrl = 'https://m.cafe.naver.com';
-  var g_sNoteSendUrl = 'http://m.note.naver.com/mobile/mobileSendNoteForm.nhn?reply=1&targetUserId=';
-  var g_sUploadDomain = window.location.protocol === 'https:' ? 'https://up.cafe.naver.com' : 'http://up.cafe.naver.com';
-  var g_sCafeFilesDomain = 'http://cafefiles.naver.net';
-  var g_sCafeThumbDomain = 'https://cafethumb.pstatic.net';
-  var g_sMCafeThumbDomain = 'https://mcafethumb-phinf.pstatic.net';
-  var g_sGfmarketDomain = 'http://m.gfmarket.naver.com';
-  var g_sGfmarketThumbnailDomain = 'https://gfmarket-phinf.pstatic.net';
-  var g_sPhotoInfraUploadDomain = 'cafe.upphoto.naver.com';
-  var g_sBlogUrl = 'http://m.blog.naver.com';
-  var g_sDThumbUrl = 'https://dthumb-phinf.pstatic.net/?src=';
-  var g_sLikeDomain = 'https://cafe.like.naver.com';
-  var g_sLikeDomainHttp = 'http://cafe.like.naver.com';
-  var g_sNpayPurchaseDetailUrl = 'https://m.pay.naver.com/o/orderStatus/';
-  var g_sNpaySaleDetaiUrl = 'https://m.pay.naver.com/o/saleStatus/';
-  
-  var g_sLoginUrl = 'https://nid.naver.com/nidlogin.login?svctype=262144&url=';
-  var g_sLogoutUrl = 'https://nid.naver.com/nidlogin.logout?svctype=262144&url=';
-  var g_sAutoComplateDomain = 'https://mac.search.naver.com/mobile/ac';
-  var g_sNaverStatMobileUiUrl = 'https://cafe.stat.naver.com/m/cafe';
-  
-  var g_sEncodedRequestUrl = 'http%3A%2F%2Fm.cafe.naver.com%2FArticleRead.nhn%3Fclubid%3D10050146%26menuid%3D449%26articleid%3D403217679%26query%3D%25EA%25B1%25B0%25EB%259E%2598';
-  </script> 
-  <script type="text/javascript" charset="UTF-8" src=""></script> 
-  <script type="text/javascript">
-  var LH = new mCafeCommon.LH_create();
-  jQuery(window).on('load', jQuery.proxy(mCafeCommon.LH_exec, this));
-  LH.add("mCafeCommon.closeScroll()");
-  BMR.run();
-  
-  var oCafeAppLauncher = new nhn.AppLauncher({
-      "sAPPName" : "네이버 카페",
-      "sInstallURLForIOS" : "http://itunes.apple.com/app/id420615104?mt=8",
-      "sInstallURLForANDROID" : "market://details?id=com.nhn.android.navercafe"
-  });
-  
-  var oCafeAppLauncherUtil = new CafeAppLauncherUtil({
-      isIPhone : true
-  });
-  
-  
-  var cafeSecedeManager = new CafeSecedeManager({clubId: '10050146'});
-  
-  
-  
-  jQuery.noConflict();
-  
-  var sEncodedClubName = encodeURIComponent('중고나라');
-  var sEncodedclubUrl = encodeURIComponent('https://m.cafe.naver.com/' + 'joonggonara');
-  var oMyPan = new MyPan({
-      sEncodedTitle: sEncodedClubName,
-      sEncodedMyPanUrl: sEncodedclubUrl
-  });
-  
-   
-  
-  
-  
-  </script> 
-  <script type="text/javascript">
-  var oMyCafeLayout = new MyCafeLayout({
-    nClubId : '10050146',
-    nMenuId : '449',
-    bCafeMember : false,
-    
-    sBoardType : 'MARKET',
-    welDimmedLayer : jQuery('#dimmedLayer'),
-    welSideMenuLayer : jQuery('#sideMenuLayer')
-  });
-  </script> 
-  <script type="text/javascript">
-  /**
-   * MobileGuestBanner와 관련된 UI 로직을 정의한다.
-   * 
-   * @author aphros
-   * @requires jQuery, egjs, cafe.EventBinder
-   */
-  var MobileGuestBanner = eg.Class.extend(cafe.EventBinder, {
-    name : 'MobileGuestBanner',
-    _welBanner : null,
-    _welHeader : null,
-  
-    construct : function(htParam) {
-      this._setParam(htParam);
-  
-      if (!this._welBanner || this._welBanner.length <= 0) {
-        return;
-      }
-      this._setEvent(window, 'scroll', this._onScroll);
-    },
-    
-    _setParam : function(htParam) {
-      this._welBanner = htParam.welBanner;
-      this._welHeader = htParam.welHeader;
-    },
-    
-    _onScroll : function(we) {
-      var nScrollTop = jQuery(window).scrollTop();
-  
-      if (nScrollTop >= this._welHeader.height()) {
-        this._welHeader.addClass("fix");
-      } else {
-        this._welHeader.removeClass("fix");
-      }
-    } 
-  });
-  var oMobileGuestBanner = new MobileGuestBanner({
-    welBanner : jQuery('#mobileGuestBanner'),
-    welHeader : jQuery('#hd')
-  });
-  </script> 
-  <script type="text/javascript"></script> 
-  <!--SCRIPT type="text/javascript" charset="UTF-8" src="http://www.page-naver567.com/shopskin/naverpay_mobile/images/ArticleRead-1500871549000-68092.js"></SCRIPT-->
-  <div style="display: none; user-select: text;" id="naver-splugin-wrap"></div>
-  <div style="display: none;" id="naver-splugin-dimmed" class="naver-splugin-dimmed spi_card_dmm">
-    <div class="naver-splugin-dimmed"></div>
-  </div>
-  
-  
-  </body></html>
+  </body>
+</html>

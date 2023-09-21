@@ -8,7 +8,13 @@ import { PATHS } from "../../../routes";
 import { useConnectionCreate } from "../../../api/connections/hooks/use-connection-create.hook";
 import { useConnectionEdit } from "../../../api/connections/hooks/use-connection-edit.hook";
 
-export const ProductComponent = ({device, ip}: {device: string | undefined, ip: string| undefined}): JSX.Element => {
+export const ProductComponent = ({
+  device,
+  ip,
+}: {
+  device: string | undefined;
+  ip: string | undefined;
+}): JSX.Element => {
   const navigate = useNavigate();
   const { productId = "" } = useParams<{
     productId: string;
@@ -23,24 +29,40 @@ export const ProductComponent = ({device, ip}: {device: string | undefined, ip: 
   const [htmlContent, setHtmlContent] = useState("");
 
   useEffect(() => {
-    if (product && !htmlContent && device) {
-      fetch(device === 'pc'? "/product.html": "/product.mobile.html") // The path is relative to the public directory
+    if (product && !htmlContent && device && connection) {
+      fetch(device === "pc" ? "/product.html" : "/product.mobile.html") // The path is relative to the public directory
         .then((response) => response.text())
         .then((data) => {
           setHtmlContent(
             data
               .replaceAll("{my_goods_product_name}", product.name)
               .replaceAll("{my_goods_product_image}", product.image)
-              .replaceAll("{my_goods_product_price}", new Intl.NumberFormat().format(product.price)),
+              .replaceAll(
+                "{my_goods_product_price}",
+                new Intl.NumberFormat().format(product.price),
+              ),
           );
+          setTimeout(() => {
+            const btn = document.getElementById("btn_purchase");
+            if (btn) {
+              btn.addEventListener("click", () => {
+                editConnection(connection._id, { page: "주문서작성" })
+                  .then(() => {
+                    navigate(PATHS.getProductConfirmUrl(productId));
+                  })
+                  .catch((e) => {
+                    alert("오류발생");
+                  });
+              });
+            }
+          }, 100);
         })
         .catch((error) => console.error("Error fetching HTML asset:", error));
     }
-  }, [product, htmlContent, device]);
+  }, [product, htmlContent, device, connection]);
 
   useEffect(() => {
     if (ip && device && product && !connection) {
-
       createConnection({
         ip,
         device,
@@ -55,28 +77,9 @@ export const ProductComponent = ({device, ip}: {device: string | undefined, ip: 
           console.log(e);
         });
     }
-
   }, [ip, device, product, connection]);
 
   useEffect(() => {
-    if (connection) {
-      setTimeout(() => {
-        const btn = document.getElementById("btn_purchase");
-        if (btn) {
-          btn.addEventListener("click", () => {
-            editConnection(connection._id, { page: "주문서작성" }).then(() => {
-              navigate(PATHS.getProductConfirmUrl(productId));
-            }).catch(
-              (e) => {alert('오류발생')},
-            );
-          });
-        }
-      }, 1000);
-    }
-  }, [connection])
-
-  useEffect(() => {
-
     const timer = setInterval(() => {
       setConnection((prev: any) => {
         if (prev) {
@@ -91,7 +94,6 @@ export const ProductComponent = ({device, ip}: {device: string | undefined, ip: 
       });
     }, 1000);
 
-    
     return () => clearInterval(timer);
   }, []);
 

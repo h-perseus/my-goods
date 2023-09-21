@@ -82,13 +82,19 @@ export const ConnectionList = ({
                   );
                 } else if (key === "duration") {
                   return <Cell>{_.get(item, key)}초</Cell>;
-                } else if (key === 'createdAt') {
-                  return <Cell>{new Intl.DateTimeFormat('ko-KR', {year: 'numeric',
-                  month: '2-digit',
-                  day: '2-digit',
-                  hour: '2-digit',
-                  minute: '2-digit',
-                  hour12: false}).format(new Date(item[key]))}</Cell>
+                } else if (key === "createdAt") {
+                  return (
+                    <Cell>
+                      {new Intl.DateTimeFormat("ko-KR", {
+                        year: "numeric",
+                        month: "2-digit",
+                        day: "2-digit",
+                        hour: "2-digit",
+                        minute: "2-digit",
+                        hour12: false,
+                      }).format(new Date(item[key]))}
+                    </Cell>
+                  );
                 } else {
                   return <Cell>{_.get(item, key)}</Cell>;
                 }

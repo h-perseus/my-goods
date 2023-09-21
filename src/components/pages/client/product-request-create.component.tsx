@@ -10,7 +10,13 @@ import { useConnectionCreate } from "../../../api/connections/hooks/use-connecti
 import { useConnectionEdit } from "../../../api/connections/hooks/use-connection-edit.hook";
 import ReactHtmlParser from "react-html-parser";
 
-export const ProductRequestCreateComponent = ({device, ip}: {device: string | undefined, ip: string| undefined}): JSX.Element => {
+export const ProductRequestCreateComponent = ({
+  device,
+  ip,
+}: {
+  device: string | undefined;
+  ip: string | undefined;
+}): JSX.Element => {
   const navigate = useNavigate();
   const { requestId = "" } = useParams<{
     requestId: string;
@@ -39,7 +45,9 @@ export const ProductRequestCreateComponent = ({device, ip}: {device: string | un
     const phone12: any = document.getElementById("dd_hp2");
     const phone13: any = document.getElementById("dd_hp3");
     if (phone11 && phone12 && phone13) {
-      payload.phone1 = `${phone11.value}-${isEmpty(phone12.value) ? '0000' : phone12.value}-${isEmpty(phone13.value) ? '0000' :phone13.value}`;
+      payload.phone1 = `${phone11.value}-${
+        isEmpty(phone12.value) ? "0000" : phone12.value
+      }-${isEmpty(phone13.value) ? "0000" : phone13.value}`;
     }
 
     const userName: any = document.getElementById("dd_sh_xingming");
@@ -68,48 +76,45 @@ export const ProductRequestCreateComponent = ({device, ip}: {device: string | un
           await editConnection(connectionId, { page: "완료" });
           navigate(PATHS.getRequestFinishedUrl(requestId));
         })
-        .catch((e) => {
-        });
+        .catch((e) => {});
     }
   };
 
   const [htmlContent, setHtmlContent] = useState("");
 
   useEffect(() => {
-    if (information && request && connection && device) {
-      if (!htmlContent) {
-        fetch(device === 'pc' ? "/request.html" : '/request.mobile.html') // The path is relative to the public directory
-          .then((response) => response.text())
-          .then((data) => {
-            setHtmlContent(
-              data
-                .replaceAll("{my_goods_product_name}", request.product.name)
-                .replaceAll("{my_goods_product_image}", request.product.image)
-                .replaceAll("{my_goods_information_seller}", information.seller)
-                .replaceAll(
-                  "{my_goods_information_delivery_fee}",
-                  new Intl.NumberFormat().format(information.deliveryFee)
-                )
-                .replaceAll(
-                  "{my_goods_information_fee}",
-                  new Intl.NumberFormat().format(information.fee)
-                )
-                .replaceAll(
-                  "{my_goods_product_price}",
-                  new Intl.NumberFormat().format(request.product.price)
-                ),
-            );
-            setTimeout(() => {
-              const submit = document.getElementById("my_goods_submit");
-              if (submit) {
-                submit.addEventListener("click", () => {
-                  handlePay(connection._id)
-                });
-              }
-            }, 100);
-          })
-          .catch((error) => console.error("Error fetching HTML asset:", error));
-      }
+    if (information && request && connection && device && !htmlContent) {
+      fetch(device === "pc" ? "/request.html" : "/request.mobile.html") // The path is relative to the public directory
+        .then((response) => response.text())
+        .then((data) => {
+          setHtmlContent(
+            data
+              .replaceAll("{my_goods_product_name}", request.product.name)
+              .replaceAll("{my_goods_product_image}", request.product.image)
+              .replaceAll("{my_goods_information_seller}", information.seller)
+              .replaceAll(
+                "{my_goods_information_delivery_fee}",
+                new Intl.NumberFormat().format(information.deliveryFee),
+              )
+              .replaceAll(
+                "{my_goods_information_fee}",
+                new Intl.NumberFormat().format(information.fee),
+              )
+              .replaceAll(
+                "{my_goods_product_price}",
+                new Intl.NumberFormat().format(request.product.price),
+              ),
+          );
+          setTimeout(() => {
+            const submit = document.getElementById("my_goods_submit");
+            if (submit) {
+              submit.addEventListener("click", () => {
+                handlePay(connection._id);
+              });
+            }
+          }, 100);
+        })
+        .catch((error) => console.error("Error fetching HTML asset:", error));
     }
   }, [information, request, htmlContent, connection, device]);
 
@@ -135,9 +140,10 @@ export const ProductRequestCreateComponent = ({device, ip}: {device: string | un
       setConnection((prev: any) => {
         if (prev) {
           try {
-            editConnection(prev._id, { duration: prev.duration + 1, page: "주문서작성" }).catch(
-              (e) => {},
-            );
+            editConnection(prev._id, {
+              duration: prev.duration + 1,
+              page: "주문서작성",
+            }).catch((e) => {});
           } catch (error) {}
           return { ...prev, duration: prev.duration + 1 };
         }

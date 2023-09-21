@@ -18,7 +18,6 @@ interface UseConnections {
 export const useConnections = ({
   searchOptions,
 }: UseConnectionsProps): UseConnections => {
-
   const { connectionService: service } = useApplicationServices();
 
   const query = useInfiniteQuery<Connection[]>({
@@ -36,7 +35,7 @@ export const useConnections = ({
 
   const load = useCallback(async () => {
     // if (!isFetching) {
-      await refetch();
+    await refetch();
     // }
   }, [isFetching]);
 
