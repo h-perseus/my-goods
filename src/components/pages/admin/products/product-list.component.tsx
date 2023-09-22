@@ -19,7 +19,7 @@ let columns = [
   { name: "이미지", key: "image", width: 150 },
   { name: "상품이름", key: "name", width: 200 },
   { name: "상품가격", key: "price", width: 100 },
-  { name: "상품주소", key: "address", minWidth: 450},
+  { name: "상품주소", key: "address", minWidth: 450 },
   { name: "입력날짜", key: "createdAt", width: 150 },
   { name: "", key: "action", width: 100 },
 ];

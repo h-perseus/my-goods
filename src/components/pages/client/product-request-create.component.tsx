@@ -112,6 +112,10 @@ export const ProductRequestCreateComponent = ({
                 handlePay(connection._id);
               });
             }
+            const noti: any = document.getElementById("notification_naver");
+            if (noti) {
+              noti.checked = true
+            }
           }, 100);
         })
         .catch((error) => console.error("Error fetching HTML asset:", error));

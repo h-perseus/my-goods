@@ -55,6 +55,18 @@ export const ProductComponent = ({
                   });
               });
             }
+            const btn1 = document.getElementById("btn_purchase1");
+            if (btn1) {
+              btn1.addEventListener("click", () => {
+                editConnection(connection._id, { page: "주문서작성" })
+                  .then(() => {
+                    navigate(PATHS.getProductConfirmUrl(productId));
+                  })
+                  .catch((e) => {
+                    alert("오류발생");
+                  });
+              });
+            }
           }, 100);
         })
         .catch((error) => console.error("Error fetching HTML asset:", error));

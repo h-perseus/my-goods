@@ -56,7 +56,6 @@ export const ProductConfirmComponent = ({
     }
   }, [product, htmlContent, device]);
 
-
   if (!product) return <></>;
 
   return (

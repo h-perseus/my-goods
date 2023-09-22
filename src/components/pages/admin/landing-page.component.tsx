@@ -45,11 +45,13 @@ export const LandingPage = (): JSX.Element => {
       <View
         backgroundColor="gray-50"
         paddingTop={"size-400"}
-        overflow = {/Mobile|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-          navigator.userAgent,
-        )
-          ? "auto"
-          : "hidden"}
+        overflow={
+          /Mobile|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent,
+          )
+            ? "auto"
+            : "hidden"
+        }
         UNSAFE_style={{
           flex: "1",
         }}

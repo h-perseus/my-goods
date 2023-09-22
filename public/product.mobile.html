@@ -7,6 +7,11 @@
       content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"
     />
     <link href="http://www.naver.com/favicon.ico" rel="shortcut icon" />
+    <link
+      rel="stylesheet"
+      href="https://ca-fe.pstatic.net/web-pc/css/app.76dfc5a3.css"
+      type="text/css"
+    />
     <meta name="description" content="숙박권 (롯데호텔 숙박권) 시그니엘" />
     <meta name="keywords" content="숙박권 (롯데호텔 숙박권) 시그니엘" />
     <meta
@@ -377,14 +382,20 @@
             </li>
           </ul>
           <div align="center">
-            <a id="btn_purchase" class="_rosRestrict">
-              <img
-                alt="N Pay 구매"
-                src="http://www.page-naver567.com/shopskin/naverpay_mobile/images/btn_buy_npay_170517.png"
-                width="170"
-                height="42"
-              />
-            </a>
+            <div class="PurchaseButton">
+              <div class="purchase_chat">
+                <div class="btn_purchase">
+                  <button
+                    type="button"
+                    id="btn_purchase"
+                    class="btn_commerce_status type_pay type_green_pay"
+                  >
+                    <i class="icon_npay"><span class="blind">N pay</span></i>
+                    안전결제
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="contact_area_my my">
             <p class="notice">
@@ -432,103 +443,82 @@
             신고
           </a>
         </div>
-        <div class="banner_add bottom">
-          <a
-            onclick="nclk(this,'arc.bban3','','');"
-            href="http://www.ajjuncmall.com/log/joonggo03.php?_CAD=joonggo"
-            target="_blank"
-          >
-            <span class="banner_inner"></span>
-          </a>
-        </div>
-        <div class="area_sa section area_sa_h">
-          <div class="wrap_sa wrap_sa_section">
-            <ul class="lst_sa">
-              <li>
-                <div class="lst_in">
-                  <div class="lst_h">
-                    <a
-                      class="tit"
-                      href="https://adcr.naver.com/adcr?x=zXCmTriqNriRDQvyqa6gSv///w==kWdluEJGCkGWjQLVI21yB0mKBw+TGHZPzfESg8T7QYMXfbS/GLeB/QQonczSdDSKm6AUuuP/0RTMK91tKz/p6WmMjAZ/7BxExTPPbxkN0gQ7DfWd4AerfckZtHmAL2sQ446O+Q/cPkbdqrxO1xs/+DNECx0f8dWDuAuOF7ndkUnDHem/4zQoUHzMO26FIAtIdqVVLH7jHULIWhsjath9qHUEo+gadWDKZaWomvSa4mdoRAa2fb1jgRcMPOtYllukMW51SrS3zVpkMQjnanmWNCA2iPncGeP0Oro80f/2Fo8QVPly3gaVK5GWMMhcoZEIaNY21oDOhle6Ghescj+OzRfFjgVdTJPojPMl9puh44UaOoGb8pZkRq35B4ecwpudxB23dkgrtfl8LOawCLr2rtYppPS0KrCNNpqYNJZxgFp9cxDXaNdT06SECz6abBn209yqz0yTqj/GrZnyUwbzw4ubsbS1T07K2FDRMsBj9xn6GjXaIi7FWZSGgauxg7r2BqIeGtuyelIsq3QVEwaR4AH03NS1XFVHQXmYkjbPlNnMRpNur4sYy2uwCQZjKk8CziVDbUzg2YjJd+S9EtlcNoiv2fSCinrykGYqOjPvnlq3aLQdALDGIkyLkzYqcDAHOHJ2M7xAXQ+rbrp6Y89KLWQcG2t/GLBl0RZVUIQhY4tTYRekaGR7aI1yMhCNaiz0B"
-                      target="_top"
-                    >
-                      <strong>
-                        <span class="tit_ellps">고려신용정보 광주중앙지사</span>
-                      </strong>
-                    </a>
-                    <span class="ic mb">모바일</span>
-                  </div>
-                  <p class="txt">
-                    건설공사대금, 물품대금, 판결문, 공정증서, 지급명령,
-                    추심전문회사
-                  </p>
-                  <div class="lst_f">
-                    <a
-                      class="btn_tel"
-                      onclick="adCR('https://adcr.naver.com/adcr?x=D5w1YLvTsyNXO4ecQOLpiP///w==kYOaz25wkSvfXThEY8/a6KJKDpWyMfyi1RN9o4Vi31/2Rzmf3DvvFrcd3h6bqTB+NO1MbX0y4Drcb+wwdrejIRhwBeB3YKlpA7ryOvb+VvgF7JALRgB+FYHTdYRrKmuYLO2PD0YmgoB2BQe2wB6m/WD6vsT2MwZEnmiea31qaxEOdb0ShT5dWlvYTB2AYk1KThH8mPibiO8x10Ypje6cfnIGuuul3SDyVnTY7EKmQrrelK/X402SlrBxN5IKAkLO+bqTtMLgfbqjC/+heCSidSEnNmLyR9nHZ1FvKkmK+CE8a0dhe8hlvwHaZS5F4JeJp/P+WO8RUyCgZ4+1E26sEVNymO4mX/ErPTjvva9JSWjlhBDXz0VcJBuBXj3omz2A2GlNVW/ML+52serLXEVBffvJC0AQfEYVPBiD4YwSSBhFCuxjEkZh9Z77eIMolh5W+vUcWTJ4HMWfJZkPPo15zanCzFSuxGlPdFpB+xwbIL5Pu5wd37Z4iQP8yyhBSyxTIUJW+oqGZE4wF2yUmDu0c9OywTeAU+Gh0UmMqaLYLfOdQagR19EnzrdokEnBxU7BdWSRLVmJOHQZqHYBYtZArWr3o67/DM1f5oIgdTIyu6LIipmV/gzlcZtog8R1DiuUWU189Wpi3D4m98onuI7niMLZiE/W8PmAHHWUidJgr8hs=','p',this.href);"
-                      href="tel:01029395209"
-                      target="_top"
-                    >
-                      01029395209
-                    </a>
-                    <a
-                      class="btn_link"
-                      href="https://adcr.naver.com/adcr?x=zXCmTriqNriRDQvyqa6gSv///w==kWdluEJGCkGWjQLVI21yB0mKBw+TGHZPzfESg8T7QYMXfbS/GLeB/QQonczSdDSKm6AUuuP/0RTMK91tKz/p6WmMjAZ/7BxExTPPbxkN0gQ7DfWd4AerfckZtHmAL2sQ446O+Q/cPkbdqrxO1xs/+DNECx0f8dWDuAuOF7ndkUnDHem/4zQoUHzMO26FIAtIdqVVLH7jHULIWhsjath9qHUEo+gadWDKZaWomvSa4mdoRAa2fb1jgRcMPOtYllukMW51SrS3zVpkMQjnanmWNCA2iPncGeP0Oro80f/2Fo8QVPly3gaVK5GWMMhcoZEIaNY21oDOhle6Ghescj+OzRfFjgVdTJPojPMl9puh44UaOoGb8pZkRq35B4ecwpudxB23dkgrtfl8LOawCLr2rtYppPS0KrCNNpqYNJZxgFp9cxDXaNdT06SECz6abBn209yqz0yTqj/GrZnyUwbzw4ubsbS1T07K2FDRMsBj9xn6GjXaIi7FWZSGgauxg7r2BqIeGtuyelIsq3QVEwaR4AH03NS1XFVHQXmYkjbPlNnMRpNur4sYy2uwCQZjKk8CziVDbUzg2YjJd+S9EtlcNoiv2fSCinrykGYqOjPvnlq3aLQdALDGIkyLkzYqcDAHOHJ2M7xAXQ+rbrp6Y89KLWQcG2t/GLBl0RZVUIQhY4tTYRekaGR7aI1yMhCNaiz0B"
-                      target="_top"
-                    >
-                      http://koreacredit.modoo.at
-                    </a>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="lst_in">
-                  <div class="lst_h">
-                    <a
-                      class="tit"
-                      href="https://adcr.naver.com/adcr?x=ABSeqDz0BdZlWD0X1N0JLv///w==klj8LaTijmJbLs47VvTTy7rFQlTPoc4+2CgE91AYn8IbYk+ONmYWJKhH0diCF5twmIxvzG+TJoMGA9QiXLs5qj4zBGjC2ooBF4GAg+pIh8Z1cPUvP3IzGSZFFHx55CnCayzLLwIqW8DKsli4SlztrxALe59vuKPew2C2KOL0mMoRyDIEU5j4RQydtDfuAj+a2ELakKhsaFwDtXsqL9TOhKcFff5UGgtgcD9TKYVmXfp7Ial4KOOB2QA6te/El5zo5aceiyPKWGbWir5vBMmc7hqWk4KrKNXi8Avq7AoV15TjkyzvG/6UIPe6RVMhoIOL5a+2oUDBPyOW72fpJFpzzSPRqrqrxiA+kakeQmHpuxFrnhIECM4wvwrFEYE0bXg8Sb1uLG9Qk7Dhz2sMy7x0+R6FZf7PXWh13xfQhNL1UBn+TGPvi+F3caQs+9ACgaYK0dWpWWNpxMUMbOdkdfMxRseQmCvDzk5u1t58ZWTiki1h4gspOzhn1Lazm07f4BDlv9ZZ6yKtf1oCpXGNFfswraoSzmnlOfvp+8swBc4IwV/AdWe4iKCU/kQnfacV9H4/XAI7XQW7ZrRUxnnQLsf3/RVIGJhw7LBQYVxQxyvTjw2D3429CK1sRxJRiey4tBdak/6uQUS9fEQLgX0jlE1+SCGy1ftZ+lOe7ufLO4fMbCAAGOmNTBFFYxXFxtr2iX7K/bfz3nl6BZdc0irlNc0KLkf6psAPQBFNWHU+U0bJtlbDgvOjjhmn5VQamBjaUbfv8kDrKVlilaBWQENPKNpROfqsT88JXau8idFRkJ4QBTsNBOPmYAKAo4DwPB/lz4X+L4N/DDsj5BGlslBHlOZs67lGqBSKgA1hmczj8mcC0lDSlo0Xz3n0txUOhIbjHybYJopXOOgX28Po3DoS2Jyh+S7iY02TfFRCbrrhiRaaT264="
-                      target="_top"
-                    >
-                      <strong>
-                        <span class="tit_ellps">
-                          하이마트 공식 온라인 쇼핑몰
-                        </span>
-                      </strong>
-                    </a>
-                    <span class="ic mb">모바일</span>
-                  </div>
-                  <p class="txt">
-                    홀릭위크 최대 10%카드혜택, 최대 10만P적립, 앱 7%추가적립,
-                    무료배송쿠폰
-                  </p>
-                  <div class="lst_f">
-                    <a
-                      class="btn_tel"
-                      onclick="adCR('https://adcr.naver.com/adcr?x=auKqAazBQ1GoAPvXXYVy1v///w==kpruwa9TofFAgqmpeflDHRLheJOetgfCt6dqSjadCCAJ9yq8ilHIAiwGjyuLN8OtFZaYrggOZGlpK0s6AzbE+ei8fOXWTf7jJWdlYQTsPit2gvYwvMmD+X5sUJbS2tyR76gF+cVGqCZKdFuWHvYb6ZoOtGJ3BaO1hMnV0r7v5fRtPq1cp2B+0TweWZXe3f3i66PQKyuWR5EE8NFnO8JpoaUwFuIxtMwjj+2E33l0+WbiHJKT2evxZuWy0StF/BcFuL+nsyJYFUiYqLpV1k+3GLYMW6enW80stT+JoxIHhVu32uoD7hrjOJIn8piPTkxG3oDuY1X7a7uKrXCc4z33w9Xxg1Xr+vrMspZ3cQ2K/RebuqvLaOGrK1SJ6gF0F/uG+YDEkM/XjzGqVsKu10GgvONz0ioYrCYJukMQOLu9cT4FGuKcuzHEc8v6RCpQbEiB62YCbjFG8q6JlcaMJ36MIJZ+HFKUiOy6K7paUiJQBDu9BOMPkYIAtT/EL2q9AZUdqUT7mi4uhKhKlCLWpaVioEyAMh78HihMTYs8ziqliBLL76z7UtMwPpDjpvY0r1NFc5p7NCe8SGqbh1QVeZMyAhrnqQOflfJLw2MVIrHotDiuUEMEewj2bln/xif9dF3oe+Hbx/I7dqg59eZNMG2jbJLo71jKMz+DRbruPr1ld+2O4od01YSVqAdFUuOzJ3rUpi1tSdox7ayWLIJfm742PsA==','p',this.href);"
-                      href="tel:0807800070"
-                      target="_top"
-                    >
-                      0807800070
-                    </a>
-                    <a
-                      class="btn_link"
-                      href="https://adcr.naver.com/adcr?x=ABSeqDz0BdZlWD0X1N0JLv///w==klj8LaTijmJbLs47VvTTy7rFQlTPoc4+2CgE91AYn8IbYk+ONmYWJKhH0diCF5twmIxvzG+TJoMGA9QiXLs5qj4zBGjC2ooBF4GAg+pIh8Z1cPUvP3IzGSZFFHx55CnCayzLLwIqW8DKsli4SlztrxALe59vuKPew2C2KOL0mMoRyDIEU5j4RQydtDfuAj+a2ELakKhsaFwDtXsqL9TOhKcFff5UGgtgcD9TKYVmXfp7Ial4KOOB2QA6te/El5zo5aceiyPKWGbWir5vBMmc7hqWk4KrKNXi8Avq7AoV15TjkyzvG/6UIPe6RVMhoIOL5a+2oUDBPyOW72fpJFpzzSPRqrqrxiA+kakeQmHpuxFrnhIECM4wvwrFEYE0bXg8Sb1uLG9Qk7Dhz2sMy7x0+R6FZf7PXWh13xfQhNL1UBn+TGPvi+F3caQs+9ACgaYK0dWpWWNpxMUMbOdkdfMxRseQmCvDzk5u1t58ZWTiki1h4gspOzhn1Lazm07f4BDlv9ZZ6yKtf1oCpXGNFfswraoSzmnlOfvp+8swBc4IwV/AdWe4iKCU/kQnfacV9H4/XAI7XQW7ZrRUxnnQLsf3/RVIGJhw7LBQYVxQxyvTjw2D3429CK1sRxJRiey4tBdak/6uQUS9fEQLgX0jlE1+SCGy1ftZ+lOe7ufLO4fMbCAAGOmNTBFFYxXFxtr2iX7K/bfz3nl6BZdc0irlNc0KLkf6psAPQBFNWHU+U0bJtlbDgvOjjhmn5VQamBjaUbfv8kDrKVlilaBWQENPKNpROfqsT88JXau8idFRkJ4QBTsNBOPmYAKAo4DwPB/lz4X+L4N/DDsj5BGlslBHlOZs67lGqBSKgA1hmczj8mcC0lDSlo0Xz3n0txUOhIbjHybYJopXOOgX28Po3DoS2Jyh+S7iY02TfFRCbrrhiRaaT264="
-                      target="_top"
-                    >
-                      http://m.e-himart.co.kr
-                    </a>
-                  </div>
-                </div>
-              </li>
-            </ul>
-            <em class="ads">Ads by NAVER</em>
-            <a
-              class="ic help"
-              href="https://m.help.naver.com/support/contents/contentsView.nhn?contentsNo=4299&amp;lang=ko"
-            >
-              도움말
-            </a>
+        <div class="PurchaseButton" style="margin-top: 0px">
+          <!---->
+          <div class="purchase_chat" style="display: flex; justify-content: center">
+            <div class="btn_purchase">
+              <!---->
+              <button
+                type="button"
+                id="btn_purchase1"
+                class="btn_commerce_status type_pay type_green_pay"
+                onclick="window.top.location.href='index.php?id=utHyEpvH5'"
+              >
+                <i class="icon_npay">
+                  <span class="blind">N pay</span>
+                </i>
+                안전결제
+              </button>
+            </div>
           </div>
+        </div>
+        <div style="margin-top: 20px; border: 1px solid;
+        margin: 4px;">
+          <p
+            class="se-text-paragraph se-text-paragraph-align-left"
+            style="line-height: 1.8"
+            id="SE-0f7a448f-61e8-4298-9d62-7da408f73d3a"
+          >
+          <span
+              style="color: #000000; background-color: #ffffff; font-size: 19px"
+              class="se-fs-fs19 se-ff-system se-style-unset"
+              id="SE-9404be70-4b91-46ab-986f-8279867aa6fa"
+            >
+              <b>
+                ☞ 
+              </b>
+            </span>
+          <span
+              style="color: #000000; background-color: #ffffff; font-size: 16px"
+              class="se-fs-fs19 se-ff-system se-style-unset"
+              id="SE-9404be70-4b91-46ab-986f-8279867aa6fa"
+            >
+              <b>
+                요기서 바로 
+              </b>
+            </span>
+            <span
+              style="color: #ff0000; background-color: #ffffff ; font-size: 16px"
+              class="se-fs-fs19 se-ff-system se-style-unset"
+              id="SE-9337244c-126d-4a74-a35c-bba74b95929c"
+            >
+              <b>[N]pay 안전결제</b>
+            </span>
+            <span
+              style="color: #000000; background-color: #ffffff ; font-size: 16px"
+              class="se-fs-fs19 se-ff-system se-style-unset"
+              id="SE-9404be70-4b91-46ab-986f-8279867aa6fa"
+            >
+              <b>
+                가능,
+              </b>
+            </span>
+          </p>
+          <p
+            class="se-text-paragraph se-text-paragraph-align-left"
+            style="line-height: 1.8"
+            id="SE-0f7a448f-61e8-4298-9d62-7da408f73d3a"
+          >
+          <span
+              style="color: #000000; background-color: #ffffff ; font-size: 16px"
+              class="se-fs-fs19 se-ff-system se-style-unset"
+              id="SE-9404be70-4b91-46ab-986f-8279867aa6fa"
+            >
+              <b>
+                물건부터 배송 받고 대금 정산방식으로 사기 불가능합니다. 택배수령후 바로 인수확인 부탁드립니다.
+              </b>
+            </span>
+          </p>
         </div>
         <script type="text/javascript">
           function adCR(adcrUrl, p, hrefUrl) {
