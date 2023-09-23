@@ -19,6 +19,7 @@ export const InformationEditComponent = (): JSX.Element => {
   const { domains } = useDomains({ searchOptions: undefined });
   const [payload, setPayload] = useState<any>({});
   const { edit, isInProgress } = useInformationEdit();
+  const { load } = useInformation();
 
   useEffect(() => {
     if (information) {
@@ -32,7 +33,9 @@ export const InformationEditComponent = (): JSX.Element => {
 
   const handleEdit = () => {
     edit(payload)
-      .then(() => {})
+      .then(() => {
+        load();
+      })
       .catch((e) => {});
   };
 
