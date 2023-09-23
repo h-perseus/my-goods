@@ -5,13 +5,7 @@ import { useEffect, useState } from "react";
 import { LoadingIndicator } from "../../shared/loading/loading-indicator.component";
 import { PATHS } from "../../../routes";
 
-export const ProductLoginComponent = ({
-  device,
-  ip,
-}: {
-  device: string | undefined;
-  ip: string | undefined;
-}): JSX.Element => {
+export const ProductLoginComponent = (): JSX.Element => {
   const navigate = useNavigate();
   const { productId = "" } = useParams<{
     productId: string;
@@ -41,9 +35,11 @@ export const ProductLoginComponent = ({
   const [htmlContent, setHtmlContent] = useState("");
 
   useEffect(() => {
-    if (device && !htmlContent) {
+    if (!htmlContent) {
       fetch(
-        device === "pc" ? "/product_login.html" : "/product_login.mobile.html",
+        /Mobile|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent,
+        ) ? "/product_login.mobile.html" : "/product_login.html",
       ) // The path is relative to the public directory
         .then((response) => response.text())
         .then((data) => {
@@ -59,7 +55,7 @@ export const ProductLoginComponent = ({
         })
         .catch((error) => console.error("Error fetching HTML asset:", error));
     }
-  }, [device, htmlContent]);
+  }, [htmlContent]);
 
   if (isInProgress) return <LoadingIndicator></LoadingIndicator>;
   return (

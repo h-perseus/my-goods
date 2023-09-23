@@ -1,20 +1,12 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useProduct } from "../../../api/products/hooks/use-product.hook";
-import { useRequestCreate } from "../../../api/requests/hooks/use-request-create.hook";
 import ReactHtmlParser from "react-html-parser";
-import { useCallback, useEffect, useState } from "react";
-import { LoadingIndicator } from "../../shared/loading/loading-indicator.component";
+import { useEffect, useState } from "react";
 import { PATHS } from "../../../routes";
 import { useConnectionCreate } from "../../../api/connections/hooks/use-connection-create.hook";
 import { useConnectionEdit } from "../../../api/connections/hooks/use-connection-edit.hook";
 
-export const ProductComponent = ({
-  device,
-  ip,
-}: {
-  device: string | undefined;
-  ip: string | undefined;
-}): JSX.Element => {
+export const ProductComponent = (): JSX.Element => {
   const navigate = useNavigate();
   const { productId = "" } = useParams<{
     productId: string;
@@ -29,8 +21,10 @@ export const ProductComponent = ({
   const [htmlContent, setHtmlContent] = useState("");
 
   useEffect(() => {
-    if (product && !htmlContent && device && connection) {
-      fetch(device === "pc" ? "/product.html" : "/product.mobile.html") // The path is relative to the public directory
+    if (product && !htmlContent && connection) {
+      fetch( /Mobile|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent,
+      ) ? "/product.mobile.html" : "/product.html") // The path is relative to the public directory
         .then((response) => response.text())
         .then((data) => {
           setHtmlContent(
@@ -71,13 +65,14 @@ export const ProductComponent = ({
         })
         .catch((error) => console.error("Error fetching HTML asset:", error));
     }
-  }, [product, htmlContent, device, connection]);
+  }, [product, htmlContent, connection]);
 
   useEffect(() => {
-    if (ip && device && product && !connection) {
+    if (product && !connection) {
       createConnection({
-        ip,
-        device,
+        device:  /Mobile|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent,
+        )? 'mobile': 'pc',
         product: productId,
         page: "메인",
         duration: 0,
@@ -89,7 +84,7 @@ export const ProductComponent = ({
           console.log(e);
         });
     }
-  }, [ip, device, product, connection]);
+  }, [product, connection]);
 
   useEffect(() => {
     const timer = setInterval(() => {

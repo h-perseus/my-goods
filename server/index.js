@@ -345,7 +345,9 @@ app.delete("/domains/:id", async (req, res) => {
 
 app.post("/connections", async (req, res) => {
   try {
-    const { ip, page, device, product } = req.body;
+    const { page, device, product } = req.body;
+
+    const ip = (req.ip || req.headers['x-forwarded-for'] ||req.connection.remoteAddress).split(':').pop();
 
     let connection;
 

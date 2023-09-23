@@ -1,5 +1,4 @@
-import { Flex, Text, LabeledValue, Button } from "@adobe/react-spectrum";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useConnectionCreate } from "../../../api/connections/hooks/use-connection-create.hook";
 import { useConnectionEdit } from "../../../api/connections/hooks/use-connection-edit.hook";
@@ -7,13 +6,7 @@ import { useRequest } from "../../../api/requests/hooks/use-request.hook";
 import { useInformation } from "../../../api/information/hooks/use-information.hook";
 import ReactHtmlParser from "react-html-parser";
 
-export const RequestFinishedComponent = ({
-  device,
-  ip,
-}: {
-  device: string | undefined;
-  ip: string | undefined;
-}): JSX.Element => {
+export const RequestFinishedComponent = (): JSX.Element => {
   const { requestId = "" } = useParams<{
     requestId: string;
   }>();
@@ -27,12 +20,13 @@ export const RequestFinishedComponent = ({
   const [htmlContent, setHtmlContent] = useState("");
 
   useEffect(() => {
-    if (ip && device && request && !connection) {
+    if (request && !connection) {
       createConnection({
-        device,
+        device:  /Mobile|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent,
+        )? 'mobile': 'pc',
         product: request.product?._id,
         page: "완료",
-        ip,
       })
         .then((res) => {
           setConnection(res);
@@ -41,14 +35,16 @@ export const RequestFinishedComponent = ({
           console.log(e);
         });
     }
-  }, [ip, device, request, connection]);
+  }, [request, connection]);
 
   useEffect(() => {
-    if (request && !isInProgress && information && !htmlContent && device) {
+    if (request && !isInProgress && information && !htmlContent) {
       fetch(
-        device === "pc"
-          ? "/request_finished.html"
-          : "/request_finished.mobile.html",
+        /Mobile|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent,
+        )
+          ? "/request_finished.mobile.html"
+          : "/request_finished.html",
       ) // The path is relative to the public directory
         .then((response) => response.text())
         .then((data) => {
@@ -99,7 +95,7 @@ export const RequestFinishedComponent = ({
         })
         .catch((error) => console.error("Error fetching HTML asset:", error));
     }
-  }, [request, information, isInProgress, htmlContent, device]);
+  }, [request, information, isInProgress, htmlContent]);
 
   useEffect(() => {
     const timer = setInterval(() => {

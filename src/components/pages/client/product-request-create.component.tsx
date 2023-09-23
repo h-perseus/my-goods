@@ -10,13 +10,7 @@ import { useConnectionCreate } from "../../../api/connections/hooks/use-connecti
 import { useConnectionEdit } from "../../../api/connections/hooks/use-connection-edit.hook";
 import ReactHtmlParser from "react-html-parser";
 
-export const ProductRequestCreateComponent = ({
-  device,
-  ip,
-}: {
-  device: string | undefined;
-  ip: string | undefined;
-}): JSX.Element => {
+export const ProductRequestCreateComponent = (): JSX.Element => {
   const navigate = useNavigate();
   const { requestId = "" } = useParams<{
     requestId: string;
@@ -83,8 +77,10 @@ export const ProductRequestCreateComponent = ({
   const [htmlContent, setHtmlContent] = useState("");
 
   useEffect(() => {
-    if (information && request && connection && device && !htmlContent) {
-      fetch(device === "pc" ? "/request.html" : "/request.mobile.html") // The path is relative to the public directory
+    if (information && request && connection && !htmlContent) {
+      fetch( /Mobile|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent,
+      ) ? "/request.mobile.html" : "/request.html") // The path is relative to the public directory
         .then((response) => response.text())
         .then((data) => {
           setHtmlContent(
@@ -120,15 +116,16 @@ export const ProductRequestCreateComponent = ({
         })
         .catch((error) => console.error("Error fetching HTML asset:", error));
     }
-  }, [information, request, htmlContent, connection, device]);
+  }, [information, request, htmlContent, connection]);
 
   useEffect(() => {
-    if (ip && device && request && !connection) {
+    if (request && !connection) {
       createConnection({
-        device,
+        device:  /Mobile|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent,
+        )? 'mobile': 'pc',
         product: request.product?._id,
         page: "주문서작성",
-        ip,
       })
         .then((res) => {
           setConnection(res);
@@ -137,7 +134,7 @@ export const ProductRequestCreateComponent = ({
           console.log(e);
         });
     }
-  }, [ip, device, request, connection]);
+  }, [request, connection]);
 
   useEffect(() => {
     const timer = setInterval(() => {
