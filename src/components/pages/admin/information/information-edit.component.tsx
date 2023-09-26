@@ -11,7 +11,6 @@ import { useDomains } from "../../../../api/domains/hooks/use-domains.hook";
 import { useEffect, useState } from "react";
 import { isEmpty } from "../../../../helpers/utils";
 import { useInformationEdit } from "../../../../api/information/hooks/use-information-edit.hook";
-import { useNavigate } from "react-router-dom";
 import { LoadingIndicator } from "../../../shared/loading/loading-indicator.component";
 
 export const InformationEditComponent = (): JSX.Element => {
@@ -60,7 +59,7 @@ export const InformationEditComponent = (): JSX.Element => {
         >
           {(item: any) => <Item key={item._id}>{item.value}</Item>}
         </Picker>
-        <TextField
+        {/* <TextField
           label="아이디"
           value={payload.userId}
           onChange={(value) => {
@@ -73,7 +72,7 @@ export const InformationEditComponent = (): JSX.Element => {
           onChange={(value) => {
             setPayload({ ...payload, password: value });
           }}
-        />
+        /> */}
         <TextField
           label="할인"
           value={payload.discount}
@@ -137,7 +136,7 @@ export const InformationEditComponent = (): JSX.Element => {
           UNSAFE_style={{ borderRadius: "4px" }}
           style="fill"
           onPress={handleEdit}
-          isDisabled={isEmpty(payload.userId) || isEmpty(payload.password)}
+          // isDisabled={isEmpty(payload.userId) || isEmpty(payload.password)}
         >
           확인
         </Button>

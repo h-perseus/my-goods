@@ -21,7 +21,7 @@ export const LandingPage = (): JSX.Element => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (localStorage.getItem(LOCAL_STORAGE_KEYS.AUTHORIZED) !== "true") {
+    if (!localStorage.getItem(LOCAL_STORAGE_KEYS.AUTHORIZED)) {
       navigate("/login");
     }
   }, []);

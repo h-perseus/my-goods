@@ -15,6 +15,7 @@ import { LoadingIndicator } from "../../../shared/loading/loading-indicator.comp
 import { useNavigate } from "react-router-dom";
 import { ROUTER_PATHS } from "../../../../routes";
 import { isEmpty } from "../../../../helpers/utils";
+import { LOCAL_STORAGE_KEYS } from "../../../../helpers/local-storage-keys";
 
 export const ProductCreateComponent = (): JSX.Element => {
   const navigate = useNavigate();
@@ -27,7 +28,7 @@ export const ProductCreateComponent = (): JSX.Element => {
   }, []);
 
   const handleCreate = () => {
-    create(payload)
+    create({...payload, admin: localStorage.getItem(LOCAL_STORAGE_KEYS.AUTHORIZED)})
       .then(() => {
         navigate(ROUTER_PATHS.ADMIN + ROUTER_PATHS.PRODUCTS);
       })

@@ -140,7 +140,7 @@ export const ProductList = ({
                       {information &&
                         information.domain &&
                         information.domain.value}
-                      /products/{item["_id"]}
+                      /products/{item["code"]}
                       <ActionButton
                         isQuiet
                         onPress={() => {
@@ -149,7 +149,7 @@ export const ProductList = ({
                               information &&
                               information.domain &&
                               information.domain.value
-                            }/products/${item["_id"]}`,
+                            }/products/${item["code"]}`,
                           );
                         }}
                       >

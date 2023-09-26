@@ -1,13 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ROUTER_PATHS } from "../../../routes";
-import { Flex, Heading } from "@adobe/react-spectrum";
+import { Flex, Heading, ActionButton } from "@adobe/react-spectrum";
 import classes from "./header.module.scss";
+import { removeLocalStorageKey } from "../../../helpers/utils";
+import { LOCAL_STORAGE_KEYS } from "../../../helpers/local-storage-keys";
 
-export const LandingPageHeader = ({
-  grayscale = false,
-}: {
-  grayscale?: boolean;
-}): JSX.Element => {
+export const LandingPageHeader = (): JSX.Element => {
+  const navigate = useNavigate();
+
   return (
     <>
       <Flex
@@ -32,6 +32,10 @@ export const LandingPageHeader = ({
             </Heading>
           </Link>
         </Flex>
+        <ActionButton isQuiet staticColor="white" onPress={() => {
+          removeLocalStorageKey(LOCAL_STORAGE_KEYS.AUTHORIZED);
+          navigate("/login");
+        }}>로그아웃</ActionButton>
       </Flex>
     </>
   );

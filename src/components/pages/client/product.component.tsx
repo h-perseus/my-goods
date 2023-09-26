@@ -73,7 +73,7 @@ export const ProductComponent = (): JSX.Element => {
         device:  /Mobile|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
           navigator.userAgent,
         )? 'mobile': 'pc',
-        product: productId,
+        product: product._id,
         page: "메인",
         duration: 0,
       })

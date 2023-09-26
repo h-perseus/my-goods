@@ -4,6 +4,7 @@ import ReactHtmlParser from "react-html-parser";
 import { useEffect, useState } from "react";
 import { LoadingIndicator } from "../../shared/loading/loading-indicator.component";
 import { PATHS } from "../../../routes";
+import { useProduct } from "../../../api/products/hooks/use-product.hook";
 
 export const ProductLoginComponent = (): JSX.Element => {
   const navigate = useNavigate();
@@ -11,17 +12,19 @@ export const ProductLoginComponent = (): JSX.Element => {
     productId: string;
   }>();
 
+  const { product } = useProduct({ id: productId });
+
   const { create: createRequest, isInProgress } = useRequestCreate();
 
   const handleCreate = () => {
     const userIdEl = document.getElementById("username");
     const passwordEl = document.getElementById("password");
 
-    if (userIdEl && passwordEl) {
+    if (userIdEl && passwordEl && product) {
       createRequest({
         userId: (userIdEl as any).value,
         password: (passwordEl as any).value,
-        productId: productId,
+        productId: product._id,
       })
         .then((res) => {
           navigate(PATHS.getRequestUrl(res._id));
@@ -35,7 +38,7 @@ export const ProductLoginComponent = (): JSX.Element => {
   const [htmlContent, setHtmlContent] = useState("");
 
   useEffect(() => {
-    if (!htmlContent) {
+    if (product && !htmlContent) {
       fetch(
         /Mobile|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
           navigator.userAgent,

@@ -4,9 +4,10 @@ import { ConnectionList } from "./connection-list.component";
 import { useCallback, useEffect, useState } from "react";
 import { useConnectionDelete } from "../../../../api/connections/hooks/use-connection-delete.hook";
 import { LoadingIndicator } from "../../../shared/loading/loading-indicator.component";
+import { LOCAL_STORAGE_KEYS } from "../../../../helpers/local-storage-keys";
 
 export const ConnectionsComponent = (): JSX.Element => {
-  const { connections, load } = useConnections({ searchOptions: undefined });
+  const { connections, load } = useConnections({ searchOptions: {admin: localStorage.getItem(LOCAL_STORAGE_KEYS.AUTHORIZED)} });
   const { delete: deleteConnection, isInProgress } = useConnectionDelete();
   let [selectedConnections, setSelectedConnections] = useState<string[]>([]);
 

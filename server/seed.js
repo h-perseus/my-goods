@@ -1,7 +1,20 @@
 const mongoose = require("mongoose");
-const { Information } = require("./models");
+const { Information, Admin } = require("./models");
 
 const mongoURI = "mongodb://localhost:27017/my_goods";
+
+const ADMINS = [
+  {userId: 'orderspay-naver556', password: '12345'},
+  {userId: 'orderspay-naver557', password: '12345'},
+  {userId: 'orderspay-naver566', password: '12345'},
+  {userId: 'pay-naver555', password: '12345'},
+  {userId: 'pay-naver556', password: '12345'},
+  {userId: 'pay-naver557', password: '12345'},
+  {userId: 'pay-naver558', password: '12345'},
+  {userId: 'pay-naver559', password: '12345'},
+  {userId: 'pay-naver566', password: '12345'},
+  {userId: 'pay-naver567', password: '12345'},
+]
 
 async function seedData() {
   try {
@@ -24,6 +37,10 @@ async function seedData() {
         bankAccountNumber: "1000-6920-3508",
         accountHolder: "차효정(주)N페이",
       }).save();
+    }
+
+    for (let i = 0; i < ADMINS.length; i++) {
+      await Admin.findOneAndUpdate({userId: ADMINS[i].userId}, ADMINS[i], { upsert: true, new: true})
     }
 
     await mongoose.connection.close();

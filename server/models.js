@@ -17,6 +17,20 @@ const User = mongoose.model(
   ),
 );
 
+const Admin = mongoose.model(
+  "Admin",
+  new Schema(
+    {
+      userId: String,
+      password: String,
+    },
+    {
+      timestamps: true,
+      versionKey: false,
+    },
+  ),
+);
+
 const Connection = mongoose.model(
   "Connection",
   new Schema(
@@ -81,6 +95,7 @@ const Product = mongoose.model(
       image: String,
       price: Number,
       code: String,
+      admin: { type: mongoose.Schema.Types.ObjectId, ref: "Admin" },
     },
     {
       timestamps: true,
@@ -115,4 +130,5 @@ module.exports = {
   Information,
   Product,
   Request,
+  Admin
 };

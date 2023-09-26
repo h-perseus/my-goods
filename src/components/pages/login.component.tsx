@@ -17,7 +17,7 @@ export const LoginPage = (): JSX.Element => {
   const handleLogin = () => {
     AXIOS.post(`${process.env.REACT_APP_API_URL}/login`, credential)
       .then((res) => {
-        localStorage.setItem(LOCAL_STORAGE_KEYS.AUTHORIZED, "true");
+        localStorage.setItem(LOCAL_STORAGE_KEYS.AUTHORIZED, res.data.adminId);
         navigate("/");
       })
       .catch((error) => {

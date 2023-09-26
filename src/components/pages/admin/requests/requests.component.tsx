@@ -4,9 +4,10 @@ import { RequestList } from "./request-list.component";
 import { useRequestDelete } from "../../../../api/requests/hooks/use-request-delete.hook";
 import { useCallback, useState } from "react";
 import { LoadingIndicator } from "../../../shared/loading/loading-indicator.component";
+import { LOCAL_STORAGE_KEYS } from "../../../../helpers/local-storage-keys";
 
 export const RequestsComponent = (): JSX.Element => {
-  const { requests, load } = useRequests({ searchOptions: undefined });
+  const { requests, load } = useRequests({ searchOptions: {admin: localStorage.getItem(LOCAL_STORAGE_KEYS.AUTHORIZED)} });
   const { delete: deleteRequest, isInProgress } = useRequestDelete();
   let [selectedRequests, setSelectedRequests] = useState<string[]>([]);
 

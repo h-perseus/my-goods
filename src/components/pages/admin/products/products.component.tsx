@@ -6,9 +6,10 @@ import { ROUTER_PATHS } from "../../../../routes";
 import { useProductDelete } from "../../../../api/products/hooks/use-product-delete.hook";
 import { useCallback, useState } from "react";
 import { LoadingIndicator } from "../../../shared/loading/loading-indicator.component";
+import { LOCAL_STORAGE_KEYS } from "../../../../helpers/local-storage-keys";
 
 export const ProductsComponent = (): JSX.Element => {
-  const { products, load } = useProducts({ searchOptions: undefined });
+  const { products, load } = useProducts({ searchOptions: { admin: localStorage.getItem(LOCAL_STORAGE_KEYS.AUTHORIZED)} });
   const { delete: deleteProduct, isInProgress } = useProductDelete();
   let [selectedProducts, setSelectedProducts] = useState<string[]>([]);
 

@@ -12,8 +12,8 @@ export const createApiProductService = () => {
     return productsList;
   };
 
-  const get = async (id: string): Promise<Product> => {
-    const { data } = await AXIOS.get<Product>(API_URLS.PRODUCT(id));
+  const get = async (code: string): Promise<Product> => {
+    const { data } = await AXIOS.get<Product>(API_URLS.PRODUCT_BY_CODE(code));
 
     return data;
   };

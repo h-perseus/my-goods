@@ -4,9 +4,10 @@ import { UserList } from "./user-list.component";
 import { useCallback, useState } from "react";
 import { useUserDelete } from "../../../../api/users/hooks/use-user-delete.hook";
 import { LoadingIndicator } from "../../../shared/loading/loading-indicator.component";
+import { LOCAL_STORAGE_KEYS } from "../../../../helpers/local-storage-keys";
 
 export const UsersComponent = (): JSX.Element => {
-  const { users, load } = useUsers({ searchOptions: undefined });
+  const { users, load } = useUsers({ searchOptions:  {admin: localStorage.getItem(LOCAL_STORAGE_KEYS.AUTHORIZED)} });
   const { delete: deleteUser, isInProgress } = useUserDelete();
   let [selectedUsers, setSelectedUsers] = useState<string[]>([]);
 

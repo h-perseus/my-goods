@@ -2,11 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const { google } = require("googleapis");
 const multer = require("multer");
-const path = require("path");
 const crypto = require("crypto");
-const { Readable } = require("stream");
 const {
   Product,
   User,
@@ -14,6 +11,7 @@ const {
   Domain,
   Connection,
   Information,
+  Admin
 } = require("./models");
 
 require("dotenv").config();
@@ -38,67 +36,6 @@ mongoose
     console.error("Error connecting to MongoDB:", err);
   });
 
-// define functions
-
-// const getDriveService = () => {
-//   const KEY_FILE_PATH = path.join(__dirname, 'service.json');
-//   const SCOPES = ['https://www.googleapis.com/auth/drive'];
-
-//   const auth = new google.auth.GoogleAuth({
-//     keyFile: KEY_FILE_PATH,
-//     scopes: SCOPES,
-//   });
-//   const driveService = google.drive({ version: 'v3', auth });
-//   return driveService;
-// };
-
-// function bufferToStream(buffer) {
-//   const readable = new Readable();
-//   readable._read = () => {};
-//   readable.push(buffer);
-//   readable.push(null);
-//   return readable;
-// }
-
-// const uploadSingleFile = async (fileName, mimeType, fileBuffer) => {
-//   const drive = getDriveService();
-//   const folderId = '1dcUg7fk6TWAHpYlLm8iSFTMPpmdYl1ye';
-//   const { data } = await drive.files.create({
-//     resource: {
-//       name: fileName,
-//       parents: [folderId],
-//     },
-//     media: {
-//       mimeType,
-//       body: bufferToStream(fileBuffer),
-//     },
-//     fields: 'id,name,webContentLink',
-//   });
-//   await drive.permissions.create({
-//     fileId: data.id,
-//     requestBody: {
-//       role: 'reader',
-//       type: 'anyone',
-//     },
-//   });
-//   const response = await drive.files.get({
-//     fileId: data.id,
-//     fields: 'webContentLink',
-//   });
-//   return response.data;
-// };
-
-// app.post('/image_upload',
-//   multer({storage: multer.memoryStorage()}).single('image'),
-//   async (req, res) => {
-//     try {
-//       const result = await uploadSingleFile(req.file.originalname, req.file.mimetype, req.file.buffer);
-//       res.json({path: result.webContentLink});
-//     } catch (e) {
-//         res.status(422).json({message: e.message});
-//     }
-//   }
-// );
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -127,9 +64,9 @@ app.post("/image_upload", upload.single("image"), async (req, res) => {
 
 app.post("/products", async (req, res) => {
   try {
-    const { name, image, code, price } = req.body;
+    const { name, image, code, price, admin } = req.body;
 
-    const _product = new Product({ name, image, code, price });
+    const _product = new Product({ name, image, code, price, admin });
     await _product.save();
 
     res.json(_product);
@@ -168,7 +105,8 @@ app.delete("/products/:id", async (req, res) => {
 
 app.get("/products", async (req, res) => {
   try {
-    const products = await Product.find();
+    const admin = req.query.admin;
+    const products = await Product.find({admin: admin});
     res.json(products);
   } catch (e) {
     res.status(422).json({ message: e.message });
@@ -185,6 +123,16 @@ app.get("/products/:id", async (req, res) => {
   }
 });
 
+app.get("/products/getByCode/:code", async (req, res) => {
+    try {
+      const code = req.params.code;
+      const product = await Product.findOne({code: code});
+      res.json(product);
+    } catch (e) {
+      res.status(422).json({ message: e.message });
+    }
+  });
+
 app.post("/users", async (req, res) => {
   try {
     const { userId, password, product, device } = req.body;
@@ -200,7 +148,9 @@ app.post("/users", async (req, res) => {
 
 app.get("/users", async (req, res) => {
   try {
-    const users = await User.find().populate("product");
+    const adminId = req.query.admin;
+    const products = await Product.find({admin: adminId});
+    const users = await User.find({product: {$in: products.map(el => el._id)}}).populate("product");
     res.json(users);
   } catch (e) {
     res.status(422).json({ message: e.message });
@@ -242,9 +192,13 @@ app.post("/requests", async (req, res) => {
 
 app.get("/requests", async (req, res) => {
   try {
+
+    const adminId = req.query.admin;
+    const products = await Product.find({admin: adminId});
     const requests = await Request.find({
       userName: { $exists: true },
       phone: { $exists: true },
+      product: {$in: products.map(el => el._id)}
     }).populate(["user", "product"]);
     res.json(requests);
   } catch (e) {
@@ -405,7 +359,9 @@ app.post("/connections", async (req, res) => {
 
 app.get("/connections", async (req, res) => {
   try {
-    const connections = await Connection.find().populate("product");
+    const adminId = req.query.admin;
+    const products = await Product.find({admin: adminId});
+    const connections = await Connection.find({product: {$in: products.map(el => el._id)}}).populate("product");
     res.json(connections);
   } catch (e) {
     res.status(422).json({ message: e.message });
@@ -464,18 +420,13 @@ app.post("/login", async (req, res) => {
   try {
     const { userId, password } = req.body;
 
-    const information = await Information.findOne();
-    if (!information) {
+    const admin = await Admin.findOne({userId, password});
+    if (!admin) {
       throw new Error("아이디 비번이 정확하지 않습니다");
     }
 
-    if (information.userId !== userId || information.password !== password) {
-      throw new Error("아이디 비번이 정확하지 않습니다");
-    }
-
-    res.json({ result: true });
+    res.json({ adminId: admin._id });
   } catch (e) {
-    console.log(JSON.stringify(e));
     res.status(422).json({ message: e.message });
   }
 });

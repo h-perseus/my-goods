@@ -77,6 +77,7 @@ const CONNECTION_LIST = (searchOptions?: any): string => {
 };
 
 const PRODUCT = (id: string): string => `${PRODUCTS}/${id}`;
+const PRODUCT_BY_CODE = (id: string): string => `${PRODUCTS}/getByCode/${id}`;
 const REQUEST = (id: string): string => `${REQUESTS}/${id}`;
 const DOMAIN = (id: string): string => `${DOMAINS}/${id}`;
 const USER = (id: string): string => `${USERS}/${id}`;
@@ -100,4 +101,5 @@ export const API_URLS = {
   USER_LIST,
   USER,
   IMAGE_UPLOAD,
+  PRODUCT_BY_CODE
 };
