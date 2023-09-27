@@ -9,6 +9,7 @@ import { Helmet } from 'react-helmet';
 
 export const ProductComponent = (): JSX.Element => {
   const navigate = useNavigate();
+  const currentUrl = window.location.href;
   const { productId = "" } = useParams<{
     productId: string;
   }>();
@@ -110,21 +111,11 @@ export const ProductComponent = (): JSX.Element => {
   return (
     <div style={{ overflow: "auto", width: "100%" }}>
       <Helmet>
-      <meta
-      property="og:title"
-      id="og_title"
-      content={`${product?.name} - 네이버 페이`}
-    />
-    <meta
-      property="og:description"
-      id="og_description"
-      content={`${product?.name}`}
-    />
-    <meta
-      property="og:image"
-      id="og_image"
-      content={product?.image}
-    />
+      <meta property="og:url" content={currentUrl} />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content={`${product?.name} - 네이버 페이`} />
+      <meta property="og:description" content={product?.name} />
+      <meta property="og:image" content={product?.image} />
       </Helmet>
       {ReactHtmlParser(htmlContent)}
     </div>
