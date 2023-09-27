@@ -1,0 +1,37 @@
+@charset "euc-kr";
+
+/*
+  로그인 영역 관련 CSS (title 한글 주석이 깨져서 보인다면, 해당 css 파일의 인코딩 설정을 확인해서 commit 이 필요합니다.)
+*/
+
+.layerpopup *{font-family:'돋움',dotum,Helvetica,sans-serif; margin:0; padding:0;}
+.layerpopup td{font-size:12px; color:#444444;}
+.layerpopup div{font-size:12px; color:#444444;}
+.layerpopup label{cursor:pointer; cursor:hand;}
+.layerpopup a{color:#404040; text-decoration:none;}
+.layerpopup a:hover{text-decoration:underline;}
+.layerpopup{position:absolute; z-index:99; font-family:'돋움',dotum,Helvetica,sans-serif;}
+.layerpopup img{border:none;}
+
+.layerpopup .shadow1{filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://ssl.pstatic.net/static/ws/layerpopup_shadow1.png', sizingMethod='scale'); width:100%;}
+html>body .layerpopup .shadow1{background:url('https://ssl.pstatic.net/static/ws/layerpopup_shadow1.png') transparent;}
+.layerpopup .shadow1_side{position:relative; top:-1px; left:-1px; width:100%; height:100%;}
+.layerpopup .shadow2{filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://ssl.pstatic.net/static/ws/layerpopup_shadow2.png', sizingMethod='scale'); width:100%;}
+html>body .layerpopup .shadow2{background:url('https://ssl.pstatic.net/static/ws/layerpopup_shadow2.png') transparent;}
+.layerpopup .shadow2_side{position:relative; top:-1px; left:-1px; width:100%; height:100%;}
+.layerpopup .shadow3{filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://ssl.pstatic.net/static/ws/layerpopup_shadow3.png', sizingMethod='scale'); width:100%;}
+html>body .layerpopup .shadow3{background:url('https://ssl.pstatic.net/static/ws/layerpopup_shadow3.png') transparent;}
+.layerpopup .shadow3_side{position:relative; top:-1px; left:-1px; width:100%; height:100%;}
+.layerpopup .border_type{border:2px solid #777777; background-color:#ffffff;}
+.layerpopup .closelayer{position:absolute; right:8px; top:9px;}
+.layerpopup .btn_box{text-align:center; padding:10px 0 15px 0; margin:10px 20px 0 20px; border-top:1px solid #e8e8e8;}
+.layerpopup .btn_box *{vertical-align:middle;}
+.layerpopup .logbox_wrap{width:auto; _width:100%; padding-top:6px; background:url(https://ssl.pstatic.net/static/green/bg_area01.gif) left top repeat-x;}
+.layerpopup .logbox_wrap p{font-size:11px; color:#333333; letter-spacing:-1px;}
+.layerpopup .notice{padding:4px 0 5px 11px; _padding:4px 0 7px 11px;}
+.layerpopup .notice02{margin:19px 19px 9px 19px; line-height:1.4;}
+.layerpopup .notice02 strong{color:#278F00;}
+.layerpopup .volume{font-size:12px !important; margin:16px 19px -8px 19px; letter-spacing:0 !important;} 
+.layerpopup .frame_wrap{width:auto; _width:350px; margin:0 10px 0 10px;}
+.layerpopup .frame_wrap.type03{margin:0 0 0 20px !important;}
+.layerpopup .content { display:block; margin:14px 0 0 0; margin-bottom:0; font:12px/18px '돋움',dotum,Helvetica,sans-serif; color:#666666; text-align:center }

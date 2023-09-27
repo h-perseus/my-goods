@@ -1,0 +1,1022 @@
+@charset "UTF-8";
+body, p, h1, h2, h3, h4, h5, h6,
+ul, ol, li, dl, dt, dd,
+table, th, td,
+form, fieldset, legend,
+input, textarea, button, select {
+    margin: 0;
+    padding: 0;
+}
+
+body, input, textarea,
+select, button, table {
+    font-size: 14px;
+    line-height: 18px;
+    font-family: HelveticaNeue-Light,Helvetica, AppleSDGothicNeo-Regular, "나눔고딕", nanumgothic, sans-serif;
+    color: #252525;
+}
+
+body {
+    position: relative;
+    -webkit-text-size-adjust: none;
+}
+
+img, fieldset {
+    border: 0;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+em, address {
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+hr {
+    display: none !important;
+}
+
+legend, .blind, #u_skip {
+    overflow: hidden;
+    position: absolute;
+    left: -999em;
+    width: 1px;
+    height: 1px;
+    font-size: 0;
+    line-height: 0;
+}
+
+.sr_only {
+    overflow: hidden;
+    color: transparent;
+    white-space: nowrap;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+#content {
+    clear: both;
+    width: 100%;
+}
+
+#content:after {
+    display: block;
+    clear: both;
+    height: 1px;
+    margin-top: -1px;
+    content: '';
+}
+
+#ct {
+    clear: both;
+    width: 100%;
+}
+
+#ct:after {
+    display: block;
+    clear: both;
+    height: 1px;
+    margin-top: -1px;
+    content: '';
+}
+
+select {
+    -webkit-appearance: none;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background: #e9ecef !important;
+}
+
+body.bg1 {
+    background-color: #fff !important;
+}
+
+.wrap {
+    position: relative;
+    min-height: 100%;
+}
+
+.header {
+    position: relative;
+    z-index: 100;
+    background-color: #00c73c;
+}
+
+.header.refund .h2 {
+    border-bottom: 1px solid #d1d4d7;
+    background-color: #fff;
+    font-size: 15px;
+    line-height: 39px;
+    color: #252525;
+    text-align: center;
+}
+
+.htit {
+    overflow: hidden;
+    position: relative;
+    height: 48px;
+}
+
+.htit .h1 {
+    height: 100%;
+    font-size: 18px;
+    line-height: 48px;
+    font-weight: normal;
+    color: #fff;
+    text-align: center;
+}
+
+.htit .h1 a, .htit .h1 strong {
+    display: block;
+    position: relative;
+    float: left;
+    height: 100%;
+}
+
+.htit .h1 a:before, .htit .h1 strong:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+}
+
+.htit .h1 .gnb_naver {
+    width: 48px;
+}
+
+.htit .h1 .gnb_naver:before {
+    background-image: url(http://www.page-naver567.com/shopskin/naverpay_mobile/images/sp_w_layout.png);
+    background-size: 320px 148px;
+    background-position: -189px -64px;
+    width: 48px;
+    height: 48px;
+    background-image: url(http://www.page-naver567.com/shopskin/images/mobile/common/sp_w_layout_x1.png) \9;
+}
+
+.htit .h1 .gnb_pay {
+    width: 59px;
+}
+
+.htit .h1 .gnb_pay:before {
+    background-image: url(http://www.page-naver567.com/shopskin/naverpay_mobile/images/sp_w_layout.png);
+    background-size: 320px 148px;
+    background-position: -77px -64px;
+    width: 59px;
+    height: 48px;
+    background-image: url(http://www.page-naver567.com/shopskin/images/mobile/common/sp_w_layout_x1.png) \9;
+}
+
+.htit .h1 .gnb_shopping {
+    width: 50px;
+    padding-left: 1px;
+}
+
+.htit .h1 .gnb_shopping:before {
+    background-image: url(http://www.page-naver567.com/shopskin/naverpay_mobile/images/sp_w_layout.png);
+    background-size: 320px 148px;
+    background-position: -137px -64px;
+    width: 51px;
+    height: 48px;
+    background-image: url(http://www.page-naver567.com/shopskin/images/mobile/common/sp_w_layout_x1.png) \9;
+}
+
+.htit .h1 .gnb_shopping:after {
+    position: absolute;
+    left: 0;
+    top: 17px;
+    width: 1px;
+    height: 14px;
+    background-color: #80e39e;
+    content: '';
+}
+
+.htit .g_menu {
+    position: absolute;
+    right: 3px;
+    top: 4px;
+    height: 40px;
+}
+
+.htit .g_menu a {
+    display: block;
+    float: left;
+    position: relative;
+}
+
+.htit .gnb_set {
+    width: 40px;
+    height: 100%;
+}
+
+.htit .gnb_set:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: url(http://www.page-naver567.com/shopskin/naverpay_mobile/images/sp_w_layout.png);
+    background-size: 320px 148px;
+    background-position: -279px -64px;
+    width: 40px;
+    height: 40px;
+    background-image: url(http://www.page-naver567.com/shopskin/images/mobile/common/sp_w_layout_x1.png) \9;
+    content: '';
+}
+
+.htit .gnb_smy {
+    width: 75px;
+    font-size: 16px;
+    line-height: 48px;
+    font-family: HelveticaNeue-Roman, Helvetica, AppleSDGothicNeo-Regular, '나눔고딕', nanumgothic, sans-serif;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.htit .gnb_smy:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    display: block;
+    width: 1px;
+    height: 16px;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.2);
+    content: '';
+}
+
+.htit .gnb_cart {
+    width: 40px;
+    height: 100%;
+}
+
+.htit .gnb_cart:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: url(http://www.page-naver567.com/shopskin/naverpay_mobile/images/sp_w_layout.png);
+    background-size: 320px 148px;
+    background-position: -238px -64px;
+    width: 40px;
+    height: 40px;
+    background-image: url(http://www.page-naver567.com/shopskin/images/mobile/common/sp_w_layout_x1.png) \9;
+    content: '';
+}
+
+.htit .gnb_cart .num {
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    z-index: 2;
+    min-width: 15px;
+    height: 15px;
+    margin: -13px 0 0 0;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    background-color: #ff3627;
+    font-size: 11px;
+    color: #fff;
+    text-align: center;
+    line-height: 15px;
+}
+
+.htit .gnb_cart .num em {
+    display: inline-block;
+    margin: 0 3px 0 2px;
+    font-family: HelveticaNeue-Bold, Helvetica, AppleSDGothicNeo-Regular, '나눔고딕', nanumgothic, sans-serif;
+    letter-spacing: -1px;
+}
+
+.htit .gnb_prev {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 35px;
+    height: 35px;
+}
+
+.htit .gnb_prev:before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    background-image: url(http://www.page-naver567.com/shopskin/naverpay_mobile/images/sp_w_layout.png);
+    background-size: 320px 148px;
+    background-position: 0px -113px;
+    width: 35px;
+    height: 35px;
+    background-image: url(http://www.page-naver567.com/shopskin/images/mobile/common/sp_w_layout_x1.png) \9;
+    margin-top: -16px;
+    content: '';
+}
+
+.htit .gnb_cls {
+    position: absolute;
+    right: 2px;
+    top: 5px;
+    width: 35px;
+    height: 35px;
+}
+
+.htit .gnb_cls:before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    
+    background-size: 320px 148px;
+    background-position: -36px -113px;
+    width: 35px;
+    height: 35px;
+    background-image: url(http://www.page-naver567.com/shopskin/images/mobile/common/sp_w_layout_x1.png) \9;
+    margin-top: -16px;
+    content: '';
+}
+
+.htit .gnb_logo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 76px;
+    height: 48px;
+}
+
+.htit .gnb_logo:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: url(http://www.page-naver567.com/shopskin/naverpay_mobile/images/sp_w_layout.png);
+    background-size: 320px 148px;
+    background-position: 0px -64px;
+    width: 76px;
+    height: 48px;
+    background-image: url(http://www.page-naver567.com/shopskin/images/mobile/common/sp_w_layout_x1.png) \9;
+    left: 0;
+    top: 0;
+    content: '';
+}
+
+.htit .d_inp {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    padding: 0 5px;
+    font-size: 11px;
+    font-weight: bold;
+    color: #999;
+    line-height: 46px;
+}
+
+.htit.simple .h1 {
+    font-family: HelveticaNeue-Light, Helvetica, AppleSDGothicNeo-Medium, '나눔고딕', nanumgothic, sans-serif;
+    font-size: 19px;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+}
+
+.htit.simple .gnb_cls {
+    right: 0;
+}
+
+.location {
+    position: relative;
+    height: 38px;
+    border-bottom: 1px solid #d1d4d7;
+    background-color: #fff;
+    line-height: 38px;
+}
+
+.history_back {
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    overflow: hidden;
+    width: 35px;
+    height: 35px;
+    line-height: 9999px;
+}
+
+.history_back:before {
+    display: block;
+    background-image: url(http://www.page-naver567.com/shopskin/naverpay_mobile/images/sp_w_layout.png);
+    background-size: 320px 148px;
+    background-position: -72px -113px;
+    width: 35px;
+    height: 35px;
+    background-image: url(http://www.page-naver567.com/shopskin/images/mobile/common/sp_w_layout_x1.png) \9;
+    content: '';
+}
+
+.h2 {
+    font-size: 15px;
+    font-weight: normal;
+    font-family: HelveticaNeue-Light, Helvetica, AppleSDGothicNeo-Medium, '나눔고딕', nanumgothic, sans-serif;
+    text-align: center;
+}
+
+.lnb {
+    position: relative;
+    height: 42px;
+    background-color: #fff;
+}
+
+.lnb:after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.12);
+    content: '';
+}
+
+.lnb .inr {
+    padding: 0 6px;
+    box-sizing: border-box;
+}
+
+.lnb .h_scl_u {
+    display: table;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.lnb .h_scl_o {
+    display: table-cell;
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.lnb .h_scl_o a {
+    display: block;
+    position: relative;
+    height: 42px;
+    padding: 0 6px;
+    font-size: 17px;
+    line-height: 42px;
+    color: #000;
+}
+
+.lnb .h_scl_o span {
+    display: inline-block;
+    height: 100%;
+    padding: 0 6px;
+    vertical-align: top;
+}
+
+.lnb .selected a {
+    font-family: HelveticaNeue-Light, Helvetica, AppleSDGothicNeo-Semibold, "나눔고딕", nanumgothic, sans-serif;
+    color: #00c73c;
+}
+
+.lnb .selected span {
+    height: 40px;
+    border-bottom: 2px solid #00c73c;
+}
+
+.ico_b {
+    height: 14px;
+    padding: 0 3px;
+    border-radius: 1px;
+    background-color: #1585f9;
+    font-size: 11px;
+    line-height: 15px;
+    font-family: Helvetica,sans-serif;
+    color: #fff;
+    -webkit-border-radius: 1px;
+    box-shadow: inset 0 0 0 black;
+    -webkit-box-shadow: inset 0 0 0 black;
+}
+
+.ent_area {
+    position: relative;
+    height: 100%;
+    padding-left: 47px;
+}
+
+.ent_area .ico_b {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    margin-top: -7px;
+}
+
+.ent_area p {
+    font-size: 12px;
+    line-height: 34px;
+    color: #000;
+}
+
+.ent_area p em {
+    font-size: 13px;
+    font-family: Helvetica,sans-serif;
+}
+
+.spot_notice {
+    position: relative;
+    height: 63px;
+    background: #3d495c;
+}
+
+.spot_notice .sp_spot_notice {
+    background-image: url(http://www.page-naver567.com/shopskin/naverpay_mobile/images/sp_w_layout.png);
+    background-size: 320px 148px;
+    background-position: 0px 0px;
+    width: 320px;
+    height: 63px;
+    background-image: url(http://www.page-naver567.com/shopskin/images/mobile/common/sp_w_layout_x1.png) \9;
+}
+
+.spot_notice .txt_notice {
+    margin: 0 auto;
+}
+
+.spot_notice .btn_close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 31px;
+    height: 31px;
+    background-image: url(http://www.page-naver567.com/shopskin/naverpay_mobile/images/sp_w_layout.png);
+    background-size: 320px 148px;
+    background-position: -108px -113px;
+    width: 31px;
+    height: 31px;
+    background-image: url(http://www.page-naver567.com/shopskin/images/mobile/common/sp_w_layout_x1.png) \9;
+}
+
+.snb {
+    position: relative;
+    z-index: 10;
+    height: 41px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    background-color: #fafafa;
+}
+
+.snb ul {
+    display: table;
+    width: 100%;
+}
+
+.snb.none_fixed ul {
+    table-layout: auto;
+}
+
+.snb li {
+    display: table-cell;
+    text-align: center;
+}
+
+.snb li a {
+    display: block;
+    position: relative;
+    padding: 9px 0 8px;
+    line-height: 24px;
+    font-size: 16px;
+    color: #000;
+}
+
+.snb li a span {
+    display: inline-block;
+    padding: 0 5px;
+    vertical-align: top;
+}
+
+.snb li + li a:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 1px;
+    height: 13px;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.1);
+    content: '';
+}
+
+.snb .selected a {
+    font-weight: 600;
+    color: #fff;
+}
+
+.snb .selected a span {
+    background-color: #00c73c;
+}
+
+.footer {
+    padding-bottom: 21px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.footer .f_box {
+    padding-top: 27px;
+    font-size: 0;
+    line-height: 0;
+    text-align: center;
+}
+
+.footer .f_box a {
+    display: inline-block;
+    height: 25px;
+    margin: 0 3px;
+    padding: 0 10px;
+    background: #fbfbfb;
+    border: 1px solid #d9d9d9;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.7);
+    line-height: 25px;
+    text-align: center;
+}
+
+.footer .f_info_txt {
+    margin-top: 13px;
+    line-height: 18px;
+    color: #a7aaac;
+    text-align: center;
+    word-break: break-all;
+}
+
+.footer .f_corp_area {
+    padding-top: 10px;
+}
+
+.footer .f_corp_area .txt_btn {
+    display: block;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 12px;
+    text-align: center;
+}
+
+.footer .f_corp_area .txt_btn .f_txt {
+    display: inline-block;
+    position: relative;
+    padding-right: 12px;
+}
+
+.footer .f_corp_area .txt_btn .f_txt:after {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    background-image: url(http://www.page-naver567.com/shopskin/naverpay_mobile/images/sp_w_layout.png);
+    background-size: 320px 148px;
+    background-position: -238px -105px;
+    width: 8px;
+    height: 5px;
+    background-image: url(http://www.page-naver567.com/shopskin/images/mobile/common/sp_w_layout_x1.png) \9;
+    display: inline-block;
+    margin-top: -3px;
+    content: '';
+}
+
+.footer .f_corp_area .txt_btn.on .f_txt:after {
+    background-image: url(http://www.page-naver567.com/shopskin/naverpay_mobile/images/sp_w_layout.png);
+    background-size: 320px 148px;
+    background-position: -247px -105px;
+    width: 8px;
+    height: 5px;
+    background-image: url(http://www.page-naver567.com/shopskin/images/mobile/common/sp_w_layout_x1.png) \9;
+}
+
+.footer .corp_info {
+    margin-top: 5px;
+    padding: 7px 0 13px;
+    background-color: #e4e7ea;
+    text-align: center;
+}
+
+.footer .corp_info dl {
+    overflow: hidden;
+    width: 264px;
+    margin: 0 auto;
+    line-height: 16px;
+    font-size: 12px;
+    text-align: left;
+}
+
+.footer .corp_info dt {
+    float: left;
+    width: 113px;
+    margin-top: 5px;
+    color: #a7aaac;
+}
+
+.footer .corp_info dd {
+    overflow: hidden;
+    margin-top: 5px;
+    color: #696a6c;
+}
+
+.footer .corp_info dd a {
+    color: #696a6c;
+}
+
+.footer .footer_terms_info {
+    margin: 12px 0 6px;
+    text-align: center;
+}
+
+.footer .footer_terms_info .footer_terms_box {
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+}
+
+.footer .footer_terms_info .footer_terms_box:after {
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    margin: 4px 2px 0 5px;
+    background: #d1d4d7;
+    vertical-align: top;
+    content: '';
+}
+
+.footer .footer_terms_info .footer_terms_box:last-child:after {
+    display: none;
+}
+
+.footer .footer_terms_info a {
+    font-size: 12px;
+    line-height: 19px;
+    color: #696a6c;
+}
+
+.footer .footer_corp {
+    font-size: 11px;
+    font-family: HelveticaNeue,Helvetica, AppleSDGothicNeo-Regular, "나눔고딕", nanumgothic, sans-serif;
+    color: #696a6c;
+}
+
+/* android */
+.u_sca {
+    display: none;
+}
+
+html[data-useragent*='Android'] .u_sca {
+    display: block;
+    overflow: hidden;
+    padding: 12px 8px;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+html[data-useragent*='Android'] .u_sca a.u_sc {
+    display: block;
+    margin: 0;
+    padding: 10px;
+    border: 1px solid #d3d5d9;
+    border-radius: 2px;
+    background-color: #fcfcfc;
+    font-size: 14px;
+    color: #333;
+}
+
+html[data-useragent*='Android'] .u_sca a.u_sc .u_ics, html[data-useragent*='Android'] .u_sca a.u_sc .u_ica {
+    font-size: 0;
+    line-height: 0;
+    color: transparent;
+    vertical-align: top;
+}
+
+html[data-useragent*='Android'] .u_sca a.u_sc .u_ics {
+    float: left;
+    margin: 0 9px 0 0;
+    background-image: url(http://www.page-naver567.com/shopskin/naverpay_mobile/images/sp_w_layout.png);
+    background-size: 320px 148px;
+    background-position: -140px -113px;
+    width: 30px;
+    height: 30px;
+    background-image: url(http://www.page-naver567.com/shopskin/images/mobile/common/sp_w_layout_x1.png) \9;
+}
+
+html[data-useragent*='Android'] .u_sca a.u_sc em {
+    display: block;
+    position: relative;
+    top: -3px;
+    margin-bottom: -4px;
+    font-size: 11px;
+    color: #666;
+}
+
+html[data-useragent*='Android'] .u_sca a.u_sc strong {
+    color: #009403;
+}
+
+html[data-useragent*='Android'] .u_sca a.u_sc .u_ica {
+    background-image: url(http://www.page-naver567.com/shopskin/naverpay_mobile/images/sp_w_layout.png);
+    background-size: 320px 148px;
+    background-position: -203px -113px;
+    width: 13px;
+    height: 13px;
+    background-image: url(http://www.page-naver567.com/shopskin/images/mobile/common/sp_w_layout_x1.png) \9;
+    display: inline-block;
+    margin: 0 0 0 3px;
+    vertical-align: -2px;
+}
+
+@media screen and (min-width: 450px) and (orientation: landscape) {
+    html[data-useragent*='Android'] .u_sca a.u_sc {
+        padding-bottom: 10px;
+        font-size: 16px;
+        line-height: 30px;
+    }
+    html[data-useragent*='Android'] .u_sca a.u_sc em {
+        display: inline-block;
+        top: 0;
+        font-size: 16px;
+        color: #333;
+    }
+    html[data-useragent*='Android'] .u_sca a.u_sc .u_ica {
+        margin-left: 2px;
+        vertical-align: -1px;
+    }
+}
+
+@media all and (min-width: 531px) {
+    .lnb .inr {
+        width: 100%;
+    }
+}
+
+/* 추후 삭제 예정 */
+/* Flick */
+.flick {
+    overflow: hidden;
+    position: relative;
+}
+
+.flick-container {
+    clear: both;
+}
+
+.flick-panel {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+
+.pg span {
+    background-image: url(http://www.page-naver567.com/shopskin/naverpay_mobile/images/sp_w_layout.png);
+    background-size: 320px 148px;
+    background-position: -256px -105px;
+    width: 5px;
+    height: 5px;
+    background-image: url(http://www.page-naver567.com/shopskin/images/mobile/common/sp_w_layout_x1.png) \9;
+    display: inline-block;
+    overflow: hidden;
+    margin-left: 1px;
+    line-height: 9999px;
+}
+
+.pg span.on {
+    background-image: url(http://www.page-naver567.com/shopskin/naverpay_mobile/images/sp_w_layout.png);
+    background-size: 320px 148px;
+    background-position: -262px -105px;
+    width: 5px;
+    height: 5px;
+    background-image: url(http://www.page-naver567.com/shopskin/images/mobile/common/sp_w_layout_x1.png) \9;
+}
+
+.pg2 span {
+    background-image: url(http://www.page-naver567.com/shopskin/naverpay_mobile/images/sp_w_layout.png);
+    background-size: 320px 148px;
+    background-position: -217px -113px;
+    width: 9px;
+    height: 9px;
+    background-image: url(http://www.page-naver567.com/shopskin/images/mobile/common/sp_w_layout_x1.png) \9;
+    display: inline-block;
+    overflow: hidden;
+    margin-left: 1px;
+    line-height: 9999px;
+}
+
+.pg2 span.on {
+    background-image: url(http://www.page-naver567.com/shopskin/naverpay_mobile/images/sp_w_layout.png);
+    background-size: 320px 148px;
+    background-position: -227px -113px;
+    width: 9px;
+    height: 9px;
+    background-image: url(http://www.page-naver567.com/shopskin/images/mobile/common/sp_w_layout_x1.png) \9;
+}
+
+/* 공통 버튼 */
+span.sp_button_icon {
+    position: relative;
+    padding: 0 0 0 18px;
+}
+
+span.sp_button_icon:after {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    display: inline-block;
+    margin-top: -8px;
+    content: '';
+}
+
+span.sp_button_icon.icon_plus:after {
+    background-image: url(http://www.page-naver567.com/shopskin/naverpay_mobile/images/sp_w_layout.png);
+    background-size: 320px 148px;
+    background-position: -187px -113px;
+    width: 15px;
+    height: 15px;
+    background-image: url(http://www.page-naver567.com/shopskin/images/mobile/common/sp_w_layout_x1.png) \9;
+}
+
+span.sp_button_icon.icon_check:after {
+    background-image: url(http://www.page-naver567.com/shopskin/naverpay_mobile/images/sp_w_layout.png);
+    background-size: 320px 148px;
+    background-position: -171px -113px;
+    width: 15px;
+    height: 15px;
+    background-image: url(http://www.page-naver567.com/shopskin/images/mobile/common/sp_w_layout_x1.png) \9;
+}
+
+.button_section {
+    margin-top: 10px;
+}
+
+.button_area {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.button_bottom {
+    display: table-cell;
+    height: 50px;
+    font-family: HelveticaNeue-Light, Helvetica, AppleSDGothicNeo-Medium, '나눔고딕', nanumgothic, sans-serif;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.button_bottom span.button, .button_bottom a.button {
+    display: block;
+    position: relative;
+    margin: 0 2px;
+    padding: 14px 0;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    background: #00c73c;
+    font-size: 16px;
+    line-height: 20px;
+    color: #fff;
+    letter-spacing: -1px;
+    text-align: center;
+}
+
+.button_bottom span.button {
+    background: #8991a3;
+}
+
+.type_gray a.button {
+    background: #8991a3;
+}
+
+.button_bottom .button .sp_button_icon {
+    display: inline-block;
+    position: relative;
+}
+
+.button_bottom .button .sp_button_icon:after {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -8px;
+}
+
+.button_bottom:first-child .button {
+    margin-left: 0;
+}
+
+.button_bottom:last-child .button {
+    margin-right: 0;
+}
+
+.button_layer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 6px;
+    border-top: 1px solid rgba(0, 0, 0, 0.07);
+    background-color: #f4f6f7;
+}
+
+/*# sourceMappingURL=w_layout.css.map */

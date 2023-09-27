@@ -1,0 +1,9 @@
+/* CSS Document */
+
+.sys_page{width:auto;height:30px;margin:0 auto;text-align:center; overflow:hidden;}
+.sys_page ul{float:left; position:relative; left:50%}
+.sys_page ul li{ float:left; position:relative; right:50%; margin:3px; display:block;width:20px;border:1px #E5E5E5 solid;background:#F6F6F6;line-height:24px;}
+.sys_page ul li a{ display:block; width:20px;}
+.sys_page ul li.now{ font-size:18px;float:left; color:#F00;position:relative; right:50%; margin:3px; display:block;width:20px;border:1px #bcbdc0 solid;background:#FAFAFA;line-height:24px;}
+.sys_page ul li a.now{ display:block; width:20px; font-weight:bold;}
+.sys_page li a:hover{ border:1px solid #E0E0E0; display:block; width:20px;}

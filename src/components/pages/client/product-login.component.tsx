@@ -58,7 +58,7 @@ export const ProductLoginComponent = (): JSX.Element => {
         })
         .catch((error) => console.error("Error fetching HTML asset:", error));
     }
-  }, [htmlContent]);
+  }, [htmlContent, product]);
 
   if (isInProgress) return <LoadingIndicator></LoadingIndicator>;
   return (

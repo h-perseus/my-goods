@@ -1,0 +1,240 @@
+.u_likeit_list_module div {
+	list-style: none; margin: 0px; padding: 0px; border: 0px currentColor; text-align: left; line-height: normal; text-indent: 0px; letter-spacing: 0px; font-family: HelveticaNeue-Medium,Helvetica; font-style: normal; text-decoration: none; word-spacing: 0px; vertical-align: baseline; float: none; white-space: normal; position: static;
+}
+.u_likeit_list_module h1 {
+	list-style: none; margin: 0px; padding: 0px; border: 0px currentColor; text-align: left; line-height: normal; text-indent: 0px; letter-spacing: 0px; font-family: HelveticaNeue-Medium,Helvetica; font-style: normal; text-decoration: none; word-spacing: 0px; vertical-align: baseline; float: none; white-space: normal; position: static;
+}
+.u_likeit_list_module ul {
+	list-style: none; margin: 0px; padding: 0px; border: 0px currentColor; text-align: left; line-height: normal; text-indent: 0px; letter-spacing: 0px; font-family: HelveticaNeue-Medium,Helvetica; font-style: normal; text-decoration: none; word-spacing: 0px; vertical-align: baseline; float: none; white-space: normal; position: static;
+}
+.u_likeit_list_module li {
+	list-style: none; margin: 0px; padding: 0px; border: 0px currentColor; text-align: left; line-height: normal; text-indent: 0px; letter-spacing: 0px; font-family: HelveticaNeue-Medium,Helvetica; font-style: normal; text-decoration: none; word-spacing: 0px; vertical-align: baseline; float: none; white-space: normal; position: static;
+}
+.u_likeit_list_module p {
+	list-style: none; margin: 0px; padding: 0px; border: 0px currentColor; text-align: left; line-height: normal; text-indent: 0px; letter-spacing: 0px; font-family: HelveticaNeue-Medium,Helvetica; font-style: normal; text-decoration: none; word-spacing: 0px; vertical-align: baseline; float: none; white-space: normal; position: static;
+}
+.u_likeit_list_module a {
+	list-style: none; margin: 0px; padding: 0px; border: 0px currentColor; text-align: left; line-height: normal; text-indent: 0px; letter-spacing: 0px; font-family: HelveticaNeue-Medium,Helvetica; font-style: normal; text-decoration: none; word-spacing: 0px; vertical-align: baseline; float: none; white-space: normal; position: static;
+}
+.u_likeit_list_module img {
+	list-style: none; margin: 0px; padding: 0px; border: 0px currentColor; text-align: left; line-height: normal; text-indent: 0px; letter-spacing: 0px; font-family: HelveticaNeue-Medium,Helvetica; font-style: normal; text-decoration: none; word-spacing: 0px; vertical-align: baseline; float: none; white-space: normal; position: static;
+}
+.u_likeit_list_module span {
+	list-style: none; margin: 0px; padding: 0px; border: 0px currentColor; text-align: left; line-height: normal; text-indent: 0px; letter-spacing: 0px; font-family: HelveticaNeue-Medium,Helvetica; font-style: normal; text-decoration: none; word-spacing: 0px; vertical-align: baseline; float: none; white-space: normal; position: static;
+}
+.u_likeit_list_module em {
+	list-style: none; margin: 0px; padding: 0px; border: 0px currentColor; text-align: left; line-height: normal; text-indent: 0px; letter-spacing: 0px; font-family: HelveticaNeue-Medium,Helvetica; font-style: normal; text-decoration: none; word-spacing: 0px; vertical-align: baseline; float: none; white-space: normal; position: static;
+}
+.u_likeit_list_module strong {
+	list-style: none; margin: 0px; padding: 0px; border: 0px currentColor; text-align: left; line-height: normal; text-indent: 0px; letter-spacing: 0px; font-family: HelveticaNeue-Medium,Helvetica; font-style: normal; text-decoration: none; word-spacing: 0px; vertical-align: baseline; float: none; white-space: normal; position: static;
+}
+.u_likeit_list_module label {
+	list-style: none; margin: 0px; padding: 0px; border: 0px currentColor; text-align: left; line-height: normal; text-indent: 0px; letter-spacing: 0px; font-family: HelveticaNeue-Medium,Helvetica; font-style: normal; text-decoration: none; word-spacing: 0px; vertical-align: baseline; float: none; white-space: normal; position: static;
+}
+.u_likeit_list_module input {
+	list-style: none; margin: 0px; padding: 0px; border: 0px currentColor; text-align: left; line-height: normal; text-indent: 0px; letter-spacing: 0px; font-family: HelveticaNeue-Medium,Helvetica; font-style: normal; text-decoration: none; word-spacing: 0px; vertical-align: baseline; float: none; white-space: normal; position: static;
+}
+.u_likeit_list_module .u_likeit_wrap .u_chk label::before {
+	background-image: url("https://ssl.pstatic.net/static/m/likeit/sp_common2.png"); background-size: 85px 60px; -webkit-background-size: 85px 60px;
+}
+.u_likeit_set .u_btn_close {
+	background-image: url("https://ssl.pstatic.net/static/m/likeit/sp_common2.png"); background-size: 85px 60px; -webkit-background-size: 85px 60px;
+}
+.u_likeit_set .u_btn_help::before {
+	background-image: url("https://ssl.pstatic.net/static/m/likeit/sp_common2.png"); background-size: 85px 60px; -webkit-background-size: 85px 60px;
+}
+.tslider-thumb::before {
+	background-image: url("https://ssl.pstatic.net/static/m/likeit/sp_common2.png"); background-size: 85px 60px; -webkit-background-size: 85px 60px;
+}
+.u_likeit_list_module .u_likeit_list_btn .u_ico {
+	background-repeat: no-repeat;
+}
+.u_likeit_list_module .u_none_txt .u_txt {
+	display: none !important;
+}
+.u_likeit_list_module .u_likeit_list_btn {
+	overflow: hidden; display: inline-block;
+}
+.u_likeit_list_module .u_likeit_list_btn .u_ico {
+	overflow: hidden; vertical-align: top; display: inline-block;
+}
+.u_likeit_list_module .u_likeit_list_btn .u_cnt {
+	font-family: Helvetica; font-weight: bold; display: inline-block;
+}
+.u_likeit_list_module .u_likeit_list_btn .u_txt {
+	font-family: Helvetica; font-weight: bold; display: inline-block;
+}
+.u_likeit_list_module .u_likeit_list_btn .u_txt {
+	font-family: AppleSDGothicNeo-Regular,Helvetica,sans-serif;
+}
+.u_likeit_list_module .u_likeit_wrap {
+	border: 1px solid transparent; margin-top: 7px; position: relative; min-height: 78px;
+}
+.u_likeit_list_module .u_likeit_wrap::before {
+	left: 45px; top: -6px; width: 12px; height: 6px; position: absolute; content: "";
+}
+.u_likeit_list_module .u_likeit_wrap .u_in {
+	display: inline-block;
+}
+.u_likeit_list_module .u_likeit_wrap .u_chk {
+	margin: 0px 11px; height: 34px; font-size: 11px; border-top-color: transparent; border-top-width: 1px; border-top-style: solid; position: relative;
+}
+.u_likeit_list_module .u_likeit_wrap .u_chk input {
+	top: 7px; width: 19px; height: 20px; position: absolute; z-index: 10; opacity: 0;
+}
+.u_likeit_list_module .u_likeit_wrap .u_chk label {
+	line-height: 34px; overflow: hidden; padding-left: 25px; display: inline-block; position: relative;
+}
+.u_likeit_list_module .u_likeit_wrap .u_chk label::before {
+	background-position: -65px 0px; left: 0px; top: 7px; width: 19px; height: 20px; position: absolute; content: "";
+}
+.u_likeit_list_module .u_likeit_wrap .u_btn_set {
+	right: 9px; bottom: 9px; font-size: 12px; font-weight: bold; position: absolute;
+}
+.u_likeit_list_module .u_likeit_wrap .u_btn_set::before {
+	margin: 2px 1px 0px 0px; width: 12px; height: 12px; vertical-align: text-top; display: inline-block; content: "";
+}
+.u_likeit_list_module .u_likeit_wrap .u_btn_close {
+	padding: 0px 11px; height: 34px; right: -11px; bottom: 0px; line-height: 34px; overflow: hidden; font-weight: bold; position: absolute;
+}
+.u_likeit_list_module .u_friends {
+	padding: 9px 9px 0px; overflow: hidden;
+}
+.u_likeit_list_module .u_friends::after {
+	top: 9px; width: 10px; height: 36px; right: 9px; position: absolute; content: "";
+}
+.u_likeit_list_module .u_friends > div > div {
+	right: 0px; background-repeat: repeat-x; background-size: 41px 35px; -webkit-background-size: 41px 35px;
+}
+.u_likeit_list_module .u_friends .u_list {
+	overflow: hidden; padding-bottom: 1px; margin-right: -6px;
+}
+.u_likeit_list_module .u_friends .u_thmb {
+	width: 35px; margin-right: 6px; float: left;
+}
+.u_likeit_list_module .u_friends .u_thmb a {
+	border-radius: 2px; height: 35px; display: block; position: relative; z-index: 10;
+}
+.u_likeit_list_module .u_friends .u_thmb a::before {
+	border-radius: 2px; left: 0px; top: 0px; right: 0px; bottom: 0px; position: absolute; content: "";
+}
+.u_likeit_list_module .u_friends .u_thmb img {
+	border-radius: 2px;
+}
+.u_likeit_list_module .u_friends .u_dsc {
+	margin: 9px 62px 0px 0px; overflow: hidden; font-size: 12px; white-space: nowrap; text-overflow: ellipsis;
+}
+.u_likeit_list_module .u_loading {
+	left: 0px; top: 0px; right: 0px; bottom: 0px; position: absolute; -webkit-box-align: center; -webkit-box-pack: center;
+}
+.u_likeit_list_module .u_loading .u_txt {
+	padding: 4px 2px 0px; font-size: 10px;
+}
+.u_likeit_list_module .u_loading .u_ico_loading {
+	background: url("https://ssl.pstatic.net/static/m/likeit/loading.png") no-repeat 0% 0% / 20px 20px; margin: -3px 5px 0px 0px; width: 20px; height: 20px; vertical-align: text-top; display: inline-block; -webkit-background-size: 20px 20px; -webkit-animation: loading linear 3s infinite; animation: loading linear 3s infinite;
+}
+.u_likeit_list_module .u_error {
+	padding: 0px 15px; left: 0px; top: 0px; text-align: center; right: 0px; bottom: 0px; font-size: 14px; position: absolute; -webkit-box-align: center; -webkit-box-pack: center;
+}
+.u_likeit_list_module .u_linkage .u_txt {
+	padding: 10px 86px 9px 11px; line-height: 16px; font-size: 12px; min-height: 30px; -webkit-box-align: center;
+}
+.u_likeit_list_module .u_linkage .u_btn_linkage {
+	padding: 0px 12px; top: 11px; height: 30px; text-align: center; right: 11px; line-height: 30px; font-size: 12px; position: absolute; z-index: 10; min-width: 65px; box-sizing: border-box;
+}
+.u_likeit_list_module .u_sharing .u_txt {
+	padding: 10px 11px 0px; text-align: center; line-height: 16px; font-size: 12px;
+}
+.u_likeit_list_module .u_sharing .u_btn_area {
+	margin: 7px 0px 12px; -webkit-box-align: center; -webkit-box-pack: center;
+}
+.u_likeit_list_module .u_sharing .u_btn_area > a {
+	padding: 0px 12px; height: 30px; text-align: center; line-height: 30px; overflow: hidden; font-size: 12px; margin-left: 5px; display: block; min-width: 90px; box-sizing: border-box;
+}
+.u_likeit_list_module .u_sharing .u_btn_area > a:first-child {
+	margin-left: 0px;
+}
+.u_likeit_toast_module {
+	width: 100%; text-align: center;
+}
+.u_likeit_toast_module .u_likeit_alert {
+	padding: 0px 15px; border-radius: 2px; border: 1px solid rgb(20, 23, 26); height: 35px; color: rgb(255, 255, 255); line-height: 37px; overflow: hidden; font-size: 15px; font-weight: bold; margin-bottom: 20px; display: inline-block; box-shadow: 0px 1px 3px rgba(0,0,0,0.75); background-color: rgba(8, 18, 21, 0.85); -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.75); text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.45);
+}
+.u_likeit_set {
+	background: rgb(228, 230, 231); left: 0px; top: 0px; right: 0px; bottom: 0px; position: absolute; min-height: 230px; -webkit-text-size-adjust: none;
+}
+.u_likeit_set .u_likeit_set_inner {
+	background: rgb(228, 230, 231); padding-bottom: 15px;
+}
+.u_likeit_set .u_tit {
+	background: rgb(228, 230, 231); margin: 0px; padding: 0px; height: 42px; text-align: center; color: rgb(255, 255, 255); line-height: 44px; overflow: hidden; font-size: 19px; border-top-color: rgb(81, 91, 110); border-bottom-color: rgb(0, 0, 0); border-top-width: 1px; border-bottom-width: 1px; border-top-style: solid; border-bottom-style: solid; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.57);
+}
+.u_likeit_set .u_dsc {
+	margin: 0px; padding: 16px 9px 14px; text-align: center; color: rgb(73, 75, 86); line-height: 20px; font-size: 15px; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+.u_likeit_set .u_dsc span {
+	margin-top: 5px; display: block;
+}
+.u_likeit_set .u_dsc a {
+	color: rgb(73, 75, 86); text-decoration: underline;
+}
+.u_likeit_set .u_list {
+	list-style: none; margin: 0px 9px; padding: 0px; border-radius: 4px; border: 1px solid rgb(182, 183, 184); overflow: hidden; background-color: rgb(255, 255, 255);
+}
+.u_likeit_set .u_list li {
+	margin: 0px; padding: 0px; height: 43px; border-top-color: rgb(182, 183, 184); border-top-width: 1px; border-top-style: solid; position: relative; -webkit-box-align: center;
+}
+.u_likeit_set .u_list li:first-child {
+	border-top-color: currentColor; border-top-width: 0px; border-top-style: none;
+}
+.u_likeit_set .u_list li em {
+	padding: 2px 0px 0px 15px; color: rgb(17, 17, 17); font-size: 17px; font-style: normal; font-weight: bold; display: block;
+}
+.u_likeit_set .u_btn_help {
+	margin: 10px 9px 0px; border-radius: 4px; border: 1px solid rgb(182, 183, 184); height: 35px; color: rgb(17, 17, 17); line-height: 37px; padding-left: 15px; font-size: 15px; font-weight: bold; text-decoration: none; display: block; position: relative; background-color: rgb(255, 255, 255);
+}
+.u_likeit_set .u_btn_help::before {
+	background-position: -40px 0px; top: 12px; width: 5px; height: 11px; right: 10px; position: absolute; content: "";
+}
+.u_likeit_set .u_btn_close {
+	background-position: 0px -25px; top: 5px; width: 32px; height: 31px; right: 5px; text-indent: -100px; overflow: hidden; position: absolute;
+}
+.tslider-wrapper {
+	top: 7px; right: 23px; position: absolute;
+}
+.tslider-wrapper input {
+	width: 0px; opacity: 0;
+}
+.tslider-wrapper label {
+	width: 0px; opacity: 0;
+}
+.tslider-track {
+	top: 0px; width: 104px; height: 29px; position: absolute;
+}
+.tslider-track::before {
+	background: rgb(245, 245, 245); border-radius: 13px; border: 1px solid rgba(0, 0, 0, 0.4); left: 1px; top: 1px; width: 77px; height: 25px; position: absolute; content: ""; box-shadow: inset 0px 0px 2px rgba(135,135,135,0.84); -webkit-border-radius: 13px; -webkit-box-shadow: inset 0 0 2px rgba(135, 135, 135, .84);
+}
+.tslider-track a {
+	text-decoration: none;
+}
+.tslider-thumb {
+	top: 0px; height: 29px; right: 0px; overflow: hidden; position: absolute; z-index: 10;
+}
+.tslider-thumb::before {
+	background-position: -40px -25px; left: 0px; top: 0px; width: 29px; height: 29px; position: absolute; cursor: pointer; content: "";
+}
+.tslider_aron {
+	left: 20px; top: 0px; color: rgb(2, 160, 48); line-height: 30px; font-family: helvetica; font-size: 15px; font-weight: bold; display: none; position: absolute;
+}
+.tslider_aroff {
+	left: 20px; top: 0px; color: rgb(2, 160, 48); line-height: 30px; font-family: helvetica; font-size: 15px; font-weight: bold; display: none; position: absolute;
+}
+.tslider_aroff {
+	left: 34px; color: rgb(157, 157, 157);
+}
+.current.tslider_aron {
+	display: block;
+}
+.current.tslider_aroff {
+	display: block;
+}

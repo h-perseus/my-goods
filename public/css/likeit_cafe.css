@@ -1,0 +1,105 @@
+.u_likeit_list_module .u_likeit_list_btn .u_ico {
+	background-image: url("https://ssl.pstatic.net/static/m/likeit/cafe/sp_likeit_161212.png"); background-size: 100px 40px; -webkit-background-size: 100px 40px;
+}
+.u_likeit_list_module .on.u_likeit_list_btn .u_ico {
+	background-image: url("https://ssl.pstatic.net/static/m/likeit/cafe/sp_likeit_161212.png"); background-size: 100px 40px; -webkit-background-size: 100px 40px;
+}
+.btn_like_w .u_likeit_list_module .u_likeit_list_btn .u_ico {
+	width: 17px; height: 15px; margin-right: 1px; vertical-align: top;
+}
+.btn_like_w .u_likeit_list_module .on.u_likeit_list_btn .u_ico {
+	background-position: 0px -20px;
+}
+.btn_like_w .u_likeit_list_module .disabled.u_likeit_list_btn {
+	cursor: default; opacity: 0.3;
+}
+.btn_like_w .u_likeit_list_module .u_none_txt .u_txt {
+	display: none !important;
+}
+.btn_like_w .u_likeit_list_module .u_likeit_list_btn {
+	padding: 12px 13px 0px; height: 40px; overflow: hidden; display: inline-block; box-sizing: border-box;
+}
+.btn_like_w .u_likeit_list_module .u_likeit_list_btn .u_ico {
+	overflow: hidden; vertical-align: top; display: inline-block;
+}
+.btn_like_w .u_likeit_list_module .u_likeit_list_btn .u_cnt {
+	top: -2px; font-size: 15px; vertical-align: top; display: inline-block; position: relative;
+}
+.btn_like_w .u_likeit_list_module .u_likeit_list_btn .u_txt {
+	top: -2px; font-size: 15px; vertical-align: top; display: inline-block; position: relative;
+}
+.btn_like_w .u_likeit_list_module .u_likeit_list_btn .u_cnt {
+	top: -3px; font-family: "HelveticaNeue-Light", "AppleSDGothicNeo-Light", Helvetica, sans-serif; font-size: 16px; vertical-align: -1px; position: relative;
+}
+.btn_like_w .u_likeit_list_module .u_likeit_list_btn .u_txt {
+	font-family: Helvetica Neue,AppleSDGothicNeo-Regular,sans-serif;
+}
+.btn_like_w .u_likeit_list_module .u_likeit_list_btn .u_cnt {
+	font-weight: normal;
+}
+.btn_like_w .u_likeit_list_module .u_likeit_list_btn .u_txt {
+	font-weight: normal;
+}
+.footer_fix .u_likeit_list_module {
+	vertical-align: top; display: inline-block;
+}
+.footer_fix .u_likeit_list_module .u_likeit_list_btn {
+	padding: 0px; height: auto; line-height: inherit;
+}
+.footer_fix .u_likeit_list_module .u_likeit_list_btn::before {
+	display: none;
+}
+.footer_fix .u_likeit_list_module .u_likeit_list_btn .u_ico {
+	background-position: -25px 0px; margin: 1px 0px 0px; width: 18px; height: 17px;
+}
+.footer_fix .u_likeit_list_module .on.u_likeit_list_btn .u_ico {
+	background-position: -25px -20px;
+}
+.footer_fix .u_likeit_list_module .u_likeit_list_btn .u_cnt {
+	font-family: "????",NanumGothic,"?? ??","Helvetica Neue", "Apple SD Gothic Neo", sans-serif; font-weight: normal;
+}
+.footer_fix .u_likeit_list_module .u_likeit_list_btn .u_txt {
+	font-family: "????",NanumGothic,"?? ??","Helvetica Neue", "Apple SD Gothic Neo", sans-serif; font-weight: normal;
+}
+.footer_fix .u_likeit_list_module .u_likeit_list_btn .u_cnt {
+	line-height: inherit; font-style: normal;
+}
+.footer_fix .u_likeit_list_module .on.u_likeit_list_btn .u_cnt {
+	color: rgb(255, 81, 81);
+}
+.communi_status .u_likeit_list_module {
+	vertical-align: top; display: inline-block;
+}
+.communi_status .u_likeit_list_module span::before {
+	display: none !important;
+}
+.communi_status .u_likeit_list_module .u_likeit_list_btn .u_cnt {
+	line-height: 17px; font-family: Helvetica, "Apple SD Gothic Neo", sans-serif; font-weight: normal; vertical-align: top;
+}
+.communi_status .u_likeit_list_module .u_likeit_list_btn .u_ico {
+	background-position: -50px -20px; width: 16px; height: 14px; margin-top: 2px; vertical-align: top;
+}
+.card_wrap .communi_status .u_likeit_list_module .u_likeit_list_btn .u_ico {
+	background-position: -50px 0px; margin-top: 2px; opacity: 0.5;
+}
+.profile_popular .communi_status .u_likeit_list_module .u_likeit_list_btn .u_ico {
+	margin-right: 5px;
+}
+.inapp_type .communi_status .u_likeit_list_module .u_likeit_list_btn .blind.u_txt {
+	float: left;
+}
+.inapp_type .communi_status .u_likeit_list_module .u_likeit_list_btn .u_cnt {
+	font-family: Helvetica,sans-serif;
+}
+.content_glink .desc_event .u_likeit_list_module {
+	color: rgb(85, 85, 85); line-height: 19px; padding-left: 16px; font-size: 14px; float: left;
+}
+.content_glink .desc_event .u_likeit_list_module .u_likeit_list_btn .u_ico {
+	background-position: -75px 0px; margin: 1px 5px 0px 0px; width: 20px; height: 19px; float: left;
+}
+.content_glink .desc_event .u_likeit_list_module .on.u_likeit_list_btn .u_ico {
+	background-position: -75px -20px;
+}
+.content_glink .desc_event .u_likeit_list_module .u_likeit_list_btn .u_cnt {
+	color: rgb(85, 85, 85); font-family: Helvetica Neue,sans-serif; font-weight: normal;
+}

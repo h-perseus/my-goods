@@ -1,0 +1,42 @@
+/* CSS Document 
+@import url("z_fonts/font-awesome-4.7.0/css/font-awesome.css");
+
+@font-face{
+	font-family:'f_ng1'; 
+	font-style: normal;
+  	font-weight: 400;
+	src:url("z_fonts/Nanum_Gothic/NanumGothic-Regular.woff2") format('woff2'),
+		url("z_fonts/Nanum_Gothic/NanumGothic-Regular.woff") format('woff');
+}
+@font-face{
+	font-family:'f_ng2'; 
+	font-style: normal;
+  	font-weight: 700;
+	src:url("z_fonts/Nanum_Gothic/NanumGothic-Bold.woff2") format('woff2'),
+		url("z_fonts/Nanum_Gothic/NanumGothic-Bold.woff") format('woff');
+}
+@font-face{
+	font-family:'f_ng3'; 
+	font-style: normal;
+  	font-weight: 800;
+	src:url("z_fonts/Nanum_Gothic/NanumGothic-ExtraBold.woff2") format('woff2'),
+		url("z_fonts/Nanum_Gothic/NanumGothic-ExtraBold.woff") format('woff');
+}
+
+@font-face{
+	font-family:'f_ngc1'; 
+	font-style: normal;
+  	font-weight: 400;
+	src:url("z_fonts/Nanum_Gothic_Coding/NanumGothicCoding-Regular.woff2") format('woff2'),
+		url("z_fonts/Nanum_Gothic_Coding/NanumGothicCoding-Regular.woff") format('woff');
+}
+
+@font-face{
+	font-family:'f_ngc2'; 
+	font-style: normal;
+  	font-weight: 700;
+	src:url("z_fonts/Nanum_Gothic_Coding/NanumGothicCoding-Bold.woff2") format('woff2'),
+		url("z_fonts/Nanum_Gothic_Coding/NanumGothicCoding-Bold.woff") format('woff');
+}
+
+*/

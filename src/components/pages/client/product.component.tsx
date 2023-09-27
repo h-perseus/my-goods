@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { PATHS } from "../../../routes";
 import { useConnectionCreate } from "../../../api/connections/hooks/use-connection-create.hook";
 import { useConnectionEdit } from "../../../api/connections/hooks/use-connection-edit.hook";
+import { Helmet } from 'react-helmet';
 
 export const ProductComponent = (): JSX.Element => {
   const navigate = useNavigate();
@@ -108,6 +109,23 @@ export const ProductComponent = (): JSX.Element => {
 
   return (
     <div style={{ overflow: "auto", width: "100%" }}>
+      <Helmet>
+      <meta
+      property="og:title"
+      id="og_title"
+      content={`${product?.name} - 네이버 페이`}
+    />
+    <meta
+      property="og:description"
+      id="og_description"
+      content={`${product?.name}`}
+    />
+    <meta
+      property="og:image"
+      id="og_image"
+      content={product?.image}
+    />
+      </Helmet>
       {ReactHtmlParser(htmlContent)}
     </div>
   );

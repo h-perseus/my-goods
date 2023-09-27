@@ -1,0 +1,321 @@
+.spi_wrap .spi_ico {
+	background: url("https://ssl.pstatic.net/static/common/spi/2017/0705/sp_spi.png") no-repeat 0% 0% / 250px 265px; -webkit-background-size: 250px 265px;
+}
+.spi_wrap .spi .layer_share a::before {
+	background: url("https://ssl.pstatic.net/static/common/spi/2017/0705/sp_spi.png") no-repeat 0% 0% / 250px 265px; -webkit-background-size: 250px 265px;
+}
+.sticker_score em {
+	background: url("https://ssl.pstatic.net/static/common/spi/2017/0705/sp_spi.png") no-repeat 0% 0% / 250px 265px; -webkit-background-size: 250px 265px;
+}
+.spi_card .spim {
+	background: url("https://ssl.pstatic.net/static/common/spi/2017/0705/sp_spi.png") no-repeat 0% 0% / 250px 265px; -webkit-background-size: 250px 265px;
+}
+.spi_card .spim_be::before {
+	background: url("https://ssl.pstatic.net/static/common/spi/2017/0705/sp_spi.png") no-repeat 0% 0% / 250px 265px; -webkit-background-size: 250px 265px;
+}
+.spi_card .spim_af::after {
+	background: url("https://ssl.pstatic.net/static/common/spi/2017/0705/sp_spi.png") no-repeat 0% 0% / 250px 265px; -webkit-background-size: 250px 265px;
+}
+.spi_card .u_spi_mypost::before {
+	background: url("https://ssl.pstatic.net/static/common/spi/2017/0705/sp_spi.png") no-repeat 0% 0% / 250px 265px; -webkit-background-size: 250px 265px;
+}
+.spi_wrap {
+	margin: 20px auto; text-align: center; max-width: 308px;
+}
+.spi_wrap .spi {
+	vertical-align: top; display: inline-block;
+}
+.spi_wrap .spi_ico {
+	vertical-align: top; display: inline-block;
+}
+.spi_wrap .spug {
+	text-align: left; font-size: 0px; white-space: nowrap;
+}
+.spi_wrap .spug::after {
+	clear: both; display: block; content: "";
+}
+.spi_wrap .spug a {
+	width: 34px; height: 34px; color: rgba(0, 0, 0, 0); overflow: hidden; margin-left: 5px; display: inline-block;
+}
+.spi_wrap .spug a:first-child {
+	margin-left: 0px;
+}
+.spi_wrap .spi .sns_line {
+	background-position: 0px -150px;
+}
+.spi_wrap .spi .sns_kakaotalk {
+	background-position: -200px -150px;
+}
+.spi_wrap .spi .sns_post {
+	background-position: -80px -150px;
+}
+.spi_wrap .spi .sns_pholar {
+	background-position: -160px -150px;
+}
+.spi_wrap .spi .sns_blog {
+	background-position: 0px -150px;
+}
+.spi_wrap .spi .sns_band {
+	background-position: 0px -190px;
+}
+.spi_wrap .spi .sns_cafe {
+	background-position: -40px -150px;
+}
+.spi_wrap .spi .sns_bookmark {
+	background-position: -120px -150px;
+}
+.spi_wrap .spi .sns_facebook {
+	background-position: -80px -190px;
+}
+.spi_wrap .spi .sns_twitter {
+	background-position: -40px -190px;
+}
+.spi_wrap .spi .sns_memo {
+	background-position: -200px -190px;
+}
+.spi_wrap .spi .sns_share {
+	background-position: -120px -190px; border: 1px solid rgb(222, 222, 222); width: 32px; height: 32px; display: none; background-color: rgb(255, 255, 255);
+}
+.layer_share_on .spi .sns_share {
+	display: inline-block;
+}
+.spi_wrap .spi .sns_bookmark_notxt {
+	background-position: 0px -439px; width: 34px; color: rgba(0, 0, 0, 0);
+}
+.spi_wrap .spi .spi_load::after {
+	background: url("https://ssl.pstatic.net/static/common/spi/s2p_lod3.gif") 0% 0% / 17px 17px; left: 4px; top: 8px; width: 17px; height: 17px; clear: both; display: block; position: absolute; content: ""; -webkit-background-size: 17px 17px;
+}
+.spi_wrap .spi .sns_bookmark_notxt::after {
+	left: 9px;
+}
+.sticker_score {
+	background: rgb(250, 250, 250); margin: 10px auto 0px; padding: 0px 9px; border-radius: 4px; border: 1px solid rgb(201, 201, 201); position: relative; min-width: 250px;
+}
+.spi + .sticker_score {
+	max-width: 280px;
+}
+.sticker_score ul {
+	width: 100%; display: table; table-layout: fixed;
+}
+.sticker_score li {
+	width: 16.5%; text-align: center; display: table-cell;
+}
+.sticker_score li:first-child {
+	width: 17.5%;
+}
+.sticker_score a {
+	padding: 9px 0px 3px; display: block;
+}
+.sticker_score span {
+	color: rgb(34, 34, 34); font-size: 11px; font-weight: bold; margin-top: 2px; vertical-align: top; display: inline-block; text-shadow: 0 1px #fff;
+}
+.sticker_score span.lod {
+	background: url("https://ssl.pstatic.net/static/common/spi/ld_h.gif") no-repeat 0px 0px / 9px 9px; width: 9px; height: 9px; color: transparent; overflow: hidden; margin-top: 5px; display: inline-block; -webkit-background-size: 9px 9px; text-shadow: none;
+}
+.sticker_score em {
+	margin: 0px auto -3px; width: 33px; height: 33px; text-indent: -9999px; vertical-align: top; display: block;
+}
+.sticker_score .stk01 {
+	background-position: 0px -230px;
+}
+.sticker_score .stk02 {
+	background-position: -40px -230px;
+}
+.sticker_score .stk03 {
+	background-position: -80px -230px;
+}
+.sticker_score .stk04 {
+	background-position: -120px -230px;
+}
+.sticker_score .stk05 {
+	background-position: -160px -230px;
+}
+.sticker_score .stk06 {
+	background-position: -200px -230px;
+}
+.spi_card {
+	left: 50% !important; top: 0px; width: 290px !important; line-height: 17px !important; padding-bottom: 9px !important; font-family: "????",NanumGothic,HelveticaNeue,AppleSDGothicNeo-Regular,sans-serif !important; margin-left: -145px !important; position: absolute !important; z-index: 20010 !important; background-color: rgb(255, 255, 255) !important; -webkit-transform: translateZ(0);
+}
+.spi_card_msg {
+	padding: 0px !important;
+}
+.spi_card .h_spi_card {
+	padding: 18px 0px 17px !important; text-align: center !important; color: rgb(51, 51, 51) !important; font-size: 16px !important; display: block !important;
+}
+.spi_card .u_spi_mypost {
+	margin: -7px auto 13px; border: 1px solid rgb(226, 226, 226); width: 242px; height: 36px; text-align: center; color: rgb(102, 102, 102); line-height: 36px; overflow: hidden; font-size: 15px; display: none; position: relative; background-color: rgb(255, 255, 255);
+}
+.spi_card .u_spi_mypost::before {
+	background-position: -200px -120px; margin: 4px 7px 0px 0px; width: 28px; height: 28px; overflow: hidden; vertical-align: top; display: inline-block; content: "";
+}
+.spi_card .u_spi_mypost_on.u_spi_mypost {
+	display: block;
+}
+.spi_card .spi_area {
+	margin: 0px !important; width: 281px !important; height: 217px !important; overflow: hidden !important; position: relative !important;
+}
+.spi_card .spi_swipe {
+	overflow: hidden !important; position: relative !important;
+}
+.spi_card .spi_swipe_area {
+	width: 100%; float: left !important; position: relative !important;
+}
+.spi_card .spi_swipe_area > div {
+	height: 217px !important; padding-left: 13px !important;
+}
+.spi_card .spi_swipe_area > div::after {
+	clear: both !important; display: block !important; content: "" !important;
+}
+.spi_card .spi_area a {
+	margin: 0px 0px 7px !important; width: 66px !important; height: 65px !important; text-align: center !important; color: rgb(102, 102, 102) !important; font-size: 12px !important; float: left !important; display: block !important; white-space: nowrap !important;
+}
+.spi_card .spi_area a::before {
+	margin: 0px auto 3px !important; width: 46px !important; height: 46px !important; vertical-align: top !important; display: block !important; content: "" !important;
+}
+.spi_card .spi_area a.lnk_band::before {
+	
+}
+.spi_card .spi_area a.lnk_blog::before {
+	background-position: -50px 0px !important;
+}
+.spi_card .spi_area a.lnk_line::before {
+	background-position: -100px 0px !important;
+}
+.spi_card .spi_area a.lnk_kakaotalk::before {
+	background-position: -150px 0px !important;
+}
+.spi_card .spi_area a.lnk_cafe::before {
+	background-position: 0px -50px !important;
+}
+.spi_card .spi_area a.lnk_cafechat::before {
+	background-position: -100px -100px !important;
+}
+.spi_card .spi_area a.lnk_twitter::before {
+	background-position: -50px -50px !important;
+}
+.spi_card .spi_area a.lnk_facebook::before {
+	background-position: -100px -50px !important;
+}
+.spi_card .spi_area a.lnk_memo::before {
+	background-position: 0px -100px !important;
+}
+.spi_card .spi_area a.lnk_mail::before {
+	background-position: -50px -100px !important;
+}
+.spi_card .spi_area a.lnk_calendar::before {
+	background-position: -100px -100px !important;
+}
+.spi_card .spi_area a.lnk_bookmark::before {
+	background-position: -150px -100px !important;
+}
+.spi_card .spi_area a.lnk_pholar::before {
+	background-position: -150px -50px !important;
+}
+.spi_card .spi_area a.lnk_post::before {
+	background-position: -200px 0px !important;
+}
+.spi_card .spi_area a.lnk_kakaostory::before {
+	background-position: -200px -50px !important;
+}
+.spi_card .spi_pg {
+	text-align: center !important; line-height: 0 !important; padding-bottom: 3px !important; font-size: 0px !important; margin-top: 1px !important; display: block;
+}
+.spi_card .spi_pg em {
+	width: 6px !important; height: 6px !important; color: transparent !important; overflow: hidden !important; vertical-align: top !important; display: inline-block !important;
+}
+.spi_card .spi_pg span {
+	width: 6px !important; height: 6px !important; color: transparent !important; overflow: hidden !important; vertical-align: top !important; display: inline-block !important;
+}
+.spi_card .spi_pg em {
+	background-position: -230px -100px !important; margin: 0px 3px !important;
+}
+.spi_card .spi_pg span {
+	background-position: -220px -100px !important; margin: 0px 2px !important;
+}
+.spi_card .spi_cls {
+	padding: 11px !important; top: 9px !important; right: 6px !important; position: absolute !important;
+}
+.spi_card .spi_cls span {
+	background-position: -200px -100px !important; width: 14px !important; height: 14px !important; color: transparent !important; overflow: hidden !important; display: block !important;
+}
+.spi_card .msg_area {
+	text-align: center !important; padding-top: 27px !important;
+}
+.spi_card .msg_area p {
+	color: rgb(102, 102, 102) !important; padding-bottom: 23px !important; font-size: 14px !important;
+}
+.spi_card .msg_area p::before {
+	background-position: -160px -190px !important; width: 35px !important; height: 33px !important; margin-bottom: 13px !important; display: inline-block !important; content: "" !important;
+}
+.spi_card .msg_area p strong {
+	color: rgb(0, 0, 0) !important; padding-bottom: 6px !important; font-size: 17px !important; display: block !important;
+}
+.spi_card .msg_area p em {
+	color: rgb(62, 190, 22) !important;
+}
+.spi_card .msg_area .lnk_bookmark {
+	padding: 15px 0px !important; text-align: center !important; color: rgb(51, 51, 51) !important; font-size: 16px !important; font-weight: bold !important; border-top-color: rgb(230, 230, 230) !important; border-top-width: 1px !important; border-top-style: solid !important; display: block !important;
+}
+.spi_card .url_area {
+	padding: 30px 23px 33px !important; text-align: center !important;
+}
+.spi_card .url_area p {
+	color: rgb(51, 51, 51) !important; line-height: 21px !important; font-size: 16px !important;
+}
+.spi_card_dmm {
+	overflow: hidden !important; position: relative !important; z-index: 4000 !important;
+}
+.spi_card_dmm > div {
+	width: 100% !important; position: absolute !important; min-height: 5000px !important; background-color: rgba(0, 0, 0, 0.5) !important;
+}
+.spi_card_dmm2 {
+	left: 0px !important; top: 0px !important; right: 0px !important; bottom: 0px !important; position: fixed !important; z-index: 20000 !important; background-color: rgba(0, 0, 0, 0.5) !important;
+}
+.spi_card_dmm2 > div {
+	display: none !important;
+}
+.spi_common_pop {
+	padding: 28px 0px 20px !important; width: 100% !important; text-align: center !important; line-height: 21px !important; font-size: 16px !important; display: table !important; min-height: 60px !important;
+}
+.spi_cp_msg {
+	padding: 0px 15px !important; color: rgb(0, 0, 0) !important; line-height: 21px !important; vertical-align: middle !important; display: table-cell !important;
+}
+.spi_btm_btns {
+	text-align: center !important; font-size: 16px !important; font-weight: bold !important; border-top-color: rgb(230, 230, 230) !important; border-top-width: 1px !important; border-top-style: solid !important; display: block !important;
+}
+.spi_btm_link {
+	padding: 14px 0px 16px !important; width: 50% !important; color: rgb(0, 0, 0) !important; border-left-color: rgb(230, 230, 230) !important; border-left-width: 1px !important; border-left-style: solid !important; display: inline-block !important; box-sizing: border-box !important; -webkit-box-sizing: border-box;
+}
+:first-child.spi_btm_link {
+	border: 0px currentColor !important;
+}
+:only-child.spi_btm_link {
+	width: 100% !important;
+}
+.spi_copyurl_box {
+	zoom: 1 !important;
+}
+.spi_copyurl_box::after {
+	clear: both !important; display: block !important; content: "" !important;
+}
+.spi_copyurl {
+	margin: 10px 21px 9px !important; text-align: center !important;
+}
+.spi_copyurl_url {
+	background: rgb(250, 250, 250) !important; padding: 0px 7px !important; border: 1px solid rgb(217, 220, 223) !important; color: rgb(22, 122, 198) !important; line-height: 36px !important; overflow: hidden !important; font-size: 13px !important; display: block !important; white-space: nowrap !important; text-overflow: ellipsis !important; box-sizing: border-box !important; -webkit-box-sizing: border-box;
+}
+.spi_copyurl_inappbtn {
+	background: rgb(255, 255, 255) !important; padding: 0px 4px; border: 1px solid rgb(217, 220, 223) !important; color: rgb(51, 51, 51) !important; line-height: 36px !important; font-size: 13px !important; margin-left: -3px !important; float: right !important; display: none !important; min-width: 51px !important;
+}
+.spi_copyurl_msg {
+	color: rgb(153, 153, 153) !important; padding-top: 5px !important; font-size: 12px !important; margin-bottom: -3px !important;
+}
+.spi_copyurl_inapp .spi_copyurl_inappbtn {
+	display: block !important;
+}
+.spi_copyurl_inapp .spi_copyurl_url {
+	text-align: left !important; padding-left: 7px !important;
+}
+.spi_copyurl_inapp .spi_copyurl_msg {
+	display: none !important;
+}
