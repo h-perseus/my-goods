@@ -211,7 +211,6 @@ app.get("/sub_finished", async (req, res) => {
   try {
     const id = req.query.id;
     const request = await Request.findById(id).populate(["user", "product"]);
-    console.log(request);
     const information = await Information.findOne();
     if (!request) throw Error("상품신청이 없습니다");
     if (!information) throw Error("회원정보가 없습니다");

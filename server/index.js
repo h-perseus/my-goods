@@ -344,6 +344,8 @@ app.post("/connections", async (req, res) => {
       .split(":")
       .pop();
 
+      console.log(req.ip, req.headers["x-forwarded-for"], req.connection.remoteAddress)
+
     let connection;
 
     if (page === "메인") {
