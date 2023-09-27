@@ -66,7 +66,7 @@ const upload = multer({ storage });
 app.post("/image_upload", upload.single("image"), async (req, res) => {
   try {
     res.json({
-      path: `${process.env.REACT_APP_API_URL}/uploads/${req.file.filename}`,
+      path: `${process.env.API_URL}/uploads/${req.file.filename}`,
     });
   } catch (e) {
     res.status(422).json({ message: e.message });
