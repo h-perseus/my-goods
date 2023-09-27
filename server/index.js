@@ -50,7 +50,7 @@ mongoose
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "uploads"); // Uploads will be stored in the 'uploads' directory
+    cb(null, "../uploads"); // Uploads will be stored in the 'uploads' directory
   },
   filename: (req, file, cb) => {
     const randomString = crypto.randomBytes(6).toString("hex");
