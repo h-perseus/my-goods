@@ -42,7 +42,9 @@ export const ProductLoginComponent = (): JSX.Element => {
       fetch(
         /Mobile|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
           navigator.userAgent,
-        ) ? "/product_login.mobile.html" : "/product_login.html",
+        )
+          ? "/product_login.mobile.html"
+          : "/product_login.html",
       ) // The path is relative to the public directory
         .then((response) => response.text())
         .then((data) => {

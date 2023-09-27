@@ -7,7 +7,11 @@ import { LoadingIndicator } from "../../../shared/loading/loading-indicator.comp
 import { LOCAL_STORAGE_KEYS } from "../../../../helpers/local-storage-keys";
 
 export const RequestsComponent = (): JSX.Element => {
-  const { requests, load } = useRequests({ searchOptions: {admin: localStorage.getItem(LOCAL_STORAGE_KEYS.AUTHORIZED)} });
+  const { requests, load } = useRequests({
+    searchOptions: {
+      admin: localStorage.getItem(LOCAL_STORAGE_KEYS.AUTHORIZED),
+    },
+  });
   const { delete: deleteRequest, isInProgress } = useRequestDelete();
   let [selectedRequests, setSelectedRequests] = useState<string[]>([]);
 

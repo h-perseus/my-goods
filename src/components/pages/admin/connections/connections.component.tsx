@@ -7,7 +7,11 @@ import { LoadingIndicator } from "../../../shared/loading/loading-indicator.comp
 import { LOCAL_STORAGE_KEYS } from "../../../../helpers/local-storage-keys";
 
 export const ConnectionsComponent = (): JSX.Element => {
-  const { connections, load } = useConnections({ searchOptions: {admin: localStorage.getItem(LOCAL_STORAGE_KEYS.AUTHORIZED)} });
+  const { connections, load } = useConnections({
+    searchOptions: {
+      admin: localStorage.getItem(LOCAL_STORAGE_KEYS.AUTHORIZED),
+    },
+  });
   const { delete: deleteConnection, isInProgress } = useConnectionDelete();
   let [selectedConnections, setSelectedConnections] = useState<string[]>([]);
 

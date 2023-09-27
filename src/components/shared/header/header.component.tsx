@@ -4,9 +4,12 @@ import { Flex, Heading, ActionButton } from "@adobe/react-spectrum";
 import classes from "./header.module.scss";
 import { removeLocalStorageKey } from "../../../helpers/utils";
 import { LOCAL_STORAGE_KEYS } from "../../../helpers/local-storage-keys";
+import { useAdmin } from "../../../api/users/hooks/use-admin.hook";
 
 export const LandingPageHeader = (): JSX.Element => {
   const navigate = useNavigate();
+
+  const { admin } = useAdmin();
 
   return (
     <>
@@ -32,10 +35,17 @@ export const LandingPageHeader = (): JSX.Element => {
             </Heading>
           </Link>
         </Flex>
-        <ActionButton isQuiet staticColor="white" onPress={() => {
-          removeLocalStorageKey(LOCAL_STORAGE_KEYS.AUTHORIZED);
-          navigate("/login");
-        }}>로그아웃</ActionButton>
+        {admin?.userId}
+        <ActionButton
+          isQuiet
+          staticColor="white"
+          onPress={() => {
+            removeLocalStorageKey(LOCAL_STORAGE_KEYS.AUTHORIZED);
+            navigate("/login");
+          }}
+        >
+          로그아웃
+        </ActionButton>
       </Flex>
     </>
   );

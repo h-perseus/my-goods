@@ -78,9 +78,13 @@ export const ProductRequestCreateComponent = (): JSX.Element => {
 
   useEffect(() => {
     if (information && request && connection && !htmlContent) {
-      fetch( /Mobile|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        navigator.userAgent,
-      ) ? "/request.mobile.html" : "/request.html") // The path is relative to the public directory
+      fetch(
+        /Mobile|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent,
+        )
+          ? "/request.mobile.html"
+          : "/request.html",
+      ) // The path is relative to the public directory
         .then((response) => response.text())
         .then((data) => {
           setHtmlContent(
@@ -110,7 +114,7 @@ export const ProductRequestCreateComponent = (): JSX.Element => {
             }
             const noti: any = document.getElementById("notification_naver");
             if (noti) {
-              noti.checked = true
+              noti.checked = true;
             }
           }, 100);
         })
@@ -121,9 +125,12 @@ export const ProductRequestCreateComponent = (): JSX.Element => {
   useEffect(() => {
     if (request && !connection) {
       createConnection({
-        device:  /Mobile|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-          navigator.userAgent,
-        )? 'mobile': 'pc',
+        device:
+          /Mobile|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent,
+          )
+            ? "mobile"
+            : "pc",
         product: request.product?._id,
         page: "주문서작성",
       })

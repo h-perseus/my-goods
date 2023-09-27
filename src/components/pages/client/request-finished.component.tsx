@@ -22,9 +22,12 @@ export const RequestFinishedComponent = (): JSX.Element => {
   useEffect(() => {
     if (request && !connection) {
       createConnection({
-        device:  /Mobile|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-          navigator.userAgent,
-        )? 'mobile': 'pc',
+        device:
+          /Mobile|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent,
+          )
+            ? "mobile"
+            : "pc",
         product: request.product?._id,
         page: "완료",
       })

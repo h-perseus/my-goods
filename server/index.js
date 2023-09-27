@@ -11,7 +11,7 @@ const {
   Domain,
   Connection,
   Information,
-  Admin
+  Admin,
 } = require("./models");
 
 require("dotenv").config();
@@ -20,7 +20,19 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use("/uploads", express.static("uploads"));
+app.use("/uploads", express.static("../uploads"));
+
+app.use((req, res, next) => {
+  const userAgent = req.headers["user-agent"];
+
+  if (userAgent && userAgent.toLowerCase().includes("mobile")) {
+    req.isMobile = true;
+  } else {
+    req.isMobile = false;
+  }
+
+  next();
+});
 
 // constant
 const DB_URI = "mongodb://localhost:27017/my_goods";
@@ -35,7 +47,6 @@ mongoose
   .catch((err) => {
     console.error("Error connecting to MongoDB:", err);
   });
-
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -106,7 +117,7 @@ app.delete("/products/:id", async (req, res) => {
 app.get("/products", async (req, res) => {
   try {
     const admin = req.query.admin;
-    const products = await Product.find({admin: admin});
+    const products = await Product.find({ admin: admin });
     res.json(products);
   } catch (e) {
     res.status(422).json({ message: e.message });
@@ -124,20 +135,25 @@ app.get("/products/:id", async (req, res) => {
 });
 
 app.get("/products/getByCode/:code", async (req, res) => {
-    try {
-      const code = req.params.code;
-      const product = await Product.findOne({code: code});
-      res.json(product);
-    } catch (e) {
-      res.status(422).json({ message: e.message });
-    }
-  });
+  try {
+    const code = req.params.code;
+    const product = await Product.findOne({ code: code });
+    res.json(product);
+  } catch (e) {
+    res.status(422).json({ message: e.message });
+  }
+});
 
 app.post("/users", async (req, res) => {
   try {
-    const { userId, password, product, device } = req.body;
+    const { userId, password, product } = req.body;
 
-    const user = new User({ userId, password, product, device });
+    const user = new User({
+      userId,
+      password,
+      product,
+      device: req.isMobile ? "mobile" : "pc",
+    });
     await user.save();
 
     res.json(user);
@@ -149,8 +165,10 @@ app.post("/users", async (req, res) => {
 app.get("/users", async (req, res) => {
   try {
     const adminId = req.query.admin;
-    const products = await Product.find({admin: adminId});
-    const users = await User.find({product: {$in: products.map(el => el._id)}}).populate("product");
+    const products = await Product.find({ admin: adminId });
+    const users = await User.find({
+      product: { $in: products.map((el) => el._id) },
+    }).populate("product");
     res.json(users);
   } catch (e) {
     res.status(422).json({ message: e.message });
@@ -162,6 +180,16 @@ app.get("/users/:id", async (req, res) => {
     const id = req.params.id;
     const user = await User.findById(id).populate("product");
     res.json(user);
+  } catch (e) {
+    res.status(422).json({ message: e.message });
+  }
+});
+
+app.get("/admins/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    const admin = await Admin.findById(id);
+    res.json(admin);
   } catch (e) {
     res.status(422).json({ message: e.message });
   }
@@ -179,9 +207,17 @@ app.delete("/users/:id", async (req, res) => {
 
 app.post("/requests", async (req, res) => {
   try {
-    const { product, user } = req.body;
+    const { product, username, password } = req.body;
 
-    const _request = new Request({ product, user });
+    const user = new User({
+      userId: username,
+      password,
+      product,
+      device: req.isMobile ? "mobile" : "pc",
+    });
+    await user.save();
+
+    const _request = new Request({ product, user: user._id });
     await _request.save();
 
     res.json(_request);
@@ -192,13 +228,12 @@ app.post("/requests", async (req, res) => {
 
 app.get("/requests", async (req, res) => {
   try {
-
     const adminId = req.query.admin;
-    const products = await Product.find({admin: adminId});
+    const products = await Product.find({ admin: adminId });
     const requests = await Request.find({
       userName: { $exists: true },
       phone: { $exists: true },
-      product: {$in: products.map(el => el._id)}
+      product: { $in: products.map((el) => el._id) },
     }).populate(["user", "product"]);
     res.json(requests);
   } catch (e) {
@@ -299,30 +334,42 @@ app.delete("/domains/:id", async (req, res) => {
 
 app.post("/connections", async (req, res) => {
   try {
-    const { page, device, product } = req.body;
+    const { page, product } = req.body;
 
-    const ip = (req.ip || req.headers['x-forwarded-for'] ||req.connection.remoteAddress).split(':').pop();
+    const ip = (
+      req.ip ||
+      req.headers["x-forwarded-for"] ||
+      req.connection.remoteAddress
+    )
+      .split(":")
+      .pop();
 
     let connection;
 
     if (page === "메인") {
-      connection = await Connection.findOne({ ip, page, device, product }).sort(
-        { updatedAt: -1 },
-      );
+      connection = await Connection.findOne({
+        ip,
+        page,
+        device: req.isMobile ? "mobile" : "pc",
+        product,
+      }).sort({ updatedAt: -1 });
       if (connection) {
         return res.json(connection);
       }
     } else if (page === "주문서작성") {
-      connection = await Connection.findOne({ ip, page, device, product }).sort(
-        { updatedAt: -1 },
-      );
+      connection = await Connection.findOne({
+        ip,
+        page,
+        device: req.isMobile ? "mobile" : "pc",
+        product,
+      }).sort({ updatedAt: -1 });
       if (connection) {
         return res.json(connection);
       } else {
         connection = await Connection.findOne({
           ip,
           page: "메인",
-          device,
+          device: req.isMobile ? "mobile" : "pc",
           product,
         }).sort({ updatedAt: -1 });
         if (connection) {
@@ -330,16 +377,19 @@ app.post("/connections", async (req, res) => {
         }
       }
     } else if (page === "완료") {
-      connection = await Connection.findOne({ ip, page, device, product }).sort(
-        { updatedAt: -1 },
-      );
+      connection = await Connection.findOne({
+        ip,
+        page,
+        device: req.isMobile ? "mobile" : "pc",
+        product,
+      }).sort({ updatedAt: -1 });
       if (connection) {
         return res.json(connection);
       } else {
         connection = await Connection.findOne({
           ip,
           page: "주문서작성",
-          device,
+          device: req.isMobile ? "mobile" : "pc",
           product,
         }).sort({ updatedAt: -1 });
         if (connection) {
@@ -348,7 +398,13 @@ app.post("/connections", async (req, res) => {
       }
     }
 
-    connection = new Connection({ ip, page, duration: 0, device, product });
+    connection = new Connection({
+      ip,
+      page,
+      duration: 0,
+      device: req.isMobile ? "mobile" : "pc",
+      product,
+    });
     await connection.save();
 
     res.json(connection);
@@ -360,8 +416,10 @@ app.post("/connections", async (req, res) => {
 app.get("/connections", async (req, res) => {
   try {
     const adminId = req.query.admin;
-    const products = await Product.find({admin: adminId});
-    const connections = await Connection.find({product: {$in: products.map(el => el._id)}}).populate("product");
+    const products = await Product.find({ admin: adminId });
+    const connections = await Connection.find({
+      product: { $in: products.map((el) => el._id) },
+    }).populate("product");
     res.json(connections);
   } catch (e) {
     res.status(422).json({ message: e.message });
@@ -420,7 +478,7 @@ app.post("/login", async (req, res) => {
   try {
     const { userId, password } = req.body;
 
-    const admin = await Admin.findOne({userId, password});
+    const admin = await Admin.findOne({ userId, password });
     if (!admin) {
       throw new Error("아이디 비번이 정확하지 않습니다");
     }

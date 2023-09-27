@@ -4,8 +4,7 @@ import { useEffect, useState } from "react";
 import { PATHS } from "../../../routes";
 import ReactHtmlParser from "react-html-parser";
 
-export const ProductConfirmComponent = (
-  ): JSX.Element => {
+export const ProductConfirmComponent = (): JSX.Element => {
   const navigate = useNavigate();
   const { productId = "" } = useParams<{
     productId: string;

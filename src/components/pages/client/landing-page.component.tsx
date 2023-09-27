@@ -44,8 +44,7 @@ export const LandingPage = (): JSX.Element => {
                     direction={"column"}
                     alignItems={"center"}
                   >
-                    <ProductComponent
-                    ></ProductComponent>
+                    <ProductComponent></ProductComponent>
                   </Flex>
                 }
               />
@@ -58,8 +57,7 @@ export const LandingPage = (): JSX.Element => {
                     direction={"column"}
                     alignItems={"center"}
                   >
-                    <ProductConfirmComponent
-                    ></ProductConfirmComponent>
+                    <ProductConfirmComponent></ProductConfirmComponent>
                   </Flex>
                 }
               />
@@ -72,8 +70,7 @@ export const LandingPage = (): JSX.Element => {
                     direction={"column"}
                     alignItems={"center"}
                   >
-                    <ProductLoginComponent
-                    ></ProductLoginComponent>
+                    <ProductLoginComponent></ProductLoginComponent>
                   </Flex>
                 }
               />
@@ -86,8 +83,7 @@ export const LandingPage = (): JSX.Element => {
                     direction={"column"}
                     alignItems={"center"}
                   >
-                    <ProductRequestCreateComponent
-                    ></ProductRequestCreateComponent>
+                    <ProductRequestCreateComponent></ProductRequestCreateComponent>
                   </Flex>
                 }
               />
@@ -100,8 +96,7 @@ export const LandingPage = (): JSX.Element => {
                     direction={"column"}
                     alignItems={"center"}
                   >
-                    <RequestFinishedComponent
-                    ></RequestFinishedComponent>
+                    <RequestFinishedComponent></RequestFinishedComponent>
                   </Flex>
                 }
               />

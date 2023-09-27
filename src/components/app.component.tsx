@@ -5,7 +5,6 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import { ROUTER_PATHS } from "../routes";
 import { useStorage } from "../hooks/use-storage";
 import AdminLandingPage from "./pages/admin/landing-page.component";
-import LandingPage from "./pages/client/landing-page.component";
 import LoginPage from "./pages/login.component";
 
 interface ResponseError {
@@ -53,7 +52,6 @@ const App = (): JSX.Element => {
     <>
       <Routes>
         <Route path={ROUTER_PATHS.ADMIN + "*"} element={<AdminLandingPage />} />
-        <Route path={"*"} element={<LandingPage />} />
         <Route path={"/login"} element={<LoginPage />} />
         <Route
           path="*"

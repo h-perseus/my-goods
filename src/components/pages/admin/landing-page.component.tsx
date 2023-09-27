@@ -16,9 +16,18 @@ import { DomainCreateComponent } from "./domains/domain-create.component";
 import { DomainEditComponent } from "./domains/domain-edit.component";
 import { useEffect } from "react";
 import { LOCAL_STORAGE_KEYS } from "../../../helpers/local-storage-keys";
+import { useAdmin } from "../../../api/users/hooks/use-admin.hook";
 
 export const LandingPage = (): JSX.Element => {
   const navigate = useNavigate();
+
+  const { admin, isInProgress } = useAdmin();
+
+  useEffect(() => {
+    if (!isInProgress && !admin) {
+      navigate("/login");
+    }
+  }, [admin, isInProgress]);
 
   useEffect(() => {
     if (!localStorage.getItem(LOCAL_STORAGE_KEYS.AUTHORIZED)) {

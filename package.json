@@ -55,7 +55,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prettier:write": "prettier --write --ignore-path .gitignore \"src/**/*.{ts,tsx,test.ts}\" \"public/*.html\" \"server/*.js\""
+    "prettier:write": "prettier --write --ignore-path .gitignore \"src/**/*.{ts,tsx,test.ts}\" \"server/public/*.html\" \"server/*.js\""
   },
   "eslintConfig": {
     "extends": [

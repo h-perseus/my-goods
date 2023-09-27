@@ -1,6 +1,7 @@
 const PRODUCTS = `${process.env.REACT_APP_API_URL}/products`;
 const REQUESTS = `${process.env.REACT_APP_API_URL}/requests`;
 const USERS = `${process.env.REACT_APP_API_URL}/users`;
+const ADMINS = `${process.env.REACT_APP_API_URL}/admins`;
 const CONNECTIONS = `${process.env.REACT_APP_API_URL}/connections`;
 const DOMAINS = `${process.env.REACT_APP_API_URL}/domains`;
 const INFORMATION = `${process.env.REACT_APP_API_URL}/information`;
@@ -81,6 +82,7 @@ const PRODUCT_BY_CODE = (id: string): string => `${PRODUCTS}/getByCode/${id}`;
 const REQUEST = (id: string): string => `${REQUESTS}/${id}`;
 const DOMAIN = (id: string): string => `${DOMAINS}/${id}`;
 const USER = (id: string): string => `${USERS}/${id}`;
+const ADMIN = (id: string): string => `${ADMINS}/${id}`;
 const CONNECTION = (id: string): string => `${CONNECTIONS}/${id}`;
 
 export const API_URLS = {
@@ -101,5 +103,6 @@ export const API_URLS = {
   USER_LIST,
   USER,
   IMAGE_UPLOAD,
-  PRODUCT_BY_CODE
+  PRODUCT_BY_CODE,
+  ADMIN,
 };

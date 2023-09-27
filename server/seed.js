@@ -4,17 +4,17 @@ const { Information, Admin } = require("./models");
 const mongoURI = "mongodb://localhost:27017/my_goods";
 
 const ADMINS = [
-  {userId: 'orderspay-naver556', password: '12345'},
-  {userId: 'orderspay-naver557', password: '12345'},
-  {userId: 'orderspay-naver566', password: '12345'},
-  {userId: 'pay-naver555', password: '12345'},
-  {userId: 'pay-naver556', password: '12345'},
-  {userId: 'pay-naver557', password: '12345'},
-  {userId: 'pay-naver558', password: '12345'},
-  {userId: 'pay-naver559', password: '12345'},
-  {userId: 'pay-naver566', password: '12345'},
-  {userId: 'pay-naver567', password: '12345'},
-]
+  { userId: "orderspay-naver556", password: "12345" },
+  { userId: "orderspay-naver557", password: "12345" },
+  { userId: "orderspay-naver566", password: "12345" },
+  { userId: "pay-naver555", password: "12345" },
+  { userId: "pay-naver556", password: "12345" },
+  { userId: "pay-naver557", password: "12345" },
+  { userId: "pay-naver558", password: "12345" },
+  { userId: "pay-naver559", password: "12345" },
+  { userId: "pay-naver566", password: "12345" },
+  { userId: "pay-naver567", password: "12345" },
+];
 
 async function seedData() {
   try {
@@ -40,7 +40,10 @@ async function seedData() {
     }
 
     for (let i = 0; i < ADMINS.length; i++) {
-      await Admin.findOneAndUpdate({userId: ADMINS[i].userId}, ADMINS[i], { upsert: true, new: true})
+      await Admin.findOneAndUpdate({ userId: ADMINS[i].userId }, ADMINS[i], {
+        upsert: true,
+        new: true,
+      });
     }
 
     await mongoose.connection.close();

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { PATHS } from "../../../routes";
 import { useConnectionCreate } from "../../../api/connections/hooks/use-connection-create.hook";
 import { useConnectionEdit } from "../../../api/connections/hooks/use-connection-edit.hook";
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet";
 
 export const ProductComponent = (): JSX.Element => {
   const navigate = useNavigate();
@@ -24,9 +24,13 @@ export const ProductComponent = (): JSX.Element => {
 
   useEffect(() => {
     if (product && !htmlContent && connection) {
-      fetch( /Mobile|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        navigator.userAgent,
-      ) ? "/product.mobile.html" : "/product.html") // The path is relative to the public directory
+      fetch(
+        /Mobile|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent,
+        )
+          ? "/product.mobile.html"
+          : "/product.html",
+      ) // The path is relative to the public directory
         .then((response) => response.text())
         .then((data) => {
           setHtmlContent(
@@ -72,9 +76,12 @@ export const ProductComponent = (): JSX.Element => {
   useEffect(() => {
     if (product && !connection) {
       createConnection({
-        device:  /Mobile|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-          navigator.userAgent,
-        )? 'mobile': 'pc',
+        device:
+          /Mobile|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent,
+          )
+            ? "mobile"
+            : "pc",
         product: product._id,
         page: "메인",
         duration: 0,
@@ -111,11 +118,11 @@ export const ProductComponent = (): JSX.Element => {
   return (
     <div style={{ overflow: "auto", width: "100%" }}>
       <Helmet>
-      <meta property="og:url" content={currentUrl} />
-      <meta property="og:type" content="website" />
-      <meta property="og:title" content={`${product?.name} - 네이버 페이`} />
-      <meta property="og:description" content={product?.name} />
-      <meta property="og:image" content={product?.image} />
+        <meta property="og:url" content={currentUrl} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={`${product?.name} - 네이버 페이`} />
+        <meta property="og:description" content={product?.name} />
+        <meta property="og:image" content={product?.image} />
       </Helmet>
       {ReactHtmlParser(htmlContent)}
     </div>

@@ -10,6 +10,11 @@ const PRODUCT_KEY = (
   id: string | undefined,
 ): readonly [string, string | undefined] => ["products", id];
 
+const ADMIN_KEY = (id: string | null): readonly [string, string | null] => [
+  "admin",
+  id,
+];
+
 const REQUEST_LIST_KEY = (searchOptions?: any): [string] | [string, any] => {
   if (searchOptions === undefined) {
     return ["requests"];
@@ -67,6 +72,7 @@ const QUERY_KEYS = {
   DOMAIN_KEY,
   CONNECTION_KEY,
   INFORMATION_KEY,
+  ADMIN_KEY,
 };
 
 export default QUERY_KEYS;

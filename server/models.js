@@ -130,5 +130,5 @@ module.exports = {
   Information,
   Product,
   Request,
-  Admin
+  Admin,
 };

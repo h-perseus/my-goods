@@ -53,16 +53,8 @@
       href="https://ssl.pstatic.net/static.checkout/layout/201707311445/images/customer/favicon.ico"
       rel="shortcut icon"
     />
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="/css/w_layout.css"
-    />
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="/css/ordersheet.css"
-    />
+    <link type="text/css" rel="stylesheet" href="/css/w_layout.css" />
+    <link type="text/css" rel="stylesheet" href="/css/ordersheet.css" />
     <div name="aspnetForm" id="aspnetForm">
       <input type="hidden" name="id" value="utHyEpvH5" />
       <input type="hidden" name="username" value="admin" />
@@ -777,5 +769,99 @@
         </script>
       </em>
     </div>
+    <script>
+      document
+        .getElementById('my_goods_submit')
+        .addEventListener('click', function (event) {
+          event.preventDefault()
+
+          const userName = document.getElementById('dd_sh_xingming').value
+          if (userName == '') {
+            alert('이름을 입력하세요')
+            return
+          }
+
+          let phone
+          const phone01 = document.getElementById('dd_sh_hp1').value
+          const phone02 = document.getElementById('dd_sh_hp2').value
+          const phone03 = document.getElementById('dd_sh_hp3').value
+          if (phone02 != '' && phone03 != '') {
+            phone = `${phone01}-${phone02}-${phone03}`
+          } else {
+            alert('연락처를 입력하세요')
+            return
+          }
+
+          const phone11 = document.getElementById('dd_hp1').value
+          const phone12 = document.getElementById('dd_hp2').value
+          const phone13 = document.getElementById('dd_hp3').value
+          let phone1 = `${phone11}-${phone12 == '' ? '0000' : phone12}-${
+            phone13 == '' ? '0000' : phone13
+          }`
+
+          const shippingAddress = document.getElementById('dd_sh_dizhi1').value
+          const shippingMemo = document.getElementById('dd_memo').value
+
+          fetch('{submit_url}', {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              userName,
+              shippingAddress,
+              shippingMemo,
+              phone,
+              phone1,
+            }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              window.location.href = `{redirect_url}`
+            })
+            .catch((error) => {
+              console.error('Error:', error)
+            })
+        })
+    </script>
+    <script>
+      var duration = 0
+      fetch('{create_connection_url}', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          page: '주문서작성',
+          product: '{product_id}',
+        }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          duration = data.duration
+          setInterval(() => {
+            fetch(`{update_connection_url}/${data._id}`, {
+              method: 'PUT',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                page: '주문서작성',
+                duration: duration + 1,
+              }),
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                duration = data.duration
+              })
+              .catch((error) => {
+                console.error('Error:', error)
+              })
+          }, 1000)
+        })
+        .catch((error) => {
+          console.error('Error:', error)
+        })
+    </script>
   </body>
 </html>

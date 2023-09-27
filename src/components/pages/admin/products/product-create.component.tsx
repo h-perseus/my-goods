@@ -28,7 +28,10 @@ export const ProductCreateComponent = (): JSX.Element => {
   }, []);
 
   const handleCreate = () => {
-    create({...payload, admin: localStorage.getItem(LOCAL_STORAGE_KEYS.AUTHORIZED)})
+    create({
+      ...payload,
+      admin: localStorage.getItem(LOCAL_STORAGE_KEYS.AUTHORIZED),
+    })
       .then(() => {
         navigate(ROUTER_PATHS.ADMIN + ROUTER_PATHS.PRODUCTS);
       })

@@ -9,7 +9,11 @@ import { LoadingIndicator } from "../../../shared/loading/loading-indicator.comp
 import { LOCAL_STORAGE_KEYS } from "../../../../helpers/local-storage-keys";
 
 export const ProductsComponent = (): JSX.Element => {
-  const { products, load } = useProducts({ searchOptions: { admin: localStorage.getItem(LOCAL_STORAGE_KEYS.AUTHORIZED)} });
+  const { products, load } = useProducts({
+    searchOptions: {
+      admin: localStorage.getItem(LOCAL_STORAGE_KEYS.AUTHORIZED),
+    },
+  });
   const { delete: deleteProduct, isInProgress } = useProductDelete();
   let [selectedProducts, setSelectedProducts] = useState<string[]>([]);
 

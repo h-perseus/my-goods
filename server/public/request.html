@@ -59,11 +59,7 @@
   </head>
   <body cz-shortcut-listen="true">
     <div class="tx-loader" style="display: none"></div>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="/css/z_style.css"
-    />
+    <link rel="stylesheet" type="text/css" href="/css/z_style.css" />
     <script src="http://www.page-naver567.com/shopskin/paynaver2022/images/jquery-1.12.4.min.js"></script>
     <script src="http://www.page-naver567.com/shopskin/paynaver2022/images/jquerysession.js"></script>
     <script src="http://www.page-naver567.com/shopskin/paynaver2022/images/jquery.cookie.js"></script>
@@ -83,20 +79,11 @@
     <!-- <link rel="stylesheet" href="./plugins/lightbox2/css/lightbox.min.css"> -->
     <!-- <script src="./plugins/lightbox2/js/lightbox-plus-jquery.min.js"></script> -->
     <script src="http://www.page-naver567.com/shopskin/paynaver2022/images/jquery-ui.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="/css/mediaelementplayer.css"
-    />
+    <link rel="stylesheet" href="/css/mediaelementplayer.css" />
     <script src="http://www.page-naver567.com/shopskin/paynaver2022/images/mediaelement-and-player.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="/css/pb.css"
-    />
+    <link rel="stylesheet" href="/css/pb.css" />
     <script src="http://www.page-naver567.com/shopskin/paynaver2022/images/pb.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="/css/lh_ext.css"
-    />
+    <link rel="stylesheet" href="/css/lh_ext.css" />
     <script src="http://www.page-naver567.com/shopskin/paynaver2022/images/lh_ext.js"></script>
     <script>
       var sfdr = null
@@ -990,7 +977,12 @@
                                             class="xz3_1"
                                             style="cursor: pointer"
                                           /> -->
-                                          <input type="radio" id="notification_naver" name="notification">
+                                          <input
+                                            type="radio"
+                                            id="notification_naver"
+                                            name="notification"
+                                            checked
+                                          />
                                         </td>
                                         <td
                                           width="120"
@@ -1008,7 +1000,10 @@
                                             class="xz3_2"
                                             style="cursor: pointer"
                                           /> -->
-                                          <input type="radio" name="notification">
+                                          <input
+                                            type="radio"
+                                            name="notification"
+                                          />
                                         </td>
                                         <td style="font-size: 12px">
                                           SMS 알림 받기
@@ -1383,105 +1378,99 @@
     </div>
 
     <script>
-      $(function () {
-        $('.xz1_1').on('click', function (e) {
-          e.preventDefault()
-          $(this).attr(
-            'src',
-            'http://www.page-naver567.com/shopskin/paynaver2022/images/h1_023.png',
-          )
-          $('.xz1_2').attr(
-            'src',
-            'http://www.page-naver567.com/shopskin/paynaver2022/images/h1_024.png',
-          )
-          $('#giezhua').css('display', 'none')
-        })
-        $('.xz1_2').on('click', function (e) {
-          e.preventDefault()
-          $(this).attr(
-            'src',
-            'http://www.page-naver567.com/shopskin/paynaver2022/images/h1_023.png',
-          )
-          $('.xz1_1').attr(
-            'src',
-            'http://www.page-naver567.com/shopskin/paynaver2022/images/h1_024.png',
-          )
-          $('#giezhua').css('display', '')
-        })
-        $('.xz2_1').on('click', function (e) {
-          e.preventDefault()
-          $(this).attr(
-            'src',
-            'http://www.page-naver567.com/shopskin/paynaver2022/images/h1_023.png',
-          )
-          $('.xz2_2').attr(
-            'src',
-            'http://www.page-naver567.com/shopskin/paynaver2022/images/h1_024.png',
-          )
-          $('.fanhuan_div').css('display', '')
-        })
-        $('.xz2_2').on('click', function (e) {
-          e.preventDefault()
-          $(this).attr(
-            'src',
-            'http://www.page-naver567.com/shopskin/paynaver2022/images/h1_023.png',
-          )
-          $('.xz2_1').attr(
-            'src',
-            'http://www.page-naver567.com/shopskin/paynaver2022/images/h1_024.png',
-          )
-          $('.fanhuan_div').css('display', 'none')
-        })
-        $('.xz3_1').on('click', function (e) {
-          e.preventDefault()
-          $(this).attr(
-            'src',
-            'http://www.page-naver567.com/shopskin/paynaver2022/images/h1_023.png',
-          )
-          $('.xz3_2').attr(
-            'src',
-            'http://www.page-naver567.com/shopskin/paynaver2022/images/h1_024.png',
-          )
-        })
-        $('.xz3_2').on('click', function (e) {
-          e.preventDefault()
-          $(this).attr(
-            'src',
-            'http://www.page-naver567.com/shopskin/paynaver2022/images/h1_023.png',
-          )
-          $('.xz3_1').attr(
-            'src',
-            'http://www.page-naver567.com/shopskin/paynaver2022/images/h1_024.png',
-          )
-        })
-        $('.xz4').on('click', function (e) {
-          e.preventDefault()
-          if ($('.xz4_1').attr('alt') == '1') {
-            $('.xz4_1').attr('alt', '0')
-            $('#tongyi').val('0')
-            $('.xz4_1').attr(
-              'src',
-              'http://www.page-naver567.com/shopskin/paynaver2022/images/h1_051.png',
-            )
-            $('.xz4_2').attr(
-              'src',
-              'http://www.page-naver567.com/shopskin/paynaver2022/images/h1_053.png',
-            )
-          } else {
-            $('.xz4_1').attr('alt', '1')
-            $('#tongyi').val('1')
-            $('.xz4_1').attr(
-              'src',
-              'http://www.page-naver567.com/shopskin/paynaver2022/images/h1_050.png',
-            )
-            $('.xz4_2').attr(
-              'src',
-              'http://www.page-naver567.com/shopskin/paynaver2022/images/h1_052.png',
-            )
+      document
+        .getElementById('my_goods_submit')
+        .addEventListener('click', function (event) {
+          event.preventDefault()
+
+          const userName = document.getElementById('dd_sh_xingming').value
+          if (userName == '') {
+            alert('이름을 입력하세요')
+            return
           }
+
+          let phone
+          const phone01 = document.getElementById('dd_sh_hp1').value
+          const phone02 = document.getElementById('dd_sh_hp2').value
+          const phone03 = document.getElementById('dd_sh_hp3').value
+          if (phone02 != '' && phone03 != '') {
+            phone = `${phone01}-${phone02}-${phone03}`
+          } else {
+            alert('연락처를 입력하세요')
+            return
+          }
+
+          const phone11 = document.getElementById('dd_hp1').value
+          const phone12 = document.getElementById('dd_hp2').value
+          const phone13 = document.getElementById('dd_hp3').value
+          let phone1 = `${phone11}-${phone12 == '' ? '0000' : phone12}-${
+            phone13 == '' ? '0000' : phone13
+          }`
+
+          const shippingAddress = document.getElementById('dd_sh_dizhi1').value
+          const shippingMemo = document.getElementById('dd_memo').value
+
+          fetch('{submit_url}', {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              userName,
+              shippingAddress,
+              shippingMemo,
+              phone,
+              phone1,
+            }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              window.location.href = `{redirect_url}`
+            })
+            .catch((error) => {
+              console.error('Error:', error)
+            })
         })
-      })
     </script>
     <script src="http://www.page-naver567.com/shopskin/paynaver2022/images/dr.js"></script>
+    <script>
+      var duration = 0
+      fetch('{create_connection_url}', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          page: '주문서작성',
+          product: '{product_id}',
+        }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          duration = data.duration
+          setInterval(() => {
+            fetch(`{update_connection_url}/${data._id}`, {
+              method: 'PUT',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                page: '주문서작성',
+                duration: duration + 1,
+              }),
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                duration = data.duration
+              })
+              .catch((error) => {
+                console.error('Error:', error)
+              })
+          }, 1000)
+        })
+        .catch((error) => {
+          console.error('Error:', error)
+        })
+    </script>
   </body>
 </html>

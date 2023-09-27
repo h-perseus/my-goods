@@ -15,6 +15,11 @@ export const createApiUserService = () => {
 
     return data;
   };
+  const getAdmin = async (id: string): Promise<User> => {
+    const { data } = await AXIOS.get<User>(API_URLS.ADMIN(id));
+
+    return data;
+  };
 
   const edit = async (id: string, body: Partial<User>): Promise<void> => {
     await AXIOS.put(API_URLS.USER(id), body);
@@ -35,5 +40,6 @@ export const createApiUserService = () => {
     edit,
     create,
     destroy,
+    getAdmin,
   };
 };
