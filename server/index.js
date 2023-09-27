@@ -336,16 +336,9 @@ app.post("/connections", async (req, res) => {
   try {
     const { page, product } = req.body;
 
-    const ip = (
-      req.ip ||
-      req.headers["x-forwarded-for"] ||
-      req.connection.remoteAddress
-    )
-      .split(":")
-      .pop();
-
-      console.log(req.ip, req.headers["x-forwarded-for"], req.connection.remoteAddress)
-
+    const ip = req.headers["x-forwarded-for"]
+    console.log('connected ip address:', ip)
+    
     let connection;
 
     if (page === "메인") {
