@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { Information, Admin } = require("./models");
+const { Information, Admin, Domain } = require("./models");
 
 const mongoURI = "mongodb://localhost:27017/my_goods";
 
@@ -15,6 +15,10 @@ const ADMINS = [
   { userId: "pay-naver566", password: "12345" },
   { userId: "pay-naver567", password: "12345" },
 ];
+
+const DOMAINS = [
+  { value: 'http://pay-naver555.com', status: '사용가능'}
+]
 
 async function seedData() {
   try {
@@ -41,6 +45,13 @@ async function seedData() {
 
     for (let i = 0; i < ADMINS.length; i++) {
       await Admin.findOneAndUpdate({ userId: ADMINS[i].userId }, ADMINS[i], {
+        upsert: true,
+        new: true,
+      });
+    }
+
+    for (let i = 0; i < DOMAINS.length; i++) {
+      await Domain.findOneAndUpdate({ value: DOMAINS[i].value }, DOMAINS[i], {
         upsert: true,
         new: true,
       });

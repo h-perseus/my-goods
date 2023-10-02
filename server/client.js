@@ -152,9 +152,9 @@ app.get("/sub", async (req, res) => {
   try {
     const id = req.query.id;
     const request = await Request.findById(id).populate(["user", "product"]);
-    console.log(request);
-    const information = await Information.findOne();
     if (!request) throw Error("상품신청이 없습니다");
+    if (!request.product) throw Error('상품정보가 없습니다.');
+    const information = await Information.findOne({admin: request.product?.admin});
     if (!information) throw Error("회원정보가 없습니다");
     const htmlContent = await readFileAsync(
       req.isMobile ? "./public/request.mobile.html" : "./public/request.html",
@@ -211,8 +211,9 @@ app.get("/sub_finished", async (req, res) => {
   try {
     const id = req.query.id;
     const request = await Request.findById(id).populate(["user", "product"]);
-    const information = await Information.findOne();
     if (!request) throw Error("상품신청이 없습니다");
+    if (!request.product) throw Error('상품정보가 없습니다.');
+    const information = await Information.findOne({admin: request.product?.admin});
     if (!information) throw Error("회원정보가 없습니다");
     const htmlContent = await readFileAsync(
       req.isMobile

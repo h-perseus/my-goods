@@ -10,4 +10,5 @@ export interface Information {
   depositDeadline: string;
   bankAccountNumber: string;
   accountHolder: string;
+  _id: string;
 }

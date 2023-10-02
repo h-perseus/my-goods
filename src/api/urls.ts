@@ -84,6 +84,17 @@ const DOMAIN = (id: string): string => `${DOMAINS}/${id}`;
 const USER = (id: string): string => `${USERS}/${id}`;
 const ADMIN = (id: string): string => `${ADMINS}/${id}`;
 const CONNECTION = (id: string): string => `${CONNECTIONS}/${id}`;
+const INFORMATION_GET = (admin: string): string => 
+{
+  const baseUrl = `${INFORMATION}`;
+  const searchOptionsUrl = new URLSearchParams();
+  if (admin) {
+    searchOptionsUrl.set('admin', admin);
+  }
+  return `${baseUrl}?${searchOptionsUrl.toString()}`;
+}
+const INFORMATION_EDIT = (id: string): string => 
+`${INFORMATION}/${id}`;
 
 export const API_URLS = {
   PRODUCTS,
@@ -96,6 +107,8 @@ export const API_URLS = {
   DOMAIN_LIST,
   DOMAIN,
   INFORMATION,
+  INFORMATION_GET,
+  INFORMATION_EDIT,
   CONNECTIONS,
   CONNECTION_LIST,
   CONNECTION,

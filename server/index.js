@@ -453,16 +453,34 @@ app.delete("/connections/:id", async (req, res) => {
 
 app.get("/information", async (req, res) => {
   try {
-    const information = await Information.findOne().populate("domain");
+    const admin = await Admin.findById(req.query.admin);
+    if (!admin) {
+      throw Error('관리자가 존재하지 않습니다.')
+    }
+    let information = await Information.findOne({admin: admin._id}, ).populate("domain");
+    if (!information) {
+      information = await new Information({
+          admin: admin._id,
+          discount: 0,
+          fee: 1000,
+          deliveryFee: 3000,
+          seller: "5445motor(1001****)",
+          depositBank: "가상계좌코드:토스뱅크",
+          depositDeadline: "2023-09-06",
+          bankAccountNumber: "1000-6920-3508",
+          accountHolder: "차효정(주)N페이",
+      }).save();
+    }
     res.json(information);
   } catch (e) {
     res.status(422).json({ message: e.message });
   }
 });
 
-app.put("/information", async (req, res) => {
+app.put("/information/:id", async (req, res) => {
   try {
-    const information = await Information.findOneAndUpdate({}, req.body);
+    const id = req.params.id;
+    const information = await Information.findByIdAndUpdate(id, req.body);
     res.json(information);
   } catch (e) {
     res.status(422).json({ message: e.message });

@@ -5,7 +5,7 @@ import { useApplicationServices } from "../../../components/providers/applicatio
 import { NOTIFICATION_TYPE } from "../../../components/shared/notification/notification-toast/notification-type.enum";
 
 interface UseInformationEdit {
-  edit: (args: Partial<Information>) => Promise<any>;
+  edit: (id: string, args: Partial<Information>) => Promise<any>;
   isInProgress: boolean;
 }
 export const useInformationEdit = (): UseInformationEdit => {
@@ -14,9 +14,9 @@ export const useInformationEdit = (): UseInformationEdit => {
   const { informationService: service } = useApplicationServices();
 
   const edit = useCallback(
-    async (args: Partial<Information>): Promise<any> => {
+    async (id: string, args: Partial<Information>): Promise<any> => {
       setInProgress(true);
-      await service.edit(args).catch((error: any) => {
+      await service.edit(id, args).catch((error: any) => {
         setInProgress(false);
 
         addNotification(error?.message, NOTIFICATION_TYPE.ERROR);

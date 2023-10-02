@@ -54,8 +54,6 @@ const Domain = mongoose.model(
     {
       value: String,
       status: String,
-      startedAt: Date,
-      endedAt: Date,
     },
     {
       timestamps: true,
@@ -69,8 +67,7 @@ const Information = mongoose.model(
   new Schema(
     {
       domain: { type: mongoose.Schema.Types.ObjectId, ref: "Domain" },
-      userId: String,
-      password: String,
+      admin: { type: mongoose.Schema.Types.ObjectId, ref: 'Admin'},
       discount: Number,
       fee: Number,
       deliveryFee: Number,

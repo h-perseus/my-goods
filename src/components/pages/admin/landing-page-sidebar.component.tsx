@@ -31,11 +31,11 @@ export const LandingPageSidebar = (): JSX.Element => {
       url: ROUTER_PATHS.ADMIN + ROUTER_PATHS.REQUESTS,
     },
 
-    {
-      id: "domains",
-      name: "도메인관리",
-      url: ROUTER_PATHS.ADMIN + ROUTER_PATHS.DOMAINS,
-    },
+    // {
+    //   id: "domains",
+    //   name: "도메인관리",
+    //   url: ROUTER_PATHS.ADMIN + ROUTER_PATHS.DOMAINS,
+    // },
     {
       id: "information",
       name: "정보관리",

@@ -148,7 +148,7 @@ export const LandingPage = (): JSX.Element => {
                   </Flex>
                 }
               />
-              <Route
+              {/* <Route
                 path={ROUTER_PATHS.DOMAINS}
                 element={
                   <Flex
@@ -160,7 +160,7 @@ export const LandingPage = (): JSX.Element => {
                     <DomainsComponent></DomainsComponent>
                   </Flex>
                 }
-              />
+              /> */}
               <Route
                 path={ROUTER_PATHS.DOMAIN_EDIT}
                 element={

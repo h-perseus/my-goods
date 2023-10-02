@@ -9,7 +9,6 @@ import {
 import { useInformation } from "../../../../api/information/hooks/use-information.hook";
 import { useDomains } from "../../../../api/domains/hooks/use-domains.hook";
 import { useEffect, useState } from "react";
-import { isEmpty } from "../../../../helpers/utils";
 import { useInformationEdit } from "../../../../api/information/hooks/use-information-edit.hook";
 import { LoadingIndicator } from "../../../shared/loading/loading-indicator.component";
 
@@ -31,7 +30,7 @@ export const InformationEditComponent = (): JSX.Element => {
   }, [information]);
 
   const handleEdit = () => {
-    edit(payload)
+    edit(information?._id || '', payload)
       .then(() => {
         load();
       })
