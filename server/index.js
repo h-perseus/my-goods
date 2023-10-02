@@ -459,7 +459,9 @@ app.get("/information", async (req, res) => {
     }
     let information = await Information.findOne({admin: admin._id}, ).populate("domain");
     if (!information) {
+      const domain = await Domain.findOne({});
       information = await new Information({
+          domain: domain?._id,
           admin: admin._id,
           discount: 0,
           fee: 1000,
