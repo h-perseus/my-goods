@@ -4,10 +4,22 @@ const { Information, Admin, Domain, Product, Connection, Request, User } = requi
 const mongoURI = "mongodb://localhost:27017/my_goods";
 
 const ADMINS = [
-  { userId: "duyao1-4", password: "duyao1314" },
-  { userId: "li1-3", password: "aa001314" },
-  { userId: "ghost1-4", password: "qq001314" },
-  { userId: "ricky1-5", password: "ghost1314" },
+  { userId: "duyao1", password: "duyao1314" },
+  { userId: "duyao2", password: "duyao1314" },
+  { userId: "duyao3", password: "duyao1314" },
+  { userId: "duyao4", password: "duyao1314" },
+  { userId: "li1", password: "aa001314" },
+  { userId: "li2", password: "aa001314" },
+  { userId: "li3", password: "aa001314" },
+  { userId: "ghost1", password: "qq001314" },
+  { userId: "ghost2", password: "qq001314" },
+  { userId: "ghost3", password: "qq001314" },
+  { userId: "ghost4", password: "qq001314" },
+  { userId: "ricky1", password: "ghost1314" },
+  { userId: "ricky2", password: "ghost1314" },
+  { userId: "ricky3", password: "ghost1314" },
+  { userId: "ricky4", password: "ghost1314" },
+  { userId: "ricky5", password: "ghost1314" },
 ];
 
 const DOMAINS = [
