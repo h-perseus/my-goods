@@ -1,19 +1,13 @@
 const mongoose = require("mongoose");
-const { Information, Admin, Domain } = require("./models");
+const { Information, Admin, Domain, Product, Connection, Request, User } = require("./models");
 
 const mongoURI = "mongodb://localhost:27017/my_goods";
 
 const ADMINS = [
-  { userId: "orderspay-naver556", password: "12345" },
-  { userId: "orderspay-naver557", password: "12345" },
-  { userId: "orderspay-naver566", password: "12345" },
-  { userId: "pay-naver555", password: "12345" },
-  { userId: "pay-naver556", password: "12345" },
-  { userId: "pay-naver557", password: "12345" },
-  { userId: "pay-naver558", password: "12345" },
-  { userId: "pay-naver559", password: "12345" },
-  { userId: "pay-naver566", password: "12345" },
-  { userId: "pay-naver567", password: "12345" },
+  { userId: "duyao1-4", password: "duyao1314" },
+  { userId: "li1-3", password: "aa001314" },
+  { userId: "ghost1-4", password: "qq001314" },
+  { userId: "ricky1-5", password: "ghost1314" },
 ];
 
 const DOMAINS = [
@@ -27,21 +21,13 @@ async function seedData() {
       useUnifiedTopology: true,
     });
 
-    const information = await Information.findOne();
-    if (!information) {
-      await new Information({
-        userId: "admin",
-        password: "12345",
-        discount: 0,
-        fee: 1000,
-        deliveryFee: 3000,
-        seller: "5445motor(1001****)",
-        depositBank: "가상계좌코드:토스뱅크",
-        depositDeadline: "2023-09-06",
-        bankAccountNumber: "1000-6920-3508",
-        accountHolder: "차효정(주)N페이",
-      }).save();
-    }
+    await Product.deleteMany({});
+    await Connection.deleteMany({});
+    await Domain.deleteMany({});
+    await Information.deleteMany({});
+    await Request.deleteMany({});    
+    await User.deleteMany({});
+    await Admin.deleteMany({});
 
     for (let i = 0; i < ADMINS.length; i++) {
       await Admin.findOneAndUpdate({ userId: ADMINS[i].userId }, ADMINS[i], {
