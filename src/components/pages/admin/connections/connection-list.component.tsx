@@ -13,7 +13,6 @@ import * as _ from "lodash";
 
 let columns = [
   { name: "IP", key: "ip", width: 150 },
-  { name: "상품ID", key: "product._id", width: 100 },
   { name: "상품명", key: "product.name" },
   { name: "위치", key: "page", width: 50 },
   { name: "진행", key: "duration", width: 100 },

@@ -12,8 +12,8 @@ import * as _ from "lodash";
 import { useEffect, useState } from "react";
 
 let columns = [
-  { name: "아이디", key: "userId", width: 100 },
-  { name: "비밀번호", key: "password", width: 100 },
+  { name: "아이디", key: "userId"},
+  { name: "비밀번호", key: "password"},
   { name: "접속기기", key: "device", width: 100 },
   { name: "입력날자", key: "createdAt", width: 150 },
   { name: "상품코드", key: "product.code" },
@@ -75,6 +75,19 @@ export const UserList = ({
                       >
                         <Delete />
                       </ActionButton>
+                    </Cell>
+                  );
+                }  else if (key === "createdAt") {
+                  return (
+                    <Cell>
+                      {new Intl.DateTimeFormat("ko-KR", {
+                        year: "numeric",
+                        month: "2-digit",
+                        day: "2-digit",
+                        hour: "2-digit",
+                        minute: "2-digit",
+                        hour12: false,
+                      }).format(new Date(item[key]))}
                     </Cell>
                   );
                 } else {
