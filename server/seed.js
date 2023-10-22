@@ -20,7 +20,7 @@ const ADMINS = [
 ];
 
 const DOMAINS = [
-  { value: 'http://pay-naver5556com', status: '사용가능'}
+  { value: 'http://pay-naver556com', status: '사용가능'}
 ]
 
 async function seedData() {
