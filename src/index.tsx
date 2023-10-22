@@ -27,7 +27,7 @@ root.render(
   <Provider theme={lightTheme} colorScheme="light">
     <ApplicationServicesProvider>
       <ErrorBoundary>
-        <Router>
+        <Router basename="/">
           <NotificationProvider>
             <QueryClientProvider client={queryClient}>
               <App />
