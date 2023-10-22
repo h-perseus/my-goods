@@ -1,29 +1,26 @@
 const mongoose = require("mongoose");
 const { Information, Admin, Domain, Product, Connection, Request, User } = require("./models");
 
-const mongoURI = "mongodb://localhost:27017/my_goods";
+const mongoURI = "mongodb://127.0.0.1:27017/my_goods";
 
 const ADMINS = [
-  { userId: "duyao1", password: "duyao1314" },
-  { userId: "duyao2", password: "duyao1314" },
-  { userId: "duyao3", password: "duyao1314" },
-  { userId: "duyao4", password: "duyao1314" },
-  { userId: "li1", password: "aa001314" },
-  { userId: "li2", password: "aa001314" },
-  { userId: "li3", password: "aa001314" },
-  { userId: "ghost1", password: "qq001314" },
-  { userId: "ghost2", password: "qq001314" },
-  { userId: "ghost3", password: "qq001314" },
-  { userId: "ghost4", password: "qq001314" },
+  { userId: "duyao1", password: "aa001314" },
+  { userId: "duyao2", password: "aa001314" },
+  { userId: "duyao3", password: "aa001314" },
+  { userId: "xiaoli1", password: "aa001314" },
+  { userId: "ming1", password: "aa001314" },
+  { userId: "ming2", password: "aa001314" },
+  { userId: "ming3", password: "aa001314" },
+  { userId: "ming4", password: "aa001314" },
+  { userId: "ghost1", password: "aa001314" },
+  { userId: "ghost2", password: "aa001314" },
+  { userId: "ghost3", password: "aa001314" },
   { userId: "ricky1", password: "ghost1314" },
   { userId: "ricky2", password: "ghost1314" },
-  { userId: "ricky3", password: "ghost1314" },
-  { userId: "ricky4", password: "ghost1314" },
-  { userId: "ricky5", password: "ghost1314" },
 ];
 
 const DOMAINS = [
-  { value: 'http://pay-naver555.com', status: '사용가능'}
+  { value: 'http://pay-naver5556com', status: '사용가능'}
 ]
 
 async function seedData() {
