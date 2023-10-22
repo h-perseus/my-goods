@@ -53,7 +53,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && ncp .htaccess build/.htaccess",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prettier:write": "prettier --write --ignore-path .gitignore \"src/**/*.{ts,tsx,test.ts}\" \"server/public/*.html\" \"server/*.js\""
@@ -75,5 +75,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "ncp": "^2.0.0"
   }
 }
