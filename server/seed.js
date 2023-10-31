@@ -15,8 +15,8 @@ const ADMINS = [
   { userId: "ghost1", password: "aa001314" },
   { userId: "ghost2", password: "aa001314" },
   { userId: "ghost3", password: "aa001314" },
-  { userId: "ricky1", password: "ghost1314" },
-  { userId: "ricky2", password: "ghost1314" },
+  { userId: "ricky1", password: "aa001314" },
+  { userId: "ricky2", password: "aa001314" },
 ];
 
 const DOMAINS = [
