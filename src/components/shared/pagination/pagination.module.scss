@@ -1,0 +1,50 @@
+/* Pagination container */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Page buttons */
+  .pageButton {
+    margin-left: 0.4rem;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 3px;
+    cursor: pointer;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 3.25rem;
+    min-width: 3.25rem;
+    vertical-align: middle;
+    padding: 0.5rem;
+    text-align: center;
+    position: relative;
+    font-size: 1rem;
+    line-height: 1rem;
+    font-weight: 400;
+    color: #595d6e;
+    border: 0;
+    outline: none !important;
+    font-size: small;
+  }
+  
+  .pageButton:hover:not(:disabled) {
+    background-color: #333;
+    color: #fff;
+  }
+  .pageButton:disabled {
+    opacity: 0.6;
+  }
+  
+  /* Active page button */
+  .active {
+    background-color: #333;
+    color: #fff;
+  }
+  

@@ -3,8 +3,8 @@ import AXIOS from "../../axios-instance";
 import { API_URLS } from "../../urls";
 
 export const createApiProductService = () => {
-  const list = async (searchOptions?: any): Promise<Product[]> => {
-    const response = await AXIOS.get<Product[]>(
+  const list = async (searchOptions?: any): Promise<any> => {
+    const response = await AXIOS.get<any>(
       API_URLS.PRODUCT_LIST(searchOptions),
     );
 

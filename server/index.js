@@ -116,9 +116,11 @@ app.delete("/products/:id", async (req, res) => {
 
 app.get("/products", async (req, res) => {
   try {
-    const admin = req.query.admin;
-    const products = await Product.find({ admin: admin });
-    res.json(products);
+
+    const { name, page, admin} = req.query;
+    const products = await Product.find({ admin: admin, name: new RegExp(name, 'i')}, null, { skip: (page - 1) * 10 , limit: 10 });
+    const totalCount = await Product.countDocuments({ admin: admin, name: new RegExp(name, 'i')});
+    res.json({items: products, totalCount});
   } catch (e) {
     res.status(422).json({ message: e.message });
   }

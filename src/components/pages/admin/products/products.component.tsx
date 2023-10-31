@@ -1,24 +1,67 @@
-import { Button, Flex, View, Selection } from "@adobe/react-spectrum";
+import { Button, Flex, View, Selection, SearchField } from "@adobe/react-spectrum";
 import { ProductList } from "./product-list.component";
 import { useProducts } from "../../../../api/products/hooks/use-products.hook";
 import { useNavigate } from "react-router-dom";
 import { ROUTER_PATHS } from "../../../../routes";
 import { useProductDelete } from "../../../../api/products/hooks/use-product-delete.hook";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { LoadingIndicator } from "../../../shared/loading/loading-indicator.component";
 import { LOCAL_STORAGE_KEYS } from "../../../../helpers/local-storage-keys";
+import { isEmpty } from "../../../../helpers/utils";
+import Pagination from "../../../shared/pagination/pagination.component";
 
 export const ProductsComponent = (): JSX.Element => {
-  const { products, load } = useProducts({
-    searchOptions: {
-      admin: localStorage.getItem(LOCAL_STORAGE_KEYS.AUTHORIZED),
-    },
+  const [currentPage, setCurrentPage] = useState(1);
+  const [searchOptions, setSearchOptions] = useState<any>({admin: localStorage.getItem(LOCAL_STORAGE_KEYS.AUTHORIZED), page: 1});
+  const { products, load, isInProgress: isLoading, totalCount } = useProducts({
+    searchOptions
   });
-  const { delete: deleteProduct, isInProgress } = useProductDelete();
+  const { delete: deleteProduct, isInProgress: isDeleting } = useProductDelete();
+  const [searchText, setSearchText] = useState<string>(
+    searchOptions?.name || ''
+  );
   let [selectedProducts, setSelectedProducts] = useState<string[]>([]);
 
+  useEffect(() => {
+    if (currentPage !== searchOptions.page)
+    setSearchOptions((prev: any) => ({
+      ...prev,
+      page: currentPage,
+    }));
+  }, [currentPage, searchOptions])
+
+  const onSubmit = (): void => {
+    const text = searchText.trim();
+    setSearchText(text);
+    setSearchOptions((prev: any) => ({
+      ...prev,
+      name: text,
+    }));
+    setCurrentPage(1);
+  };
+  const onClearField = (): void => {
+    setSearchText('');
+    setSearchOptions((prev: any) => ({
+      ...prev,
+      name: '',
+    }));
+    setCurrentPage(1);
+  };
+
+  const onSearchChange = (text: string): void => {
+    setSearchText(text);
+
+    if (isEmpty(text)) {
+      setSearchOptions((prev: any) => ({
+        ...prev,
+        name: text,
+      }));
+      setCurrentPage(1);
+    }
+  };
+
+
   const handleDeleteItem = (id: string) => {
-    console.log(id);
     deleteProduct([id])
       .then(() => {
         load();
@@ -36,7 +79,7 @@ export const ProductsComponent = (): JSX.Element => {
 
   const navigate = useNavigate();
 
-  if (isInProgress) return <LoadingIndicator></LoadingIndicator>;
+  if (isLoading || isDeleting) return <LoadingIndicator></LoadingIndicator>;
   return (
     <>
       <Flex
@@ -47,6 +90,18 @@ export const ProductsComponent = (): JSX.Element => {
         UNSAFE_style={{ overflow: "hidden" }}
       >
         <Flex gap={"size-100"} marginBottom={"size-200"} justifyContent={"end"}>
+          <SearchField
+            value={searchText}
+            type="search"
+            inputMode="search"
+            aria-label="search"
+            placeholder="Search"
+            isQuiet={true}
+            onClear={onClearField}
+            onSubmit={onSubmit}
+            onChange={onSearchChange}
+            UNSAFE_style={{ width: '100%' }}
+          />
           <Button
             isDisabled={selectedProducts.length === 0}
             variant="secondary"
@@ -75,6 +130,9 @@ export const ProductsComponent = (): JSX.Element => {
             ></ProductList>
           }
         </View>
+        <Flex gap={"size-100"} marginTop={"size-200"} marginBottom={'size-200'} justifyContent={"end"}>
+          <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} totalCount={ totalCount}></Pagination>
+        </Flex>
       </Flex>
     </>
   );
