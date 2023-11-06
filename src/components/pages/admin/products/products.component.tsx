@@ -21,6 +21,13 @@ export const ProductsComponent = (): JSX.Element => {
     searchOptions?.name || ''
   );
   let [selectedProducts, setSelectedProducts] = useState<string[]>([]);
+  useEffect(() => {
+    const inputElement = document.getElementById("search-input-el");
+
+    if (inputElement) {
+      inputElement.focus();
+    }
+  }, [products])
 
   useEffect(() => {
     if (currentPage !== searchOptions.page)
@@ -95,7 +102,8 @@ export const ProductsComponent = (): JSX.Element => {
             type="search"
             inputMode="search"
             aria-label="search"
-            placeholder="Search"
+            placeholder="검색"
+            id="search-input-el"
             isQuiet={true}
             onClear={onClearField}
             onSubmit={onSubmit}

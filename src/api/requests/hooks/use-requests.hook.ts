@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { useInfiniteQuery } from "react-query";
+import { useInfiniteQuery, useQuery } from "react-query";
 import QUERY_KEYS from "../../query-keys";
 import { useApplicationServices } from "../../../components/providers/application-services-provider.component";
 import { Request } from "../request.interface";
@@ -13,6 +13,7 @@ interface UseRequests {
   isInProgress: boolean;
   load: () => Promise<void>;
   error: unknown;
+  totalCount: number;
 }
 
 export const useRequests = ({
@@ -20,7 +21,7 @@ export const useRequests = ({
 }: UseRequestsProps): UseRequests => {
   const { requestService: service } = useApplicationServices();
 
-  const query = useInfiniteQuery<Request[]>({
+  const query = useQuery<any>({
     queryKey: QUERY_KEYS.REQUEST_LIST_KEY(searchOptions),
     queryFn: async () => {
       return await service.list(searchOptions);
@@ -30,7 +31,7 @@ export const useRequests = ({
   const { isLoading, isFetching, refetch, error, data } = query;
 
   const requests =
-    data?.pages?.flatMap((response: Request[]) => response) ?? [];
+    data?.items ?? [];
   const isInProgress = isLoading || isFetching;
 
   const load = useCallback(async () => {
@@ -39,5 +40,5 @@ export const useRequests = ({
     }
   }, [isFetching, refetch]);
 
-  return { requests, isInProgress, load, error };
+  return { requests, isInProgress, load, error, totalCount: data?.totalCount };
 };

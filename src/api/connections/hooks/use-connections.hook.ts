@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { useInfiniteQuery } from "react-query";
+import { useQuery } from "react-query";
 import { Connection } from "../connection.interface";
 import QUERY_KEYS from "../../query-keys";
 import { useApplicationServices } from "../../../components/providers/application-services-provider.component";
@@ -13,6 +13,7 @@ interface UseConnections {
   isInProgress: boolean;
   load: () => Promise<void>;
   error: unknown;
+  totalCount: number;
 }
 
 export const useConnections = ({
@@ -20,7 +21,7 @@ export const useConnections = ({
 }: UseConnectionsProps): UseConnections => {
   const { connectionService: service } = useApplicationServices();
 
-  const query = useInfiniteQuery<Connection[]>({
+  const query = useQuery<any>({
     queryKey: QUERY_KEYS.CONNECTION_LIST_KEY(searchOptions),
     queryFn: async () => {
       return await service.list(searchOptions);
@@ -30,7 +31,7 @@ export const useConnections = ({
   const { isLoading, isFetching, refetch, error, data } = query;
 
   const connections =
-    data?.pages?.flatMap((response: Connection[]) => response) ?? [];
+    data?.items ?? [];
   const isInProgress = isLoading || isFetching;
 
   const load = useCallback(async () => {
@@ -39,5 +40,5 @@ export const useConnections = ({
     // }
   }, [isFetching]);
 
-  return { connections, isInProgress, load, error };
+  return { connections, isInProgress, load, error, totalCount: data?.totalCount };
 };

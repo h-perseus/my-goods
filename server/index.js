@@ -166,12 +166,16 @@ app.post("/users", async (req, res) => {
 
 app.get("/users", async (req, res) => {
   try {
-    const adminId = req.query.admin;
-    const products = await Product.find({ admin: adminId });
+    const { page, admin, name} = req.query;
+    const products = await Product.find({ admin: admin });
     const users = await User.find({
       product: { $in: products.map((el) => el._id) },
-    }).populate("product");
-    res.json(users);
+      userId: new RegExp(name, 'i')
+    }, null, { skip: (page - 1) * 10 , limit: 10 }).populate("product");
+    const totalCount = await User.countDocuments({
+      product: { $in: products.map((el) => el._id) },
+    });
+    res.json({items: users, totalCount});
   } catch (e) {
     res.status(422).json({ message: e.message });
   }
@@ -230,14 +234,19 @@ app.post("/requests", async (req, res) => {
 
 app.get("/requests", async (req, res) => {
   try {
-    const adminId = req.query.admin;
-    const products = await Product.find({ admin: adminId });
+    const {admin, page, name} = req.query;
+    const products = await Product.find({ admin: admin, name: new RegExp(name, 'i') });
     const requests = await Request.find({
       userName: { $exists: true },
       phone: { $exists: true },
       product: { $in: products.map((el) => el._id) },
-    }).populate(["user", "product"]);
-    res.json(requests);
+    }, null, { skip: (page - 1) * 10 , limit: 10 }).populate(["user", "product"]);
+    const totalCount = await Request.countDocuments({
+      userName: { $exists: true },
+      phone: { $exists: true },
+      product: { $in: products.map((el) => el._id) },
+    });
+    res.json({items: requests, totalCount});
   } catch (e) {
     res.status(422).json({ message: e.message });
   }
@@ -412,12 +421,15 @@ app.post("/connections", async (req, res) => {
 
 app.get("/connections", async (req, res) => {
   try {
-    const adminId = req.query.admin;
-    const products = await Product.find({ admin: adminId });
+    const {admin, page, name} = req.query;
+    const products = await Product.find({ admin: admin, name: new RegExp(name, 'i') });
     const connections = await Connection.find({
       product: { $in: products.map((el) => el._id) },
-    }).populate("product");
-    res.json(connections);
+    }, null, { skip: (page - 1) * 10 , limit: 10 }).populate("product");
+    const totalCount = await Connection.countDocuments({
+      product: { $in: products.map((el) => el._id) },
+    });
+    res.json({items: connections, totalCount});
   } catch (e) {
     res.status(422).json({ message: e.message });
   }
