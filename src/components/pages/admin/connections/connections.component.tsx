@@ -85,12 +85,15 @@ export const ConnectionsComponent = (): JSX.Element => {
   useEffect(() => {
     const timer = setInterval(() => {
       try {
-        load();
+        console.log('sss')
+        if (selectedConnections.length === 0) {
+          load();
+        }
       } catch (error) {}
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [selectedConnections]);
 
   if (isInProgress || isLoading) return <LoadingIndicator></LoadingIndicator>;
   return (
