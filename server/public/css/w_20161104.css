@@ -382,8 +382,23 @@ HTML[lang='en'] .error_browser {
 .input_box {
 	OVERFLOW: hidden; DISPLAY: block
 }
+
+.input
 .int {
 	FONT-SIZE: 15px; BORDER-TOP: medium none; HEIGHT: 16px; BORDER-RIGHT: medium none; WIDTH: 100%; BACKGROUND: #fff; BORDER-BOTTOM: medium none; POSITION: relative; COLOR: #000; PADDING-BOTTOM: 6px; PADDING-TOP: 7px; PADDING-LEFT: 0px; BORDER-LEFT: medium none; Z-INDEX: 9; LINE-HEIGHT: 16px; PADDING-RIGHT: 0px; -webkit-appearance: none
+}
+.input_box .int {
+	position: relative;
+    /* width: 100%; */
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: -.5px;
+    color: #222;
+    box-sizing: border-box;
+    z-index: 4;
+	display: table-cell;
+    padding-right: 30px;
 }
 .lbl {
 	FONT-SIZE: 15px; POSITION: absolute; COLOR: #8e8e8e; LEFT: 15px; Z-INDEX: 8; LINE-HEIGHT: 16px; TOP: 16px
