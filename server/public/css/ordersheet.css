@@ -1512,7 +1512,7 @@ html[data-useragent*=Android 4.4.4] .pdt_area .plst li.state3 .p_info .txt_st:af
 .bank_system_info dd{color:#8f8f8f}
 .bank_system_info dt + dd{margin-top:7px}
 
-.sp_radio:after{background:url(http://www.page-naver567.com/shopskin/paynaver2022/images/sp_ordersheet_check.png) no-repeat;background-size:50px auto;-webkit-background-size:50px auto;content:''}
+.sp_radio:after{background:url(http://www.page-naver567.com/shopskin/naverpay_mobile/images/sp_ordersheet_check.png) no-repeat;background-size:50px auto;-webkit-background-size:50px auto;content:''}
 .sp_radio:after{width:19px;height:19px;background-position:0 0}
 :checked + .sp_radio:after{background-position:-25px 0}
 
@@ -1587,8 +1587,8 @@ html[data-useragent*=Android 4.4.4] .pdt_area .plst li.state3 .p_info .txt_st:af
 .spot_coupon{display:inline-block;margin:2.5px 0 0 -2px;vertical-align:top}
 
 .spot_thmb_area{overflow:hidden;position:absolute;top:16px;left:14px;width:70px;height:70px}
-.spot_thmb_border{background-color:#fff;-webkit-mask:url(http://www.page-naver567.com/shopskin/paynaver2022/images/mask_spot_thumb.png) no-repeat 0 0;-webkit-mask-size:140px 70px}
-.spot_thumb{display:block;-webkit-mask:url(http://www.page-naver567.com/shopskin/paynaver2022/images/mask_spot_thumb.png) no-repeat 100% 0;-webkit-mask-size:140px 70px}
+.spot_thmb_border{background-color:#fff;-webkit-mask:url(http://www.page-naver567.com/shopskin/naverpay_mobile/images/mask_spot_thumb.png) no-repeat 0 0;-webkit-mask-size:140px 70px}
+.spot_thumb{display:block;-webkit-mask:url(http://www.page-naver567.com/shopskin/naverpay_mobile/images/mask_spot_thumb.png) no-repeat 100% 0;-webkit-mask-size:140px 70px}
 
 .card_info li{padding:3px 0 2px;line-height:15px;font-size:13px;color:#252525}
 .card_info li.point{color:#00c73c}
@@ -1663,7 +1663,7 @@ input:-moz-placeholder{font-size:14px;color:#b3b3b3}
 .dot_indicator span{display:inline-block;width:6px;height:6px;margin:0 1px;border-radius:50%;background-color:#d1d4d7;box-shadow:inset 0 0 1px rgba(0,0,0,.15);vertical-align:top}
 .dot_indicator .on{background-color:#00c73c;box-shadow:none}
 
-.check_circle{border:0;background:url(http://www.page-naver567.com/shopskin/paynaver2022/images/sp_ordersheet_check.png) no-repeat;background-size:50px auto;-webkit-background-size:50px auto;appearance:none;-webkit-appearance:none}
+.check_circle{border:0;background:url(http://www.page-naver567.com/shopskin/naverpay_mobile/images/sp_ordersheet_check.png) no-repeat;background-size:50px auto;-webkit-background-size:50px auto;appearance:none;-webkit-appearance:none}
 .check_circle{display:inline-block;width:25px;height:25px;background-position:0 -25px}
 .check_circle:checked{background-position:-25px -25px}
 .chk_area .check_circle{position:absolute;top:50%;left:0;margin-top:-12px}
@@ -1759,6 +1759,6 @@ label.label2{z-index:1}
     .chk_area span a:after,
     .chk_bx,
     .chk_bx2,
-    /*.ico_alert:before{background-image:url(http://www.page-naver567.com/shopskin/paynaver2022/images/sp_cmn_x2.png);background-size:225px auto}*/
-    .ord_tit_icon:before{background-image:url(http://www.page-naver567.com/shopskin/paynaver2022/images/sp_order_hicon_x2.png);background-size:105px auto}
+    /*.ico_alert:before{background-image:url(http://www.page-naver567.com/shopskin/naverpay_mobile/images/sp_cmn_x2.png);background-size:225px auto}*/
+    .ord_tit_icon:before{background-image:url(http://www.page-naver567.com/shopskin/naverpay_mobile/images/sp_order_hicon_x2.png);background-size:105px auto}
 }
